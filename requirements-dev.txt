@@ -1,7 +1,7 @@
 -e .[examples]
 -r requirements-test.txt
 
-black ==21.4b0
+black ==21.8b0
 
 flake8 ==3.9.2
 pycodestyle ==2.7.0
