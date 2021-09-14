@@ -7,7 +7,8 @@ from urllib.parse import urljoin
 from aiohttp import ClientResponse, ClientSession
 
 from .models import CustomerData, InvoiceHeader, Service
-from .version import __version__  # noqa: F401 # API
+
+__version__ = "0.9.0"
 
 DEFAULT_BASE_URL = "https://tilasto.jatekukko.fi/jatekukko/"
 
