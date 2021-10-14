@@ -13,18 +13,18 @@ repos:
       - id: isort
 
   - repo: https://github.com/asottile/pyupgrade
-    rev: v2.24.0
+    rev: v2.29.0
     hooks:
       - id: pyupgrade
         args: [--py38-plus, --keep-percent-format]
 
   - repo: https://github.com/PyCQA/flake8
-    rev: 3.9.2
+    rev: 4.0.1
     hooks:
       - id: flake8
         additional_dependencies:
           - |-
-            pycodestyle ==2.7.0
+            pycodestyle ==2.8.0
           - |-
             pyflakes ==2.4.0
           - |-
@@ -34,7 +34,7 @@ repos:
           - |-
             flake8-bugbear ==21.4.3
           - |-
-            flake8-comprehensions ==3.6.1
+            flake8-comprehensions ==3.7.0
           - |-
             flake8-docstrings ==1.6.0
           - |-
