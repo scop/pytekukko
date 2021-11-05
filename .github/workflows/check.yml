@@ -119,8 +119,7 @@ jobs:
             ${{hashFiles('requirements-test.txt', 'setup.cfg')}}
       - name: Install dependencies
         run: |
-          python3 -m pip install tox-gh-actions \
-            "$(grep -F pytest-dev/py.git@ requirements-test.txt)"
+          python3 -m pip install tox-gh-actions
       - name: Run tests
         run: |
           tox --skip-missing-interpreters false
