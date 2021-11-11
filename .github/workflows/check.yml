@@ -71,15 +71,15 @@ jobs:
               <"$commits_json" >"$commit_txt"
             echo "Commit $id:"
             pre-commit run gitlint \
-              --color=always \
-              --hook-stage=commit-msg \
-              --commit-msg-filename="$commit_txt" \
+              --color always \
+              --hook-stage commit-msg \
+              --commit-msg-filename "$commit_txt" \
               || rc=1
           done
 
           # Other pre-commit checks
 
-          pre-commit run --color=always --all-files || rc=1
+          pre-commit run --color always --all-files || rc=1
 
           exit $rc
 
