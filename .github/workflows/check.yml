@@ -74,12 +74,12 @@ jobs:
               --color=always \
               --hook-stage=commit-msg \
               --commit-msg-filename="$commit_txt" \
-              || ((rc+=$?))
+              || rc=1
           done
 
           # Other pre-commit checks
 
-          pre-commit run --color=always --all-files || ((rc+=$?))
+          pre-commit run --color=always --all-files || rc=1
 
           exit $rc
 
