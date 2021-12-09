@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.10.0](https://www.github.com/scop/pytekukko/compare/v0.9.0...v0.10.0) (2021-12-09)
+
+
+### Features
+
+* **examples:** load env from $PYTEKUKKO_DOTENV, actually walk from cwd ([9ac3df4](https://www.github.com/scop/pytekukko/commit/9ac3df45d14ebd25b0037debb7070b08a6b4889a))
+
+
+### Documentation
+
+* **readme:** elaborate disclaimer a bit ([f0e87b1](https://www.github.com/scop/pytekukko/commit/f0e87b16737d1cbbcf25dc7e527223ed87921261))
+
 ## [0.10.0](https://www.github.com/scop/pytekukko/compare/v0.9.0...v0.10.0) (2021-12-06)
 
 
