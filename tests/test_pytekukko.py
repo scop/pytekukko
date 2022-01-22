@@ -83,7 +83,6 @@ async def fixture_client() -> Pytekukko:
     )
 
 
-@pytest.mark.asyncio
 @pytest.mark.vcr
 async def test_login(client: Pytekukko) -> None:
     """Test login."""
@@ -92,7 +91,6 @@ async def test_login(client: Pytekukko) -> None:
     assert result
 
 
-@pytest.mark.asyncio
 @pytest.mark.vcr
 async def test_logout(client: Pytekukko) -> None:
     """Test logout."""
@@ -102,7 +100,6 @@ async def test_logout(client: Pytekukko) -> None:
     # No exception counts as success here
 
 
-@pytest.mark.asyncio
 @pytest.mark.vcr
 async def test_get_collection_schedule(client: Pytekukko) -> None:
     """Test getting collection schedule."""
@@ -114,7 +111,6 @@ async def test_get_collection_schedule(client: Pytekukko) -> None:
     assert all(isinstance(date, datetime.date) for date in dates)
 
 
-@pytest.mark.asyncio
 @pytest.mark.vcr
 async def test_get_invoice_headers(client: Pytekukko) -> None:
     """Test getting invoice headers."""

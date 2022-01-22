@@ -1,5 +1,5 @@
 pytest >=6
-pytest-asyncio
+pytest-asyncio >=0.17
 pytest-vcr
 # See note in test_pytekukko.vcr_config
 vcrpy ==4.1.1
