@@ -17,7 +17,7 @@ isort ==5.10.1
 
 mypy ==0.910
 
-pylint ==2.12.2
+pylint ==2.13.1
 pylint-strict-informational ==0.1
 
 tox ~=3.14
