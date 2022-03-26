@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.11.0](https://github.com/scop/pytekukko/compare/v0.10.0...v0.11.0) (2022-03-26)
+
+
+### Features
+
+* **models:** expose CustomerData.name ([c835fea](https://github.com/scop/pytekukko/commit/c835fea47a580c38f2eeb3d070369b98e57a7854))
+
 ## [0.10.0](https://www.github.com/scop/pytekukko/compare/v0.9.0...v0.10.0) (2021-12-06)
 
 

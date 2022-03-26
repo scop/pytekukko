@@ -9,7 +9,7 @@ from aiohttp import ClientResponse, ClientResponseError, ClientSession
 
 from .models import CustomerData, InvoiceHeader, Service
 
-__version__ = "0.10.0"
+__version__ = "0.11.0"
 DEFAULT_BASE_URL = "https://tilasto.jatekukko.fi/jatekukko/"
 
 
