@@ -22,6 +22,10 @@ QUERY_PARAMETER_FILTERS = [
     ("customerNumber", FAKE_CUSTOMER_NUMBER),
     ("pos", FAKE_POS),
 ]
+POST_DATA_FILTERS = [
+    ("j_username", FAKE_CUSTOMER_NUMBER),
+    ("j_password", FAKE_PASSWORD),
+]
 
 
 def before_record_response(response: T) -> T:
@@ -63,11 +67,11 @@ def vcr_config() -> Dict[str, Any]:
         "before_record_response": before_record_response,
         "filter_headers": ["Cookie"],
         "filter_query_parameters": QUERY_PARAMETER_FILTERS,
-        # NOTE: this should be uncommented when upgrading vcrpy to a fixed > 4.1.1:
-        #   https://github.com/kevin1024/vcrpy/issues/398
-        #   https://github.com/kevin1024/vcrpy/pull/582
-        #   https://github.com/kevin1024/vcrpy/pull/581
-        # "filter_post_data_parameters": ["j_username", "j_password"],
+        # As of vcrpy 4.2.0, this is kind of a no-op as we don't get a response body
+        # recorded in redirection chains like the one at login at all. But the syntax
+        # is accepted, and we would like to filter these if they did exist, so prepare
+        # for it. Refs https://github.com/kevin1024/vcrpy/pull/581
+        "filter_post_data_parameters": POST_DATA_FILTERS,
     }
 
 
