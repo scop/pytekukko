@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.11.1](https://github.com/scop/pytekukko/compare/v0.11.0...v0.11.1) (2022-04-20)
+
+
+### Reverts
+
+* don't error on pyparsing sre_constants 3.11 deprecation ([3b06256](https://github.com/scop/pytekukko/commit/3b06256602014fcbfbd343a5db6b644fdcc09a33))
+
 ## [0.11.0](https://github.com/scop/pytekukko/compare/v0.10.0...v0.11.0) (2022-03-26)
 
 
