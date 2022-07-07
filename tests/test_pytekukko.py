@@ -33,7 +33,7 @@ def before_record_response(response: T) -> T:
 
     response["headers"].pop("Set-Cookie", None)
 
-    # As of vcrpy 4.1.1, query parameters filtered with filter_query_parameters
+    # As of vcrpy 4.2.0, query parameters filtered with filter_query_parameters
     # do not end up filtered in response["url"], so address them here.
     url_parts = urlparse(response["url"])
     new_query_parts = []
