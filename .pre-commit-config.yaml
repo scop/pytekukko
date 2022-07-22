@@ -62,7 +62,7 @@ repos:
         require_serial: true
 
   - repo: https://github.com/crate-ci/typos
-    rev: v1.5.0
+    rev: v1.10.3
     hooks:
       - id: typos
 
