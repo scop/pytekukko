@@ -17,6 +17,6 @@ isort ==5.10.1
 
 mypy ==0.981
 
-pylint ==2.14.3
+pylint ==2.15.5
 
 tox ~=3.14
