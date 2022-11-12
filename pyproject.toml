@@ -1,5 +1,39 @@
 [build-system]
-requires = ["setuptools >=42", "wheel"]
+requires = ["setuptools >=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pytekukko"
+version = "0.11.0"
+description = "Jätekukko Omakukko API client"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { file = "LICENSE" }
+authors = [{ name = "Ville Skyttä", email = "ville.skytta@iki.fi" }]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Framework :: AsyncIO",
+  "Intended Audience :: Developers",
+  "Intended Audience :: End Users/Desktop",
+  "License :: OSI Approved :: Apache Software License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3 :: Only",
+  "Typing :: Typed",
+]
+dependencies = ["aiohttp ~=3.4"]
+
+[project.optional-dependencies]
+examples = ["python-dotenv ~=0.10", "google-api-python-client ~=2.0,>=2.0.2"]
+
+[project.scripts]
+pytekukko-collection-schedules = "pytekukko.examples.print_collection_schedules:main [examples]"
+pytekukko-invoice-headers = "pytekukko.examples.print_invoice_headers:main [examples]"
+pytekukko-next-collections = "pytekukko.examples.print_next_collections:main [examples]"
+pytekukko-update-google-calendar = "pytekukko.examples.update_google_calendar:main [examples]"
+
+[project.urls]
+Homepage = "https://github.com/scop/pytekukko"
+Changelog = "https://github.com/scop/pytekukko/blob/main/CHANGELOG.md"
 
 [tool.black]
 target-version = ["py39", "py310", "py311"] # TODO: add "py312" when supported
@@ -56,6 +90,7 @@ legacy_tox_ini = """
 [tox]
 envlist = py39, py310, py311, py312, pypy3
 skip_missing_interpreters = true
+isolated_build = true
 [testenv]
 deps = -rrequirements-test.txt
 extras = examples

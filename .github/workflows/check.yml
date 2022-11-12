@@ -24,7 +24,7 @@ jobs:
             pip+venv
             ${{ steps.setup-python.outputs.python-version }}
             ${{ hashFiles(
-                'requirements-dev.txt', 'requirements-test.txt', 'setup.cfg'
+                'pyproject.toml', 'requirements-dev.txt', 'requirements-test.txt'
             ) }}
       - uses: actions/cache@v3
         with:
@@ -107,7 +107,7 @@ jobs:
             .tox
           key: >-
             ${{ runner.os }} pip ${{ matrix.python-version }}
-            ${{ hashFiles('requirements-test.txt', 'setup.cfg') }}
+            ${{ hashFiles('pyproject.toml', 'requirements-test.txt') }}
       - name: Install dependencies
         run: |
           python3 -m pip install tox-gh-actions
