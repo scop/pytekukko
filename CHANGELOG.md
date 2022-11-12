@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.12.1](https://github.com/scop/pytekukko/compare/v0.12.0...v0.12.1) (2022-11-12)
+
+
+### Bug Fixes
+
+* **dist:** actually include `py.typed` ([5822a46](https://github.com/scop/pytekukko/commit/5822a4614c1b9ad2a13c5727a66cc971e709ae76))
+
 ## [0.12.0](https://github.com/scop/pytekukko/compare/v0.11.0...v0.12.0) (2022-11-12)
 
 
