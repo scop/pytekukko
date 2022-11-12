@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.12.0](https://github.com/scop/pytekukko/compare/v0.11.0...v0.12.0) (2022-11-12)
+
+
+### Bug Fixes
+
+* **dist:** include py.typed ([134eec2](https://github.com/scop/pytekukko/commit/134eec2b9990d06f24ab8af42f6372e55ecd9b73))
+
+
+### Reverts
+
+* don't error on pyparsing sre_constants 3.11 deprecation ([3b06256](https://github.com/scop/pytekukko/commit/3b06256602014fcbfbd343a5db6b644fdcc09a33))
+
+
+### Miscellaneous Chores
+
+* **python:** drop support for 3.8 ([6ca7a09](https://github.com/scop/pytekukko/commit/6ca7a098b0f04e36a6ba421c9bd9309d03fc4616))
+
 ## [0.11.0](https://github.com/scop/pytekukko/compare/v0.10.0...v0.11.0) (2022-03-26)
 
 
