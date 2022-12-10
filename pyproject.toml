@@ -100,11 +100,4 @@ commands =
   {envpython} -X dev -bb -W error -m pytekukko.examples.print_invoice_headers --help
   {envpython} -X dev -bb -W error -m pytekukko.examples.print_next_collections --help
   {envpython} -X dev -bb -W error -m pytekukko.examples.update_google_calendar --help
-[gh-actions]
-python =
-  3.9: py39
-  3.10: py310
-  3.11: py311
-  3.12: py312
-  pypy-3.9: pypy3
 """
