@@ -64,7 +64,7 @@ repos:
         require_serial: true
 
   - repo: https://github.com/crate-ci/typos
-    rev: v1.12.14
+    rev: v1.13.9
     hooks:
       - id: typos
         # TODO: to .typos.toml, https://github.com/crate-ci/typos/issues/347
