@@ -15,7 +15,8 @@ from .models import CustomerData, InvoiceHeader, Service
 __version__ = "0.12.1"
 DEFAULT_BASE_URL = "https://tilasto.jatekukko.fi/jatekukko/"
 
-_SERVICE_TZ = ZoneInfo("Europe/Helsinki")
+SERVICE_TIMEZONE = ZoneInfo("Europe/Helsinki")
+"""Assumed time zone of timestamps in data from service."""
 
 
 class Pytekukko:
@@ -165,11 +166,11 @@ def _unmarshal(data: Any) -> Any:
             data[i] = _unmarshal(value)
     elif isinstance(data, str):
         try:
-            parsed = dt.strptime(data, "%Y-%m-%d").replace(tzinfo=_SERVICE_TZ)
+            parsed = dt.strptime(data, "%Y-%m-%d").replace(tzinfo=SERVICE_TIMEZONE)
             data = parsed.date()
         except ValueError:
             with suppress(ValueError):
-                parsed = dt.strptime(data, "%H:%M").replace(tzinfo=_SERVICE_TZ)
+                parsed = dt.strptime(data, "%H:%M").replace(tzinfo=SERVICE_TIMEZONE)
                 data = parsed.time()
     return data
 
