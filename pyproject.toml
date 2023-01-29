@@ -46,7 +46,6 @@ ignore = [
   "D213", # Ping/pong with D212
   #"E203", # Black, uncomment when/if ruff starts to support
   "E501", # Black
-  "S101", # Maybe sometime
   "TCH003", # Maybe sometime
 
 ]
@@ -54,6 +53,9 @@ fix = true
 unfixable = ["T20"]
 src = ["src", "tests"]
 target-version = "py39"
+
+[tool.ruff.per-file-ignores]
+"tests/*.py" = ["S101"]
 
 [tool.mypy]
 python_version = "3.9"

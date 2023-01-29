@@ -10,6 +10,7 @@ from zoneinfo import ZoneInfo
 
 from aiohttp import ClientResponse, ClientResponseError, ClientSession
 
+from .exceptions import UnexpectedResponseStructureError
 from .models import CustomerData, InvoiceHeader, Service
 
 __version__ = "0.12.1"
@@ -55,7 +56,8 @@ class Pytekukko:
             url=url,
             params=params,
         )
-        assert isinstance(response_data, (list, tuple))
+        if not isinstance(response_data, (list, tuple)):
+            raise UnexpectedResponseStructureError(response_data)
 
         return [Service(raw_data=_unmarshal(service)) for service in response_data]
 
@@ -88,7 +90,8 @@ class Pytekukko:
             url=url,
             params=params,
         )
-        assert isinstance(response_data, (list, tuple))
+        if not isinstance(response_data, (list, tuple)):
+            raise UnexpectedResponseStructureError(response_data)
 
         return [
             InvoiceHeader(raw_data=_unmarshal(invoice_header))
