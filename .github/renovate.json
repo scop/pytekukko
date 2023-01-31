@@ -48,7 +48,7 @@
     {
       "matchPackagePatterns": ["(^|/)ruff(-pre-commit)?$"],
       "groupName": "ruff",
-      "versioning": "semver"
+      "versioning": "pep440"
     }
   ]
 }
