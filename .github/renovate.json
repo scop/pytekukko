@@ -34,7 +34,7 @@
       "versioning": "pep440"
     },
     {
-      "matchPackagePatterns": ["(^|/)ruff$"],
+      "matchPackagePatterns": ["(^|/)ruff(-pre-commit)?$"],
       "groupName": "ruff",
       "versioning": "semver"
     }
