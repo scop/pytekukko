@@ -38,16 +38,18 @@ jobs:
             ${{ hashFiles('.pre-commit-config.yaml') }}
       - name: Install dependencies
         run: |
-          set -euxo pipefail
+          set -euo pipefail
           python3 -m venv venv
           source venv/bin/activate
+          set -x
           python3 -m pip install -Ur \
             requirements-dev.txt pre-commit~=2.9 gitlint==0.18.0
           pre-commit install-hooks
       - name: Run linters
         run: |
-          set -euxo pipefail
+          set -euo pipefail
           source venv/bin/activate
+          set -x
           rc=0
           gitlint --ignore-stdin \
             --commits "origin/${GITHUB_BASE_REF:-main}..HEAD" \
