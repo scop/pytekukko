@@ -64,21 +64,3 @@ warn_unreachable = true
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
 filterwarnings = ["error"]
-
-[tool.tox]
-legacy_tox_ini = """
-[tox]
-envlist = py39, py310, py311, py312, pypy3
-skip_missing_interpreters = true
-isolated_build = true
-[testenv]
-deps = -rrequirements-test.txt
-extras = examples
-passenv = PYTEST_*
-commands =
-  {envpython} -X dev -bb -m pytest {posargs}
-  {envpython} -X dev -bb -W error -m pytekukko.examples.print_collection_schedules --help
-  {envpython} -X dev -bb -W error -m pytekukko.examples.print_invoice_headers --help
-  {envpython} -X dev -bb -W error -m pytekukko.examples.print_next_collections --help
-  {envpython} -X dev -bb -W error -m pytekukko.examples.update_google_calendar --help
-"""

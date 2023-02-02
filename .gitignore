@@ -1,8 +1,8 @@
 *.egg-info/
 *~
 /.env
+/.nox/
 /.python-version
-/.tox/
 /build/
 /dist/
 /service_account.json
