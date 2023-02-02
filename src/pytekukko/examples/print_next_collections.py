@@ -27,7 +27,7 @@ async def run_example() -> None:
         if not cookie_jar_path:
             await client.logout()
 
-    print(json.dumps(data))  # noqa: print-found
+    print(json.dumps(data))  # noqa: T201
 
     if cookie_jar_path:
         cookie_jar.save(cookie_jar_path)

@@ -165,7 +165,7 @@ async def run_example() -> None:
     args = argparser.parse_args()
 
     if not args.google_calendar_id:
-        print("Google calendar id required", file=sys.stderr)  # noqa: print-found
+        print("Google calendar id required", file=sys.stderr)  # noqa: T201
         sys.exit(2)
 
     client, cookie_jar, cookie_jar_path = example_client(args)
