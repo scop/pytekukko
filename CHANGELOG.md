@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.13.0](https://github.com/scop/pytekukko/compare/v0.12.1...v0.13.0) (2023-02-03)
+
+
+### Features
+
+* error explicitly on unexpected response structures ([c7b493a](https://github.com/scop/pytekukko/commit/c7b493a37f4bcb6dda2d244691d6ee9feef06ec3))
+* expose assumed service time zone ([2ed26e6](https://github.com/scop/pytekukko/commit/2ed26e6cf554278243438554fb8e3a994abd5c91))
+
+
+### Bug Fixes
+
+* **unmarshal:** times to timezone aware objects ([4523632](https://github.com/scop/pytekukko/commit/4523632ba0a7bd4b9f242b3b74d4255d90a428c9))
+
 ## [0.12.1](https://github.com/scop/pytekukko/compare/v0.12.0...v0.12.1) (2022-11-12)
 
 
