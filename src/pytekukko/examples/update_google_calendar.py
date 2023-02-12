@@ -36,7 +36,7 @@ class CalendarData(NamedTuple):
 
 
 # https://developers.google.com/resources/api-libraries/documentation/calendar/v3/python/latest/calendar_v3.events.html
-def update_google_calendar(  # pylint: disable=too-many-locals
+def update_google_calendar(
     credentials: service_account.Credentials,
     calendar_id: str,
     data: Mapping[str, CalendarData],
@@ -53,11 +53,7 @@ def update_google_calendar(  # pylint: disable=too-many-locals
 
     # Events with only date set are apparently treated as occurring at midnight,
     # start of day in calendar's timezone.
-    calendar = (
-        service.calendars()  # pylint: disable=no-member
-        .get(calendarId=calendar_id)
-        .execute()
-    )
+    calendar = service.calendars().get(calendarId=calendar_id).execute()
     if calendar.get("timeZone"):
         timezone: datetime.tzinfo = zoneinfo.ZoneInfo(calendar["timeZone"])
     else:
@@ -67,7 +63,7 @@ def update_google_calendar(  # pylint: disable=too-many-locals
     )
 
     events = (
-        service.events()  # pylint: disable=no-member
+        service.events()
         .list(
             calendarId=calendar_id,
             orderBy="startTime",
@@ -85,7 +81,7 @@ def update_google_calendar(  # pylint: disable=too-many-locals
         if pos and pos in data and not pos_events.get(pos):
             pos_events[pos] = event
         else:
-            service.events().delete(  # pylint: disable=no-member
+            service.events().delete(
                 calendarId=calendar_id,
                 eventId=event["id"],
             ).execute()
@@ -126,7 +122,7 @@ def update_google_calendar(  # pylint: disable=too-many-locals
             for key, value in event_data.items():
                 if event.get(key) != value:
                     action = "updated"
-                    method = service.events().patch(  # pylint: disable=no-member
+                    method = service.events().patch(
                         calendarId=calendar_id,
                         eventId=event["id"],
                         body=event_data,
@@ -137,7 +133,7 @@ def update_google_calendar(  # pylint: disable=too-many-locals
                 log_level = logging.DEBUG
         else:
             action = "created"
-            method = service.events().insert(  # pylint: disable=no-member
+            method = service.events().insert(
                 calendarId=calendar_id,
                 body=event_data,
             )

@@ -41,7 +41,7 @@ def before_record_response(response: T) -> T:
     for key, values in query_params.items():
         for filter_key, filter_value in QUERY_PARAMETER_FILTERS:
             if key == filter_key:
-                values = [filter_value]  # pylint: disable=redefined-loop-name
+                values = [filter_value]
         for value in values:
             new_query_parts.append(f"{quote_plus(key)}={quote_plus(value)}")
     new_url_parts = list(url_parts)
