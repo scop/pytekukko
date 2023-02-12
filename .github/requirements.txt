@@ -1,4 +1,4 @@
 -r ../requirements-dev.txt
 
 gitlint==0.18.0
-pre-commit~=2.9
+pre-commit>=2.9
