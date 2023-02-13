@@ -27,12 +27,10 @@ jobs:
             ) }}
       - name: Install dependencies
         run: |
-          set -euo pipefail
+          set -euxo pipefail
           # venv due to mypy through pre-commit, venv-run
           python3 -m venv venv
-          source venv/bin/activate
-          set -x
-          python3 -m pip install -Ur .github/requirements.txt
+          venv/bin/python3 -m pip install -Ur .github/requirements.txt
       - run: venv/bin/gitlint --commits "origin/$GITHUB_BASE_REF..HEAD"
         if: github.event_name == 'pull_request'
       - uses: pre-commit/action@v3.0.0
