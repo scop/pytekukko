@@ -20,11 +20,13 @@ jobs:
             ~/.cache/pip
             venv
           key: >-
-            pip+venv
-            ${{ hashFiles(
-                'pyproject.toml', 'requirements-dev.txt',
-                'requirements-test.txt', '.github/requirements.txt'
+            lint-${{ hashFiles(
+                '.github/requirements.txt',
+                'requirements-dev.txt',
+                'requirements-test.txt',
+                'pyproject.toml'
             ) }}
+          restore-keys: lint-
       - name: Install dependencies
         run: |
           set -euxo pipefail
@@ -53,8 +55,11 @@ jobs:
             ~/.cache/pip
             .nox
           key: >-
-            ${{ runner.os }} pip ${{ matrix.python-version }}
-            ${{ hashFiles('pyproject.toml', 'requirements-test.txt') }}
+            test-${{ runner.os }}-${{ matrix.python-version }}-${{ hashFiles(
+              'requirements-test.txt',
+              'pyproject.toml'
+            ) }}
+          restore-keys: test-${{ runner.os }}-${{ matrix.python-version }}-
       - uses: excitedleigh/setup-nox@v2.1.0
       - uses: actions/setup-python@v4
         with:
