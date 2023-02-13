@@ -48,7 +48,7 @@ jobs:
           gitlint --commits "origin/${GITHUB_BASE_REF:-main}..HEAD" \
             || rc=1
           pre-commit run --all-files --color always --show-diff-on-failure \
-            || rc1=1
+            || rc=1
           exit $rc
 
   test:
