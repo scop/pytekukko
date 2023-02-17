@@ -2,6 +2,6 @@
 -r requirements-test.txt
 
 black ==23.1.0
-mypy ==0.991
+mypy ==1.0.1
 ruff ==0.0.246
 nox
