@@ -39,10 +39,12 @@ Changelog = "https://github.com/scop/pytekukko/blob/main/CHANGELOG.md"
 select = ["ALL"]
 ignore = [
   "ANN", # Maybe sometime
+  "COM", # Black
   "D203", # Black, ping/pong with D211
   "D213", # Ping/pong with D212
   #"E203", # Black, uncomment when/if ruff starts to support
-  "E501", # Black
+  "E50", # Black
+  "E70", # Black
   "TCH003", # Maybe sometime
 
 ]
