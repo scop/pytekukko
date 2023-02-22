@@ -1,11 +1,11 @@
-pytest >=6
-pytest-asyncio >=0.17
-pytest-vcr
-vcrpy ==4.2.1
-python-dotenv ~=0.10
+pytest>=6
+  pytest-asyncio>=0.17
+  pytest-vcr
+  vcrpy==4.2.1
+python-dotenv~=0.10
 
 # https://github.com/aio-libs/aiohttp/issues/6600
 # https://github.com/aio-libs/aiohttp/pull/6708
-aiohttp ~=3.4,>=3.8.2; python_version>='3.11'
+aiohttp~=3.4,>=3.8.2;python_version>='3.11'
 # https://github.com/certifi/python-certifi/pull/199
-certifi >=2022.6.15.1; python_version>='3.11'
+certifi>=2022.6.15.1;python_version>='3.11'
