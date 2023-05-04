@@ -1,3 +1,5 @@
+-c test-constraints.txt
+
 pytest>=6
   pytest-asyncio>=0.17
   pytest-vcr
