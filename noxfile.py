@@ -16,7 +16,7 @@ def test(session: nox.Session) -> None:
             FROZENLIST_NO_EXTENSIONS="1",
             YARL_NO_EXTENSIONS="1",
         )
-    session.install(".[examples]", "-r", "requirements-test.txt")
+    session.install(".[examples]", "-r", "requirements/test-requirements.txt")
 
     prefix = "python3 -X dev -bb"
     session.run(*f"{prefix} -m pytest".split() + session.posargs)

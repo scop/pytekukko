@@ -1,5 +1,5 @@
 -e .[examples]
--r requirements-test.txt
+-r test-requirements.txt
 
 black==23.1.0
 mypy==1.0.1

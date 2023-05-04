@@ -13,9 +13,6 @@
   ],
   "semanticCommits": "enabled",
   "commitMessageTopic": "{{depName}}",
-  "pip_requirements": {
-    "fileMatch": ["(^|/)requirements[\\w-]*\\.txt$"]
-  },
   "regexManagers": [
     {
       "fileMatch": ["^\\.pre-commit-config\\.yaml$"],
@@ -25,7 +22,7 @@
   ],
   "packageRules": [
     {
-      "matchFiles": ["requirements-test.txt"],
+      "matchFiles": ["requirements/test-requirements.txt"],
       "semanticCommitType": "test"
     },
     {

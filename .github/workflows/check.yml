@@ -22,8 +22,8 @@ jobs:
           key: >-
             lint-${{ hashFiles(
                 '.github/requirements.txt',
-                'requirements-dev.txt',
-                'requirements-test.txt',
+                'requirements/dev-requirements.txt',
+                'requirements/test-requirements.txt',
                 'pyproject.toml'
             ) }}
           restore-keys: lint-
@@ -56,7 +56,7 @@ jobs:
             .nox
           key: >-
             test-${{ runner.os }}-${{ matrix.python-version }}-${{ hashFiles(
-              'requirements-test.txt',
+              'requirements/test-requirements.txt',
               'pyproject.toml'
             ) }}
           restore-keys: test-${{ runner.os }}-${{ matrix.python-version }}-
