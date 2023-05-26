@@ -1,0 +1,1258 @@
+interactions:
+- request:
+    body:
+      j_password: secret
+      j_username: 00-0000000-00
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '78'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - tilasto.jatekukko.fi
+      User-Agent:
+      - Python/3.11 aiohttp/3.8.4
+      X-Requested-With:
+      - XMLHttpRequest
+    method: POST
+    uri: https://tilasto.jatekukko.fi/jatekukko/j_acegi_security_check?target=2
+  response:
+    body: {}
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Date:
+      - Fri, 26 May 2023 07:58:06 GMT
+      Location:
+      - https://tilasto.jatekukko.fi/jatekukko/secure/welcome.do
+      Server:
+      - nginx
+      Strict-Transport-Security:
+      - max-age=63072000
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Powered-By:
+      - 'Servlet/4.0 JSP/2.3 (Payara Server  5.2022.5 #badassfish Java/Eclipse OpenJ9/1.8)'
+    status:
+      code: 303
+      message: See Other
+    url: https://tilasto.jatekukko.fi/jatekukko/j_acegi_security_check?target=2
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Host:
+      - tilasto.jatekukko.fi
+      User-Agent:
+      - Python/3.11 aiohttp/3.8.4
+      X-Requested-With:
+      - XMLHttpRequest
+    method: GET
+    uri: https://tilasto.jatekukko.fi/jatekukko/secure/welcome.do
+  response:
+    body: {}
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Content-Security-Policy:
+      - frame-ancestors 'none'
+      Date:
+      - Fri, 26 May 2023 07:58:06 GMT
+      Location:
+      - https://tilasto.jatekukko.fi/jatekukko/secure/well.do
+      Server:
+      - nginx
+      Strict-Transport-Security:
+      - max-age=63072000
+      X-Frame-Options:
+      - DENY
+      X-Powered-By:
+      - 'Servlet/4.0 JSP/2.3 (Payara Server  5.2022.5 #badassfish Java/Eclipse OpenJ9/1.8)'
+    status:
+      code: 303
+      message: See Other
+    url: https://tilasto.jatekukko.fi/jatekukko/secure/welcome.do
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Host:
+      - tilasto.jatekukko.fi
+      User-Agent:
+      - Python/3.11 aiohttp/3.8.4
+      X-Requested-With:
+      - XMLHttpRequest
+    method: GET
+    uri: https://tilasto.jatekukko.fi/jatekukko/secure/well.do
+  response:
+    body:
+      string: '{ "response":"OK"}'
+    headers:
+      Accept-Charset:
+      - big5, big5-hkscs, cesu-8, euc-jp, euc-kr, gb18030, gb2312, gbk, ibm-thai,
+        ibm00858, ibm01140, ibm01141, ibm01142, ibm01143, ibm01144, ibm01145, ibm01146,
+        ibm01147, ibm01148, ibm01149, ibm037, ibm1026, ibm1047, ibm273, ibm277, ibm278,
+        ibm280, ibm284, ibm285, ibm290, ibm297, ibm420, ibm424, ibm437, ibm500, ibm775,
+        ibm850, ibm852, ibm855, ibm857, ibm860, ibm861, ibm862, ibm863, ibm864, ibm865,
+        ibm866, ibm868, ibm869, ibm870, ibm871, ibm918, iso-2022-cn, iso-2022-jp,
+        iso-2022-jp-2, iso-2022-kr, iso-8859-1, iso-8859-13, iso-8859-15, iso-8859-2,
+        iso-8859-3, iso-8859-4, iso-8859-5, iso-8859-6, iso-8859-7, iso-8859-8, iso-8859-9,
+        jis_x0201, jis_x0212-1990, koi8-r, koi8-u, shift_jis, tis-620, us-ascii, utf-16,
+        utf-16be, utf-16le, utf-32, utf-32be, utf-32le, utf-8, windows-1250, windows-1251,
+        windows-1252, windows-1253, windows-1254, windows-1255, windows-1256, windows-1257,
+        windows-1258, windows-31j, x-big5-hkscs-2001, x-big5-solaris, x-compound_text,
+        x-euc-jp-linux, x-euc-tw, x-eucjp-open, x-ibm1006, x-ibm1025, x-ibm1046, x-ibm1097,
+        x-ibm1098, x-ibm1112, x-ibm1122, x-ibm1123, x-ibm1124, x-ibm1166, x-ibm1364,
+        x-ibm1381, x-ibm1383, x-ibm300, x-ibm33722, x-ibm737, x-ibm833, x-ibm834,
+        x-ibm856, x-ibm874, x-ibm875, x-ibm921, x-ibm922, x-ibm930, x-ibm933, x-ibm935,
+        x-ibm937, x-ibm939, x-ibm942, x-ibm942c, x-ibm943, x-ibm943c, x-ibm948, x-ibm949,
+        x-ibm949c, x-ibm950, x-ibm964, x-ibm970, x-iscii91, x-iso-2022-cn-cns, x-iso-2022-cn-gb,
+        x-iso-8859-11, x-jis0208, x-jisautodetect, x-johab, x-macarabic, x-maccentraleurope,
+        x-maccroatian, x-maccyrillic, x-macdingbat, x-macgreek, x-machebrew, x-maciceland,
+        x-macroman, x-macromania, x-macsymbol, x-macthai, x-macturkish, x-macukraine,
+        x-ms932_0213, x-ms950-hkscs, x-ms950-hkscs-xp, x-mswin-936, x-pck, x-sjis_0213,
+        x-utf-16le-bom, x-utf-32be-bom, x-utf-32le-bom, x-windows-50220, x-windows-50221,
+        x-windows-874, x-windows-949, x-windows-950, x-windows-iso2022jp
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '18'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Fri, 26 May 2023 07:58:06 GMT
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - nginx
+      Strict-Transport-Security:
+      - max-age=63072000
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Powered-By:
+      - 'Servlet/4.0 JSP/2.3 (Payara Server  5.2022.5 #badassfish Java/Eclipse OpenJ9/1.8)'
+    status:
+      code: 200
+      message: OK
+    url: https://tilasto.jatekukko.fi/jatekukko/secure/well.do
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Host:
+      - tilasto.jatekukko.fi
+      User-Agent:
+      - Python/3.11 aiohttp/3.8.4
+    method: GET
+    uri: https://tilasto.jatekukko.fi/jatekukko/j_acegi_logout_elcustrap
+  response:
+    body: {}
+    headers:
+      Connection:
+      - keep-alive
+      Content-Language:
+      - fi-FI
+      Content-Length:
+      - '198'
+      Content-Type:
+      - text/html;charset=UTF-8
+      Date:
+      - Fri, 26 May 2023 07:58:06 GMT
+      Location:
+      - https://tilasto.jatekukko.fi/jatekukko/sahas.jsp
+      Server:
+      - nginx
+      Strict-Transport-Security:
+      - max-age=63072000
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Powered-By:
+      - 'Servlet/4.0 JSP/2.3 (Payara Server  5.2022.5 #badassfish Java/Eclipse OpenJ9/1.8)'
+    status:
+      code: 302
+      message: Found
+    url: https://tilasto.jatekukko.fi/jatekukko/j_acegi_logout_elcustrap
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Host:
+      - tilasto.jatekukko.fi
+      User-Agent:
+      - Python/3.11 aiohttp/3.8.4
+    method: GET
+    uri: https://tilasto.jatekukko.fi/jatekukko/sahas.jsp
+  response:
+    body:
+      string: "\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n    \r\n    \r\n\r\n
+        \   <!doctype html>\r\n\r\n    <html lang=\"fi_FI\">\r\n\r\n    <head>\r\n
+        \       <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\r\n        <meta
+        charset=\"utf-8\">\r\n        <meta name=\"viewport\" content=\"width=device-width,
+        initial-scale=1\">\r\n\r\n        <title>J\xE4tekukko Oy - S\xE4hk\xF6inen
+        asiointi</title>\r\n\r\n        \r\n\r\n        \r\n\r\n        <link rel=\"icon\"
+        href=\"/jatekukko/images/favicon.png?timestamp=20230505-0729\" type=\"image/x-icon\">\r\n
+        \       <link rel=\"shortcut icon\" href=\"/jatekukko/images/favicon.png?timestamp=20230505-0729\"\r\n
+        \             type=\"image/x-icon\">\r\n        <link rel=\"manifest\" href=\"manifest.json\">\r\n\r\n
+        \       \r\n\r\n\r\n\r\n<style id=\"antiClickjack\">body{display:none !important;}</style>\r\n\r\n<script
+        type=\"text/javascript\">\r\n\tif (self === top) {\r\n\t\t\r\n\t\tvar antiClickjack
+        = document.getElementById(\"antiClickjack\");\r\n\t\tantiClickjack.parentNode.removeChild(antiClickjack);\r\n\t}
+        else {\r\n\t\t\r\n\t\ttop.location = self.location;\r\n\t}\r\n</script>\r\n\r\n
+        \       <!-- Dhtmlx -->    \r\n<link rel=\"stylesheet\" type=\"text/css\"
+        href=\"/jatekukko/js/dhtmlxSuite/codebase/dhtmlx.css\">\r\n<link rel=\"stylesheet\"
+        type=\"text/css\" href=\"js/dhtmlxSuite/skins/terrace/dhtmlx.css\">\r\n<!--
+        <link rel=\"STYLESHEET\" type=\"text/css\" href=\"/jatekukko/js/dhtmlxSuite/skins/skyblue/dhtmlx.css\">
+        -->\r\n\r\n\r\n<!-- ArcGIS -->\r\n<link rel=\"stylesheet\" href=\"https://js.arcgis.com/3.39/esri/css/esri.css\"
+        />\r\n\r\n<!-- Bootstrap -->\r\n<link rel=\"stylesheet\" type=\"text/css\"
+        href=\"css/bootstrap/bootstrap.min.css\">\r\n\r\n<!-- KendoUI -->\r\n<link
+        rel=\"stylesheet\" type=\"text/css\" href=\"/jatekukko/css/kendoui/kendo.common-bootstrap.min.css\">\r\n<link
+        rel=\"stylesheet\" type=\"text/css\" href=\"/jatekukko/css/kendoui/kendo.bootstrap.min.css\">\r\n<link
+        rel=\"stylesheet\" type=\"text/css\" href=\"css/kendoui/kendo.mobile.all.min.css\">\r\n\r\n<!--
+        Styles -->\r\n<link rel=\"stylesheet\" href=\"css/shared_base.css?timestamp=20230505-0729\">\r\n<link
+        rel=\"stylesheet\" href=\"css/sahas/main_base.css?timestamp=20230505-0729\">\r\n\r\n<link
+        rel=\"stylesheet\" href=\"css/shared.css?timestamp=20230505-0729\">\r\n<link
+        rel=\"stylesheet\" href=\"css/sahas/main.css?timestamp=20230505-0729\">\r\n\r\n\r\n
+        \       \r\n\r\n<link href='https://fonts.googleapis.com/css?family=Lato:300,300Italic,400,400italic,700,700italic'
+        rel='stylesheet' type='text/css'/>\r\n<link rel=\"stylesheet\" type=\"text/css\"
+        href=\"https://fonts.googleapis.com/css?family=PT+Sans\"/>\r\n<link href=\"https://fonts.googleapis.com/css?family=Signika:300,400\"
+        rel=\"stylesheet\"/>\r\n    </head>\r\n\r\n    <body id=\"sahas\" class=\"login\">\r\n
+        \   \r\n    <header>\r\n        <div id=\"browser-incompatible-message\" class=\"alert
+        alert-danger text-center\" style=\"display: none\">\r\n            Selainversiosi
+        ei ole verkkopalvelun tuettujen selainten listalla. Verkkopalvelu ei v\xE4ltt\xE4m\xE4tt\xE4
+        toimi oikein.\r\n        </div>\r\n\r\n        \r\n\r\n        <nav class=\"navbar\">\r\n
+        \           <div class=\"container\">\r\n                <div class=\"navbar-header\">\r\n
+        \                   <button type=\"button\" class=\"navbar-toggle collapsed\"
+        data-toggle=\"collapse\"\r\n                            data-target=\"#navbar-collapse\"
+        aria-expanded=\"false\">\r\n                        <span class=\"sr-only\">Avaa
+        valikko</span>\r\n                        <span class=\"icon-bar\"></span>\r\n
+        \                       <span class=\"icon-bar\"></span>\r\n                        <span
+        class=\"icon-bar\"></span>\r\n                    </button>\r\n                    \r\n
+        \                       \r\n                            <a href=\"https://www.jatekukko.fi/\">\r\n
+        \                               <img src=\"/jatekukko/images/jatekukko-logo-teksti.png\"\r\n
+        \                                    alt=\"J\xE4tekukko Oy\" class=\"navbar-brand\">\r\n
+        \                           </a>\r\n                        \r\n                        \r\n
+        \                       \r\n                    \r\n                </div>\r\n\r\n
+        \               <div class=\"collapse navbar-collapse\" id=\"navbar-collapse\">\r\n
+        \                   <div class=\"navbar-right\">\r\n                        \r\n
+        \                       \r\n                        \r\n                    </div>\r\n
+        \               </div>\r\n            </div>\r\n        </nav>\r\n\r\n        \r\n
+        \   </header>\r\n\r\n    <main>\r\n        <div data-role=\"main-tabbar\">\r\n
+        \           <header class=\"container\" style=\"display:none\">\r\n                <div
+        class=\"row\">\r\n                    <ul class=\"nav navbar-nav navbar-right
+        tab-list\" data-role=\"tab-list\"\r\n                        style=\"display:none\">\r\n
+        \                       <li class=\"login active\"><a href=\"#login\">Kirjaudu</a></li>\r\n
+        \                       <li class=\"services\"><a href=\"#services\">Palvelut</a></li>\r\n
+        \                       \r\n                        \r\n                            <li
+        class=\"customer-data\"><a href=\"#customer-data\">Kohteen tiedot</a></li>\r\n
+        \                       \r\n                        <li class=\"user-details\"><a
+        href=\"#user-details\">Omat tiedot</a></li>\r\n                        \r\n
+        \                           <li class=\"invoices\"><a href=\"#invoices\">Laskut</a></li>\r\n
+        \                       \r\n                        \r\n\r\n                            \r\n
+        \                           \r\n                            \r\n                            \r\n
+        \                           \r\n\r\n                            \r\n\r\n                                \r\n
+        \                               \r\n\r\n                                    \r\n\r\n
+        \                                   <li class=\"feedback\"><a\r\n                                            href=\"#feedback\">Palaute</a></li>\r\n\r\n
+        \                                   \r\n\r\n                                \r\n
+        \                           \r\n\r\n                                \r\n                                \r\n
+        \                           \r\n\r\n                                \r\n                                \r\n
+        \                           \r\n\r\n                        \r\n                        <li
+        class=\"logout\"><a href=\"#logout\"\r\n                                              onclick=\"window.location=baseurl
+        + '/j_acegi_logout_elcustrap'\">Kirjaudu ulos</a></li>\r\n                        \r\n
+        \                           \r\n                            \r\n                                \r\n
+        \                           \r\n                            <li class=\"exituser\"><a
+        href=\"#exituser\"\r\n                                                    onclick=\"window.location=baseurl
+        + '/jatekukko/j_acegi_exit_user?redirect=/secure/admin/users.do'\">Lopeta
+        peilaus</a></li>\r\n                        \r\n                    </ul>\r\n
+        \               </div>\r\n\r\n                <div class=\"row\">\r\n                    <div
+        class=\"col-lg-offset-2 col-lg-8\">\r\n                        <div id=\"service-selector\"
+        class=\"service-selector\" style=\"display:none\"></div>\r\n                    </div>\r\n
+        \               </div>\r\n            </header>\r\n\r\n            <section
+        id=\"login\" class=\"login container\">\r\n                \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n<div
+        class=\"tab-content\">\r\n\t\r\n\t\t\r\n\t\t\r\n\t\t\r\n\r\n\t\t\r\n\r\n\r\n\r\n\r\n<div
+        class=\"tab-pane active\" role=\"tabpanel\" id=\"login-general\">\r\n    <div
+        class=\"row\">\r\n        \r\n            \r\n            \r\n                \r\n
+        \           \r\n        \r\n        <div class=\"col-sm-6 col-md-6 login-page-message\">\r\n
+        \           <p class=\"lead\">Tervetuloa Omakukkoon <br><span style=\"font-size:
+        0.8em\">&#8212 J\xE4tekukon s\xE4hk\xF6iseen asiointiin</span></p>\r\n\r\n
+        \           \r\n\r\n            \r\n            \r\n            <div class=\"alert
+        alert-danger\" data-role=\"login-alert\"></div>\r\n            <form id=\"login-form-general\"
+        data-role=\"login-form\" method=\"POST\" autocomplete=\"off\">\r\n                <div
+        class=\"form-group\">\r\n                    <label for=\"j_username-general\">\r\n
+        \                       \r\n                    </label>\r\n\r\n                    \r\n
+        \                   \r\n                    <span class=\"glyphicon glyphicon-question-sign
+        small\" data-toggle=\"popover\"\r\n                        tabindex=\"-1\"
+        data-placement=\"auto right\"\r\n                        data-original-title=\"K\xE4ytt\xE4j\xE4tunnuksena
+        toimii asiakasnumerosi (xx-xxxxxxx-xx). Jos olet is\xE4nn\xF6itsij\xE4 tai
+        yritys, voit saada J\xE4tekukolta erillisen tunnuksen, jonka avulla n\xE4et
+        kaikkien kohteidesi j\xE4tehuollon.\" data-trigger=\"focus\"></span>\r\n                    \r\n\r\n
+        \                   <input class=\"form-control\" type=\"text\" id=\"j_username-general\"\r\n
+        \                       name=\"j_username\" placeholder=\"K\xE4ytt\xE4j\xE4tunnus\">\r\n
+        \               </div>\r\n                <div class=\"form-group\">\r\n                    <label
+        for=\"j_password-general\">\r\n                        \r\n                    </label>\r\n\r\n
+        \                   \r\n                    \r\n                    <span
+        class=\"glyphicon glyphicon-question-sign small\" data-toggle=\"popover\"\r\n
+        \                       tabindex=\"-1\" data-placement=\"auto right\"\r\n
+        \                       data-original-title=\"Ensimm\xE4isell\xE4 kirjautumiskerralla
+        salasana on laskun numero tai laskutusosoitteesi. Ensimm\xE4isen kirjautumisen
+        j\xE4lkeen p\xE4\xE4set muuttamaan salasanasi.\" data-trigger=\"focus\"></span>\r\n
+        \                   \r\n\r\n                    <input class=\"form-control\"
+        type=\"password\" id=\"j_password-general\"\r\n                       name=\"j_password\"
+        autocomplete=\"off\"\r\n                       placeholder=\"Salasana\">\r\n
+        \                   \r\n                    <div class=\"form-group\">\r\n
+        \                       <input type=\"password\" id=\"hp-general\"\r\n                               style=\"display:none\"\r\n
+        \                              class=\"form-control\"\r\n                               autocomplete=\"off\"
+        value=\"donotsave\" />\r\n                        <input type=\"password\"
+        id=\"hp2-general\"\r\n                               style=\"display:none\"\r\n
+        \                              class=\"form-control\"\r\n                               autocomplete=\"off\"
+        value=\"donotsave2\" />\r\n                    </div>\r\n                    \r\n
+        \                   <div class=\"checkbox\" style=\"display:none\">\r\n                        <label>\r\n
+        \                           <input type=\"checkbox\" id=\"remember-me\" name=\"remember-me\">\r\n
+        \                           Muista minut\r\n                        </label>\r\n
+        \                   </div>\r\n                </div>\r\n\r\n                <div
+        class=\"form-group\">\r\n                    <button type=\"button\" data-action=\"forgotten-password\"
+        class=\"btn btn-link\">\r\n                        Tilaa unohtunut salasana\r\n
+        \                   </button>\r\n                </div>\r\n                <div
+        class=\"form-group\" id=\"login-button-group\">\r\n                    <button
+        type=\"submit\" class=\"btn btn-primary\" id=\"login-button-general\">\r\n
+        \                       Kirjaudu\r\n                    </button>\r\n                    \r\n
+        \                   <button type=\"button\" data-action=\"qr-reader\" class=\"btn
+        btn-primary\">\r\n                        Lue QR-koodi\r\n                    </button>\r\n
+        \                   \r\n                </div>\r\n\r\n                \r\n\r\n
+        \               \r\n            </form>\r\n\r\n            \r\n                <!--
+        Alert must not contain any extra characters, even whitespace, for hiding to
+        work properly. -->\r\n                <br>\r\n                <div class=\"error-bulletin
+        alert alert-info\"></div>\r\n            \r\n            \r\n            \r\n
+        \       </div>\r\n\r\n        \r\n        <div class=\"col-sm-6 col-md-6\">\r\n
+        \           \r\n            \r\n            <div class=\"row login-page-actions\">\r\n
+        \               \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\t<div class=\"row\">\r\n\t\t\r\n\t\t\r\n\t\t\t\r\n\t\t\r\n\t\t<button
+        type=\"button\" class=\"btn btn-primary btn-block long-text-button\" data-action=\"join-waste-collection\">\r\n\t\t\tLiity
+        j\xE4tehuoltoon\r\n\t\t</button>\r\n\t\t\r\n\t</div>\r\n\r\n\r\n\r\n\t<div
+        class=\"row\">\r\n\t\t<h4></h4>\r\n\t\t\r\n\t\t\t\r\n\t\t\r\n\t\t<button type=\"button\"
+        class=\"btn btn-primary btn-block long-text-button compost-note\" data-action=\"make-compost-notice\">\r\n\t\t\tT\xE4yt\xE4
+        kompostointi-ilmoitus\r\n\t\t</button>\r\n\t\t\r\n\t</div>\r\n\r\n\r\n\r\n\r\n\t\r\n\t\r\n\t\r\n\t\r\n\t\r\n\r\n\t\r\n\r\n\t\r\n\t\r\n\r\n\t\r\n\t\r\n\t<div
+        class=\"row\">\r\n\t\t<h4></h4>\r\n\t\t\r\n\t\t\t\r\n\t\t\r\n\t\t<button type=\"button\"
+        class=\"btn btn-primary btn-block long-text-button\" data-action=\"give-feedback\"
+        data-feedback-window-id=\"0\">\r\n\t\t\tAnna palautetta\r\n\t\t</button>\r\n\t\t\r\n\t</div>\r\n\r\n\t\r\n\r\n\t\r\n\r\n\t\r\n\r\n\t\r\n\t\r\n\r\n\t\r\n\r\n\t\r\n\t\r\n\r\n\t\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n
+        \           </div>\r\n            \r\n        </div>\r\n    \r\n\r\n    </div>\r\n
+        \   \r\n    <div id=\"login-footer\" class=\"row\">\r\n        <div class=\"contact-info\">\r\n
+        \           <div class=\"col-sm-6 col-md-6\">\r\n                <div class=\"login-footer-text\">\r\n
+        \                   \r\n                </div>\r\n            </div>\r\n            <div
+        class=\"col-sm-6 col-md-6\">\r\n                 \r\n                    \r\n
+        \                   \r\n                    \r\n                \r\n             </div>\r\n
+        \       </div>\r\n    </div>\r\n</div>\r\n\t\r\n</div>\r\n\r\n\r\n\r\n\r\n
+        \           </section>\r\n\r\n            <section id=\"service-list\" class=\"services
+        container\" style=\"display:none\">\r\n                <div class=\"empty-page\">\r\n
+        \                   <p class=\"lead text-center\">Valitse kohde oikean yl\xE4kulman
+        valikosta.</p>\r\n                </div>\r\n\r\n                <div class=\"content
+        row\">\r\n                    <div class=\"col-lg-10 col-lg-offset-1\">\r\n
+        \                       <div class=\"do-not-show\" id=\"do-not-show\">Huomasithan,
+        ett\xE4 \"Tilaa ylim\xE4\xE4r\xE4inen tyhjennys\" -toiminto l\xF6ytyy nykyisin
+        \"Tee muutoksia palveluun\"-painikkeen alta. <a href=\"#\" data-action=\"compost-notice\">Kompostointi-ilmoitukseen
+        p\xE4\xE4set t\xE4st\xE4</a>.</div>\r\n                        \r\n                        <div
+        class=\"services\">\r\n                            \r\n                                <div
+        class=\"form-buttons text-center action-buttons-block\" data-role=\"action-buttons\">\r\n
+        \                                   \r\n                                        <div
+        class=\"service-item order-new-box\">\r\n                                            <div
+        class=\"vertical-centering-wrapper text-center\">\r\n                                                <a
+        href=\"\" class=\"order-new create-service-button\">Tilaa uusi palvelu<span\r\n
+        \                                                       class=\"rounded-link\">+</span></a>\r\n
+        \                                           </div>\r\n                                        </div>\r\n
+        \                                   \r\n\r\n                                    \r\n\r\n
+        \                                   \r\n\r\n                                    \r\n
+        \                               </div>\r\n                            \r\n
+        \                       </div>\r\n                        <div class=\"clearfix\"></div>\r\n
+        \                   </div>\r\n                </div>\r\n            </section>\r\n\r\n
+        \           \r\n\r\n            \r\n                <section id=\"customer-data\"
+        class=\"customer-data container\" style=\"display:none\">\r\n                    <div
+        class=\"row\">\r\n                        <div class=\"col-md-12\">\r\n                            <ul
+        class=\"list-inline text-center\" data-role=\"action-buttons\">\r\n                                \r\n
+        \                                   <li>\r\n                                        <button
+        class=\"btn btn-primary\" data-action=\"compost-notice\">\r\n                                            Tee
+        kompostointi-ilmoitus\r\n                                        </button>\r\n
+        \                                       <div data-role=\"compost-notice-information\"></div>\r\n
+        \                                   </li>\r\n                                \r\n
+        \                               \r\n                                    <li>\r\n
+        \                                       <button class=\"btn btn-primary\"
+        data-action=\"change-join-type\">\r\n                                            Vaihda
+        j\xE4tehuollon liittymistapaa\r\n                                        </button>\r\n
+        \                                   </li>\r\n                                \r\n
+        \                               <li>\r\n                                    <button
+        class=\"btn btn-primary\" data-action=\"terminate-service\">\r\n                                        P\xE4\xE4t\xE4
+        kohteen j\xE4tehuolto\r\n                                    </button>\r\n
+        \                               </li>\r\n                            </ul>\r\n
+        \                       </div>\r\n                    </div>\r\n                    <div
+        class=\"row\">\r\n                        <div class=\"col-md-12 col-md-offset-0
+        panel panel-form\">\r\n                            <div class=\"form\"></div>\r\n
+        \                           <div class=\"global-validation-error alert alert-danger\"
+        style=\"display:none\">\r\n                                T\xE4yt\xE4 puuttuvat
+        kent\xE4t\r\n                            </div>\r\n                        </div>\r\n
+        \                   </div>\r\n                </section>\r\n            \r\n\r\n
+        \           \r\n                <section id=\"invoices\" class=\"invoices
+        container\" style=\"display:none\">\r\n                    \r\n                        <p>Lataa-painikkeesta
+        p\xE4\xE4set katsomaan omia laskujasi vuodesta 2018 l\xE4htien pdf-muodossa.</p>\r\n
+        \                   \r\n\r\n                    <div class=\"row\">\r\n                        <div
+        class=\"col-md-12 panel panel-form\">\r\n                                \r\n
+        \                           <!-- Disable Edge browser annoying blue numbers
+        -->\r\n                            <div class=\"table-responsive\" x-ms-format-detection=\"none\">\r\n
+        \                               <div id=\"invoices-gridbox\"></div>\r\n                            </div>\r\n\r\n
+        \                           <div id=\"invoices-loading\">\r\n                                <p>\r\n
+        \                                   <img class=\"loading-image\" src=\"/jatekukko/images/ajax-loader.gif\"/>\r\n
+        \                               </p>\r\n                                <p
+        class=\"text-center muted\">Lataus voi kest\xE4\xE4 useita minuutteja!</p>\r\n
+        \                           </div>\r\n                        </div>\r\n                    </div>\r\n
+        \               </section>\r\n            \r\n\r\n            \r\n\r\n                \r\n
+        \               \r\n                \r\n                \r\n                \r\n\r\n
+        \               \r\n\r\n                    \r\n                    \r\n\r\n
+        \                       \r\n\r\n                        <section id=\"feedback\"\r\n
+        \                                data-feedback-window-id=\"0\"\r\n                                 class=\"feedback
+        container\" style=\"display:none\">\r\n                            <div class=\"row\">\r\n
+        \                               <div class=\"col-md-6 col-md-offset-3 panel
+        panel-form\">\r\n                                    \r\n\r\n                                    <div
+        class=\"form\"></div>\r\n                                    <div class=\"global-validation-error
+        alert alert-danger\" style=\"display:none\">\r\n                                        T\xE4yt\xE4
+        puuttuvat kent\xE4t\r\n                                    </div>\r\n                                </div>\r\n
+        \                           </div>\r\n                        </section>\r\n\r\n
+        \                       \r\n\r\n                    \r\n                \r\n\r\n
+        \                   \r\n                    \r\n                \r\n\r\n                    \r\n
+        \                   \r\n                \r\n\r\n            \r\n\r\n            <section
+        id=\"user-details\" class=\"user-details container\" style=\"display:none\">\r\n
+        \               <div class=\"row\">\r\n                    <div class=\"col-md-6
+        col-md-offset-3 panel panel-form\">\r\n                        <div class=\"form\"></div>\r\n
+        \                       <div class=\"global-validation-error alert alert-danger\"
+        style=\"display:none\">\r\n                            T\xE4yt\xE4 puuttuvat
+        kent\xE4t\r\n                        </div>\r\n                    </div>\r\n
+        \               </div>\r\n            </section>\r\n\r\n            <section
+        id=\"logout\" class=\"logout\"></section>\r\n        </div>\r\n    </main>\r\n\r\n
+        \   <div>\r\n        \r\n\r\n\r\n<div id=\"terms-modal\" class=\"modal\" style=\"display:none\">\r\n\t<div
+        class=\"modal-dialog modal-lg\">\r\n\t\t<div class=\"modal-content\">\r\n\t\t\t<div
+        class=\"modal-body\">\r\n\t\t\t\t<div class=\"text\"></div>\r\n\t\t\t\r\n\t\t\t\t<div
+        data-role=\"confirm-buttons\" class=\"form-buttons text-center\">\r\n\t\t\t\t\t<button
+        type=\"button\" class=\"btn btn-default cancel\" data-dismiss=\"modal\">En
+        hyv\xE4ksy ehtoja</button>\r\n\t\t\t\t\t<button type=\"button\" class=\"btn
+        btn-primary accept\" data-dismiss=\"modal\">Hyv\xE4ksyn ehdot</button>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div
+        data-role=\"display-buttons\" class=\"form-buttons text-center\">\r\n\t\t\t\t\t<button
+        type=\"button\" class=\"btn btn-primary\" data-dismiss=\"modal\" data-action=\"display-ok\">OK</button>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n</div>\r\n\r\n\r\n\r\n<div
+        id=\"order-form-modal\" class=\"modal\" style=\"display:none\" role=\"dialog\"
+        aria-hidden=\"true\">\r\n\t<div class=\"modal-dialog\">\r\n\t\t<div class=\"modal-content\">\r\n\t\t\t<div
+        class=\"modal-body\">\r\n\t\t\t\t<div class=\"page-header\">\r\n\t\t\t\t\t\r\n\t\t\t\t\t<button
+        class=\"pull-right btn-dismiss\" aria-label=\"Sulje\" data-action=\"cancel-all\"></button>\r\n
+        \                   <h1>Tilaa ylim\xE4\xE4r\xE4inen tyhjennys</h1>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div
+        class=\"form\"></div>\r\n\t\t\t\t<div class=\"global-validation-error alert
+        alert-danger\" style=\"display:none\">\r\n                    T\xE4yt\xE4
+        puuttuvat kent\xE4t\r\n                </div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n</div>\r\n\r\n\r\n\r\n<div
+        id=\"create-new-user-modal\" class=\"modal\" style=\"display:none\">\r\n\t<div
+        class=\"modal-dialog\">\r\n\t\t<div class=\"modal-content\">\r\n\t\t\t<div
+        class=\"modal-body\">\r\n\t\t\t\t<div class=\"page-header\">\r\n\t\t\t\t\t\r\n\t\t\t\t\t<h1>Luo
+        uusi tunnus</h1>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div class=\"form formCol\"></div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n</div>\r\n\r\n\r\n\r\n<div
+        id=\"email-phone-modal\" class=\"modal\" style=\"display:none\">\r\n\t<div
+        class=\"modal-dialog\">\r\n\t\t<div class=\"modal-content\">\r\n\t\t\t<div
+        class=\"modal-body\">\r\n\t\t\t\t<div class=\"page-header\">\r\n\t\t\t\t\t\r\n\t\t\t\t\t<h1>Anna
+        s\xE4hk\xF6posti ja puhelinnumero</h1>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
+        class=\"form formCol\"></div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n</div>\r\n\r\n\r\n\r\n<div
+        id=\"create-new-service-modal\" class=\"modal\" style=\"display:none\">\r\n\t<div
+        class=\"modal-dialog modal-lg\">\r\n\t\t<div class=\"modal-content\">\r\n\t\t\t<div
+        class=\"modal-body\">\r\n\t\t\t\t<div class=\"page-header\">\r\n\t\t\t\t\t\r\n\t\t\t\t\t<button
+        class=\"pull-right btn-dismiss\" aria-label=\"Sulje\" data-action=\"cancel-all\"></button>\r\n
+        \                   <h1>Uuden palvelun tilaus</h1>\r\n\t\t\t\t</div>\r\n                \r\n
+        \               <h3>Tyhjennyskohde</h3>\r\n                \r\n                <address>\r\n
+        \                   <strong><span data-role=\"name\"></span></strong><br>\r\n
+        \                   <span data-role=\"address\"></span><br>\r\n                    <span
+        data-role=\"post\"></span>\r\n                </address>\r\n\r\n\t\t\t\t<div
+        class=\"form\"></div>\r\n\r\n\t\t\t\t<div class=\"global-validation-error
+        alert alert-danger\" style=\"display:none\">\r\n\t\t    \t\tT\xE4yt\xE4 puuttuvat
+        kent\xE4t\r\n\t\t    \t</div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n</div>\r\n\r\n\r\n\r\n<div
+        id=\"change-password-modal\" class=\"modal\" style=\"display:none\">\r\n\t<div
+        class=\"modal-dialog\">\r\n\t\t<div class=\"modal-content\">\r\n\t\t\t<div
+        class=\"modal-header\">\r\n\t\t\t\tVaihda salasana\r\n\t\t\t</div>\r\n\t\t\t<div
+        class=\"modal-body\">\r\n\t\t\t\t<div class=\"form formCol\"></div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n</div>\r\n\r\n\r\n\r\n<div
+        id=\"change-service-modal\" class=\"modal\" style=\"display:none\">\r\n\t<div
+        class=\"modal-dialog\">\r\n\t\t<div class=\"modal-content\">\r\n\t\t\t<div
+        class=\"modal-body\">\r\n\t\t\t\t<div class=\"page-header\">\r\n\t\t\t\t\t\r\n\t\t\t\t\t<button
+        class=\"pull-right btn-dismiss\" aria-label=\"Sulje\" data-action=\"cancel-all\"></button>\r\n
+        \                   <h1>Palvelumuutos</h1>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div
+        class=\"form\"></div>\r\n\t\t\t\t<div class=\"global-validation-error alert
+        alert-danger\" style=\"display:none\">\r\n                    T\xE4yt\xE4
+        puuttuvat kent\xE4t\r\n                </div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n</div>\r\n\r\n\r\n\r\n<div
+        id=\"create-kimppa-modal\" class=\"modal\" style=\"display:none\">\r\n\t<div
+        class=\"modal-dialog modal-lg\">\r\n\t\t<div class=\"modal-content\">\r\n\t\t\t<div
+        class=\"modal-body\">\r\n\t\t\t\t<div class=\"page-header\">\r\n\t\t\t\t\t\r\n\t\t\t\t\t<button
+        class=\"pull-right btn-dismiss\" aria-label=\"Sulje\" data-action=\"cancel-all\"></button>\r\n\t\t\t\t\t<h1>Palvelusta
+        kimpaksi</h1>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div class=\"text-right\">\r\n\t\t\t\t\t<button
+        class=\"btn btn-link\" data-action=\"print\">Tulosta kimppaluettelo <span
+        class=\"glyphicon glyphicon-print\"></span></button>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
+        class=\"kimppa\">\r\n\t\t\t\t\t<style scoped>\r\n\t\t\t\t\t.kimppa span.isanta:before
+        {\r\n\t\t\t\t\t\tcontent: 'Kimppais\xE4nt\xE4';\r\n\t\t\t\t\t}\r\n\t\t\t\t\t</style>\r\n\t\t\t\t\t\r\n\t\t\t\t\t<div
+        class=\"grid\"></div>\r\n\r\n\t\t\t\t\t<script id=\"kimppa-edit-menu-template\"
+        type=\"text/x-template\">\r\n\t\t\t\t\t<div class=\"menu edit-menu\" data-role=\"edit-menu\">\r\n\t\t\t\t\t\t<div
+        class=\"row\">\r\n\t\t\t\t\t\t\t<div class=\"col-xs-4\"><button type=\"button\"
+        data-action=\"edit-osakas\" class=\"btn btn-primary btn-block\">\r\n\t\t\t\t\t\t\t\tMuokkaa\r\n\t\t\t\t\t\t\t</button></div>\r\n\t\t\t\t\t\t\t<div
+        class=\"col-xs-4\"><button type=\"button\" data-action=\"close-menu\" class=\"btn
+        btn-primary btn-block\">\r\n\t\t\t\t\t\t\t\tPeruuta\r\n\t\t\t\t\t\t\t</button></div>\r\n\t\t\t\t\t\t\t<div
+        class=\"col-xs-4\"><button type=\"button\" data-action=\"delete-row\" class=\"btn
+        btn-primary btn-block\">\r\n\t\t\t\t\t\t\t\tPoista\r\n\t\t\t\t\t\t\t</button></div>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t</script>\r\n\r\n\t\t\t\t\t<script
+        id=\"kimppa-paino-menu-template\" type=\"text/x-template\">\r\n\t\t\t\t\t<div
+        class=\"menu paino-menu\" data-role=\"paino-menu\">\r\n\t\t\t\t\t\t<div class=\"row
+        row-centered\">\r\n\t\t\t\t\t\t\t<div class=\"col-xs-4 col-centered\"><button
+        type=\"button\" data-action=\"set-paino\" data-value=\"0\" class=\"btn btn-primary
+        btn-block\">\r\n\t\t\t\t\t\t\t\tEi laskuteta\r\n\t\t\t\t\t\t\t</button></div>\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t<div
+        class=\"col-xs-4 col-centered\"><button type=\"button\" data-action=\"set-paino\"
+        data-value=\"2\" class=\"btn btn-primary btn-block\">\r\n\t\t\t\t\t\t\t\tVakituisen
+        mukaisesti\r\n\t\t\t\t\t\t\t</button></div>\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t<div
+        class=\"col-xs-4 col-centered\"><button type=\"button\" data-action=\"set-paino\"
+        data-value=\"1\" class=\"btn btn-primary btn-block\">\r\n\t\t\t\t\t\t\t\tVapaa-ajan
+        mukaisesti\r\n\t\t\t\t\t\t\t</button></div>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t</script>\r\n\r\n\t\t\t\t\t<p>Laskutusosuuksien
+        summa t\xE4ytyy olla 100 %. Voit jakaa kimpan laskutusosuudet automaattisesti
+        alla olevalla painikkeella, jolloin laskutusosuudet jaetaan kiinteist\xF6n
+        k\xE4ytt\xF6tarkoituksen mukaan. Voit my\xF6s halutessasi sy\xF6tt\xE4\xE4
+        laskutusosuudet k\xE4sin yll\xE4oleviin kenttiin.</p>\r\n\r\n\t\t\t\t\t<div
+        class=\"text-center\">\r\n\t\t\t\t\t\t<button type=\"button\" class=\"btn
+        btn-default\" data-action=\"distribute-evenly\">Jaa laskutus-% tasan</button>\r\n\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t<div
+        class=\"form-group\">\r\n\t\t\t\t\t\t<label for=\"KIMComm\">Muutoksen syy</label>\r\n\t\t\t\t\t\t<textarea
+        id=\"KIMComm\" name=\"KIMComm\" class=\"form-control\"></textarea>\r\n\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t<div
+        class=\"form-group \">\r\n\t\t\t\t\t\t<label for=\"KIRPvm\">Muutokset tulevat
+        voimaan</label>\r\n\t\t\t\t\t\t<input name=\"KIRPvm\" class=\"form-control\"
+        >\r\n\t\t\t\t\t</div>\r\n\r\n                    <div class=\"form-group\">\r\n
+        \                       <label for=\"notifierphone\">Ilmoittajan puhelinnumero</label>\r\n
+        \                       <input name=\"notifierphone\" type=\"tel\" class=\"form-control\"
+        pattern=\"^\\s*\\+?(\\d|\\s|-)+$\" placeholder=\"\">\r\n                    </div>\r\n\r\n
+        \                   <div class=\"form-group\">\r\n                        <label
+        for=\"notifieremail\">Ilmoittajan s\xE4hk\xF6postiosoite</label>\r\n                        <input
+        name=\"notifieremail\" type=\"email\" class=\"form-control\">\r\n                    </div>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\r\n\t\t\t<div
+        class=\"modal-footer\">\r\n\t\t\t\t<div class=\"form-group\">\r\n\t\t\t\t\t<div
+        class=\"checkbox text-left\">\r\n\t\t\t\t\t\t<label><input type=\"checkbox\"
+        name=\"confirm-changes\"> Olen tarkistanut kimpan laskutusosuudet ja tiedot
+        ovat oikein.</label>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div
+        class=\"form-buttons text-center\">\r\n\t\t\t\t\t<button class=\"btn btn-primary\"
+        data-action=\"save-kimppa\" disabled>L\xE4het\xE4 muutokset</button>\r\n\t\t\t\t\t<button
+        class=\"btn btn-primary\" data-action=\"cancel-all\">Peruuta muutokset</button>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n</div>\r\n\r\n\r\n\r\n\r\n\r\n<div
+        id=\"edit-kimppa-modal\" class=\"modal\" style=\"display:none\">\r\n\t<div
+        class=\"modal-dialog modal-lg\">\r\n\t\t<div class=\"modal-content\">\r\n\t\t\t<div
+        class=\"modal-body\">\r\n\t\t\t\t<div class=\"page-header\">\r\n\t\t\t\t\t\r\n\t\t\t\t\t<button
+        class=\"pull-right btn-dismiss\" aria-label=\"Sulje\" data-action=\"cancel-all\"></button>\r\n\t\t\t\t\t<h1>Muokkaa
+        kimppaa</h1>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div class=\"text-right\">\r\n\t\t\t\t\t<button
+        class=\"btn btn-link\" data-action=\"print\">Tulosta kimppaluettelo <span
+        class=\"glyphicon glyphicon-print\"></span></button>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
+        class=\"kimppa\">\r\n\t\t\t\t\t<style scoped>\r\n\t\t\t\t\t.kimppa span.isanta:before
+        {\r\n\t\t\t\t\t\tcontent: 'Kimppais\xE4nt\xE4';\r\n\t\t\t\t\t}\r\n\t\t\t\t\t</style>\r\n\r\n\t\t\t\t\t<div
+        class=\"grid\"></div>\r\n\r\n\t\t\t\t\t<script id=\"kimppa-edit-menu-template\"
+        type=\"text/x-template\">\r\n\t\t\t\t\t\t<div class=\"menu edit-menu\" data-role=\"edit-menu\">\r\n\t\t\t\t\t\t\t<div
+        class=\"row\">\r\n\t\t\t\t\t\t\t\t<div class=\"col-xs-4\">\r\n\t\t\t\t\t\t\t\t\t<button
+        type=\"button\" data-action=\"edit-osakas\" class=\"btn btn-primary btn-block\">\r\n\t\t\t\t\t\t\t\t\t\tMuokkaa\r\n\t\t\t\t\t\t\t\t\t</button>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t<div
+        class=\"col-xs-4\">\r\n\t\t\t\t\t\t\t\t\t<button type=\"button\" data-action=\"close-menu\"
+        class=\"btn btn-primary btn-block\">\r\n\t\t\t\t\t\t\t\t\t\tPeruuta\r\n\t\t\t\t\t\t\t\t\t</button>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\t<div
+        class=\"col-xs-4\">\r\n\t\t\t\t\t\t\t\t\t<button type=\"button\" data-action=\"delete-row\"
+        class=\"btn btn-primary btn-block\">\r\n\t\t\t\t\t\t\t\t\t\tPoista\r\n\t\t\t\t\t\t\t\t\t</button>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</script>\r\n\r\n\t\t\t\t\t<script
+        id=\"kimppa-paino-menu-template\" type=\"text/x-template\">\r\n\t\t\t\t\t<div
+        class=\"menu paino-menu\" data-role=\"paino-menu\">\r\n\t\t\t\t\t\t<div class=\"row
+        row-centered\">\r\n\t\t\t\t\t\t\t<div class=\"col-xs-4 col-centered\"><button
+        type=\"button\" data-action=\"set-paino\" data-value=\"0\" class=\"btn btn-primary
+        btn-block\">\r\n\t\t\t\t\t\t\t\tEi laskuteta\r\n\t\t\t\t\t\t\t</button></div>\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t<div
+        class=\"col-xs-4 col-centered\"><button type=\"button\" data-action=\"set-paino\"
+        data-value=\"2\" class=\"btn btn-primary btn-block\">\r\n\t\t\t\t\t\t\t\tVakituisen
+        mukaisesti\r\n\t\t\t\t\t\t\t</button></div>\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t<div
+        class=\"col-xs-4 col-centered\"><button type=\"button\" data-action=\"set-paino\"
+        data-value=\"1\" class=\"btn btn-primary btn-block\">\r\n\t\t\t\t\t\t\t\tVapaa-ajan
+        mukaisesti\r\n\t\t\t\t\t\t\t</button></div>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t</script>\r\n\r\n\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t<p>Jos
+        kimpan osakaissa on tapahtunut muutoksia, poista osakas ja luo uusi.</p>\r\n\t\t\t\t\t\t\r\n\r\n\t\t\t\t\t\t<p>Laskutusosuuksien
+        summa t\xE4ytyy olla 100 %. Voit jakaa kimpan laskutusosuudet automaattisesti
+        alla olevalla painikkeella, jolloin laskutusosuudet jaetaan kiinteist\xF6n
+        k\xE4ytt\xF6tarkoituksen mukaan. Voit my\xF6s halutessasi sy\xF6tt\xE4\xE4
+        laskutusosuudet k\xE4sin yll\xE4oleviin kenttiin.</p>\r\n\r\n\t\t\t\t\t\t<div
+        class=\"text-center\">\r\n\t\t\t\t\t\t\t<button type=\"button\" class=\"btn
+        btn-default\" data-action=\"distribute-evenly\">Jaa laskutus-% tasan</button>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\r\n\t\t\t\t\t\t<div
+        class=\"form-group\">\r\n\t\t\t\t\t\t\t<label for=\"KIMComm\">Muutoksen syy</label>\r\n\t\t\t\t\t\t\t<textarea
+        id=\"KIMComm\" name=\"KIMComm\" class=\"form-control\"></textarea>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\r\n\t\t\t\t\t\t<div
+        class=\"form-group \">\r\n\t\t\t\t\t\t\t<label for=\"KIRPvm\">Muutokset tulevat
+        voimaan</label>\r\n\t\t\t\t\t\t\t<input name=\"KIRPvm\" class=\"form-control\"
+        >\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t<div class=\"form-group\">\r\n\t
+        \                       <label for=\"notifierphone\">Ilmoittajan puhelinnumero</label>\r\n\t
+        \                       <input name=\"notifierphone\" type=\"tel\" class=\"form-control\"
+        pattern=\"^\\s*\\+?(\\d|\\s|-)+$\" placeholder=\"\">\r\n\t                    </div>\r\n\r\n\t
+        \                   <div class=\"form-group\">\r\n\t                        <label
+        for=\"notifieremail\">Ilmoittajan s\xE4hk\xF6postiosoite</label>\r\n\t                        <input
+        name=\"notifieremail\" type=\"email\" class=\"form-control\">\r\n\t                    </div>\r\n
+        \                   \r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\r\n\t\t\t<div class=\"modal-footer\">\r\n\t\t\t\t\r\n\t\t\t\t\t<div
+        class=\"form-group\">\r\n\t\t\t\t\t\t<div class=\"checkbox text-left\">\r\n\t\t\t\t\t\t\t<label><input
+        type=\"checkbox\" name=\"confirm-changes\"> Olen tarkistanut kimpan laskutusosuudet
+        ja tiedot ovat oikein.</label>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\r\n\r\n\t\t\t\t<div
+        class=\"form-buttons text-center\">\r\n\t\t\t\t\t\r\n\t\t\t\t\t\t<button class=\"btn
+        btn-primary\" data-action=\"save-kimppa\" disabled>\r\n\t\t\t\t\t\t\tL\xE4het\xE4
+        muutokset\r\n\t\t\t\t\t\t</button>\r\n\t\t\t\t\t\r\n\t\t\t\t\t<button class=\"btn
+        btn-primary\" data-action=\"cancel-all\">\r\n\t\t\t\t\t\tPeruuta muutokset\r\n\t\t\t\t\t</button>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n</div>\r\n\r\n<script
+        id=\"kimppa-print-template\" type=\"text/x-kendo-template\">\r\n\t<link rel=\"stylesheet\"
+        href=\"/jatekukko/css/sahas/kimppa-print.css\">\r\n\r\n\t<header>\r\n\t\t<h1><div>J\xE4tekukko
+        Oy</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div>KIMPPA #: name #</div></h1><div
+        class=\"date\">#: date #</div>\r\n\t</header>\r\n\t<table>\r\n\t\t<thead>\r\n\t\t\t<tr>\r\n\t\t\t\t\r\n\t\t\t\t<th>Nimi</th>\r\n\t\t\t\t<th>L\xE4hiosoite</th>\r\n\t\t\t\t<th>Laskutusosoite</th>\r\n\t\t\t\t<th
+        class=\"numeric\">Palvelu/Pros.osuus</th>\r\n\t\t\t</tr>\r\n\t\t</thead>\r\n\t\t<tbody>\r\n\t\t#
+        for(var i = 0; i < rows.length; ++i) { var row = rows[i]; #\r\n\t\t\t<tr>\r\n\t\t\t\t\r\n\t\t\t\t<td>#:
+        row.osakas.nimi #</td>\r\n\t\t\t\t<td>#: row.osakas.katu #<br>#: row.osakas.posti
+        #</td>\r\n\t\t\t\t<td>#: row.osakas.laskutuskatu #<br>#: row.osakas.laskutusposti
+        #</td>\r\n\t\t\t\t<td class=\"numeric\">#: kendo.toString(row.KIRPros, 'n')
+        # %</td>\r\n\t\t\t</tr>\r\n\t\t# } #\r\n\t\t</tbody>\r\n\t\t<tfooter>\r\n\t\t\t<tr>\r\n\t\t\t\t<td></td>\r\n\t\t\t\t<td></td>\r\n\t\t\t\t<td></td>\r\n\t\t\t\t<td
+        class=\"numeric\">Yhteens\xE4</td>\r\n\t\t\t\t<td class=\"numeric\"><strong>#:
+        kendo.toString(percentSum, 'n') # %</strong></td>\r\n\t\t\t</tr>\r\n\t\t</tfooter>\r\n\t</table>\r\n</script>\r\n\r\n<iframe
+        name=\"kimppa-print\" width=\"0\" height=\"0\" frameborder=\"0\" src=\"about:blank\"></iframe>\r\n\r\n\r\n\r\n<div
+        id=\"resign-kimppa-modal\" class=\"modal\" style=\"display:none\">\r\n\t<div
+        class=\"modal-dialog modal-lg\">\r\n\t\t<div class=\"modal-content\">\r\n\t\t\t<div
+        class=\"modal-body\">\r\n\t\t\t\t<div class=\"page-header line-style\">\r\n\t\t\t\t\t\r\n\t\t\t\t\t<button
+        class=\"pull-right btn-dismiss\" aria-label=\"Sulje\" data-action=\"cancel-all\"></button>\r\n
+        \                   <h2>Eroa kimpasta</h2>\r\n                </div>\r\n\r\n\t\t\t\t<div
+        class=\"form\"></div>\r\n\t\t\t\t<div class=\"global-validation-error alert
+        alert-danger\" style=\"display:none\">T\xE4yt\xE4 puuttuvat kent\xE4t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div
+        class=\"akp\"></div>\r\n\t\t\t\t<div class=\"akp-info\"></div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n</div>\r\n\r\n\r\n\r\n<div
+        id=\"akp-location-modal\" class=\"modal\" style=\"display:none\">\r\n\t<div
+        class=\"modal-dialog modal-lg\">\r\n\t\t<div class=\"modal-content\">\r\n\t\t\t<div
+        class=\"modal-header\">\r\n\t\t\t\tPisteen sijainti / Vaihda pistett\xE4\r\n\t\t\t</div>\r\n\t\t\t<div
+        class=\"modal-body\">\r\n\t\t\t\t<div class=\"akp\"></div>\r\n\t\t\t\t<div
+        class=\"akp-info\"></div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n</div>\r\n\r\n\r\n\r\n<div
+        id=\"resign-akp-modal\" class=\"modal\" style=\"display:none\">\r\n\t<div
+        class=\"modal-dialog modal-lg\">\r\n\t\t<div class=\"modal-content\">\r\n\t\t\t<div
+        class=\"modal-header\">\r\n\t\t\t\tLopeta pisteen k\xE4ytt\xF6\r\n\t\t\t</div>\r\n\t\t\t<div
+        class=\"modal-body\">\r\n\t\t\t\t<div class=\"form\"></div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n</div>\r\n\r\n\r\n\r\n<div
+        id=\"terminate-service-modal\" class=\"modal\" style=\"display:none\">\r\n\t<div
+        class=\"modal-dialog\">\r\n\t\t<div class=\"modal-content\">\r\n\t\t\t<div
+        class=\"modal-body\">\r\n\t\t\t\t\r\n\t\t\t\t<button class=\"pull-right btn-dismiss\"
+        aria-label=\"Sulje\" data-action=\"cancel-all\"></button>\r\n                <div
+        class=\"form\"></div>\r\n\t\t\t\t<div class=\"global-validation-error alert
+        alert-danger\" style=\"display:none\">\r\n\t\t    \t\tT\xE4yt\xE4 puuttuvat
+        kent\xE4t\r\n\t\t    \t</div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n</div>\r\n\r\n\r\n\r\n<div
+        id=\"change-join-type-modal\" class=\"modal\" style=\"display:none\">\r\n\t<div
+        class=\"modal-dialog modal-lg\">\r\n\t\t<div class=\"modal-content\">\r\n\t\t\t<div
+        class=\"modal-body\">\r\n\t\t\t\t<div class=\"page-header\">\r\n\t\t\t\t\t\r\n\t\t\t\t\t<button
+        class=\"pull-right btn-dismiss\" aria-label=\"Sulje\" data-action=\"cancel-all\"></button>\r\n
+        \                   <h2>Vaihda j\xE4tehuollon liittymistapaa</h2>\r\n\t\t\t\t</div>\r\n\r\n
+        \               <div class=\"form-general-info\"></div>\r\n\t\t\t\t<div class=\"form\"></div>\r\n
+        \               <div class=\"form-informant\"></div>\r\n\t\t\t\t<div class=\"akp-root\">\r\n\t\t\t\t\t<div
+        class=\"akp\"></div>\r\n\t\t\t\t\t<div class=\"akp-info\"></div>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n</div>\r\n\r\n\r\n\r\n<div
+        id=\"order-modal\" class=\"modal\" style=\"display:none\">\r\n    <div class=\"modal-dialog
+        modal-lg\">\r\n        <div class=\"modal-content\">\r\n            <div class=\"modal-body\">\r\n\r\n
+        \               <div class=\"page-header\">\r\n                    \r\n                    <button
+        class=\"pull-right btn-dismiss\" aria-label=\"Sulje\" data-action=\"cancel-all\"></button>\r\n
+        \                   <h1>J\xE4tehuoltoon liittyminen</h1>\r\n                </div>\r\n\r\n
+        \               <div class=\"loading-icon\"></div>\r\n\r\n                <div
+        class=\"tabbar\">\r\n                    \r\n                    <ul class=\"tab-list
+        list-inline\" data-role=\"tab-list\">\r\n                        <li class=\"a1
+        number-breadcrumb\"><a href=\"#a1\">1</a></li>\r\n                        <li
+        class=\"a1_5 number-breadcrumb\"><a href=\"#a1.5\">2</a></li>\r\n                        \r\n
+        \                       <li class=\"akp number-breadcrumb\"><a href=\"#akp\">3</a></li>\r\n
+        \                       \r\n                        \r\n                        <li
+        class=\"waste-water number-breadcrumb\"><a href=\"#waste-water\">4</a></li>\r\n
+        \                       \r\n                        <li class=\"a2 number-breadcrumb\"><a
+        href=\"#a2\">5</a></li>\r\n                        \r\n                        <li
+        class=\"a3 number-breadcrumb\"><a href=\"#a3\">6</a></li>\r\n                        <li
+        class=\"a4 number-breadcrumb\"><a href=\"#a4\">7</a></li>\r\n                        <li
+        class=\"a5 number-breadcrumb\"><a href=\"#a5\">8</a></li>\r\n                    </ul>\r\n\r\n
+        \                   <div class=\"a1\"></div>\r\n                    <div class=\"a1_5\"></div>\r\n
+        \                   \r\n                    <div class=\"akp\">\r\n                        <div
+        data-role=\"akp-page\"></div>\r\n                        <div data-role=\"buttons\"></div>\r\n
+        \                   </div>\r\n                    \r\n                    \r\n
+        \                   <div data-role=\"waste-water\" class=\"waste-water\">\r\n
+        \                       <div data-role=\"tabbar\">\r\n                            <ul
+        class=\"tab-list list-inline\">\r\n                                <li class=\"active
+        a1\"><a href=\"#a1\">A1</a></li><li class=\"a2 disabled\"><a href=\"#a2\">A2</a></li><li
+        class=\"a3 disabled\"><a href=\"#a3\">A3</a></li><li class=\"a4 disabled\"><a
+        href=\"#a4\">A4</a></li><li class=\"a5 disabled\"><a href=\"#a5\">A5</a></li><li
+        class=\"a6 disabled\"><a href=\"#a6\">A6</a></li>\r\n                            </ul>\r\n\r\n
+        \                           <div class=\"a1\"></div>\r\n                            <div
+        class=\"a2\"></div>\r\n                            <div class=\"a3\"></div>\r\n
+        \                           <div class=\"a4\"></div>\r\n                            <div
+        class=\"a5\"></div>\r\n\r\n                            <div class=\"a6\">\r\n
+        \                               <div class=\"map-info\">\r\n                                    <div>Karttaa
+        voi siirt\xE4\xE4 hiirell\xE4 raahaamalla. Klikkaa Paikka -painiketta ja vie
+        hiiri kartalla kohtaan, jossa kaivo on. Ohjelma varmistaa viel\xE4 valinnan
+        oikeaksi </div>\r\n                                    <button data-action=\"mark-well\">Paikka</button>\r\n
+        \                               </div>\r\n                                <div
+        data-role=\"kartta\" class=\"map\"></div>\r\n                            </div>\r\n
+        \                       </div>\r\n\r\n                        <div data-role=\"buttons\"></div>\r\n
+        \                   </div>\r\n                    \r\n                    <div
+        class=\"a2\"></div>\r\n                    \r\n                    <div class=\"a3\"></div>\r\n
+        \                   <div class=\"a4\"></div>\r\n                    <div class=\"a5\"></div>\r\n
+        \               </div>\r\n\r\n                <div class=\"global-validation-error
+        alert alert-danger\" style=\"display:none\">T\xE4yt\xE4 puuttuvat kent\xE4t</div>\r\n\r\n
+        \           </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n\r\n\r\n\r\n<div
+        id=\"compost-modal\" class=\"modal\" style=\"display:none\">\r\n\t<div class=\"modal-dialog
+        modal-lg\">\r\n\t\t<div class=\"modal-content\">\r\n\t\t\t<div class=\"modal-body\">\r\n\r\n\t\t\t\t<div
+        class=\"page-header\">\r\n\t\t\t\t\t\r\n\t\t\t\t\t<button class=\"pull-right
+        btn-dismiss\" aria-label=\"Sulje\" data-action=\"cancel-all\"></button>\r\n
+        \                   <h1>Kompostoinnista ilmoittaminen</h1>\r\n\t\t\t\t</div>\r\n\t\t
+        \   \t\r\n\t\t    \t<div class=\"form\"></div>\r\n\r\n\t\t    \t<div class=\"global-validation-error
+        alert alert-danger\" style=\"display:none\">\r\n\t\t    \t\tT\xE4yt\xE4 puuttuvat
+        kent\xE4t\r\n\t\t    \t</div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n</div>\r\n\r\n\r\n\r\n<div
+        id=\"register-modal\" class=\"modal\" style=\"display:none\">\r\n\t<div class=\"modal-dialog
+        modal-lg\">\r\n\t\t<div class=\"modal-content\">\r\n\t\t\t<div class=\"modal-body\">\r\n\t\t\t\r\n\t\t\t\t<div
+        class=\"page-header\">\r\n\t\t\t\t\t<h1>Tilaa k\xE4ytt\xE4j\xE4tunnus</h1>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
+        class=\"form\"></div>\r\n\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n</div>\r\n\r\n\r\n\r\n<div
+        id=\"bookup-modal\" class=\"modal\" style=\"display:none\">\r\n    <div class=\"modal-dialog
+        modal-lg\">\r\n        <div class=\"modal-content\">\r\n            <div class=\"modal-body\">\r\n
+        \               <div class=\"page-header\">\r\n                    <button
+        class=\"pull-right btn-dismiss cancel\"></button>\r\n                    <h1>Tilaa
+        palveluita</h1>\r\n                </div>\r\n\r\n                <div class=\"community-form\">\r\n
+        \                   <form>\r\n                        <div class=\"form-group\">\r\n
+        \                           <label for=\"community-select\" class=\"control-label\">Valitse
+        kunta, jossa asut</label>\r\n                            <select id=\"community-select\"
+        name=\"community-select\" data-role=\"community-select\" class=\"form-control\"></select>\r\n
+        \                       </div>\r\n                        <div id=\"extra-note\"
+        class=\"form-group\">\r\n                        </div>\r\n                        <div
+        class=\"form-group\">\r\n                            <button type=\"button\"
+        class=\"btn btn-primary disabled\" data-action=\"select-community\">Ok</button>\r\n
+        \                       </div>\r\n                    </form>\r\n                </div>\r\n\r\n
+        \               <div class=\"shopping-page\" style=\"display:none\">\r\n                    <div
+        class=\"shopping-cart-content\" style=\"display:none\">\r\n                        <div
+        class=\"form\"></div>\r\n                        <div class=\"global-validation-error
+        alert alert-danger\" style=\"display:none\">\r\n                            T\xE4yt\xE4
+        puuttuvat kent\xE4t\r\n                        </div>\r\n                    </div>\r\n\r\n
+        \                   <div class=\"row\">\r\n                        <div class=\"col-md-12
+        text-center\">\r\n                            <div data-role=\"toolbar\"></div>\r\n
+        \                       </div>\r\n                    </div>\r\n\r\n                    <div
+        class=\"shopping-page-content\">\r\n                        <div class=\"row\">\r\n
+        \                           <div class=\"col-md-12\">\r\n                                <label
+        data-role=\"subcategory-header\">Alikategoria</label>\r\n                                <div
+        class=\"subcategory-toolbar\" data-role=\"subcategory-toolbar\"></div>\r\n
+        \                           </div>\r\n                        </div>\r\n\r\n
+        \                       <div class=\"row\">\r\n                            <div
+        class=\"col-md-4 col-md-push-8\">\r\n                                <div
+        class=\"shopping-cart\" data-role=\"shopping-cart\">\r\n                                    <div
+        class=\"form-group\">\r\n                                        <div data-role=\"grid\"></div>\r\n
+        \                                   </div>\r\n                                    <div
+        class=\"form-group\">\r\n                                        <button type=\"button\"
+        class=\"btn btn-primary disabled\" data-action=\"order\">Tilaa</button>\r\n
+        \                                   </div>\r\n                                </div>\r\n
+        \                           </div>\r\n                            <div class=\"col-md-8
+        col-md-pull-4\">\r\n                                <div class=\"alert alert-info\"
+        data-role=\"message\"></div>\r\n                                <div class=\"product-list\"
+        data-role=\"product-list\"></div>\r\n                            </div>\r\n
+        \                       </div>\r\n                    </div>\r\n\r\n                    \r\n
+        \                       \r\n                        \r\n                        \r\n
+        \                       <div data-role=\"repsikka-tab\">\r\n                            <p
+        class=\"alert alert-info\"></p>\r\n                            <div data-role=\"form\"></div>\r\n
+        \                           <p>Tarkista yhteystietosi. Huomioithan erityisesti,
+        ett\xE4 tarvitsemme puhelinnumeron, josta sinut tavoittaa p\xE4iv\xE4saikaan.</p><p>Vahvistamme
+        tilauksen viel\xE4 s\xE4hk\xF6postitse tai puhelimitse.</p>\r\n                            <div
+        class=\"form-buttons text-center\">\r\n                                <button
+        type=\"button\" data-action=\"send\" class=\"btn btn-primary\">L\xE4het\xE4</button>\r\n
+        \                           </div>\r\n                            <div class=\"global-validation-error
+        alert alert-danger\" style=\"display:none\">\r\n                                T\xE4yt\xE4
+        puuttuvat kent\xE4t\r\n                            </div>\r\n                        </div>\r\n
+        \                       \r\n                        \r\n                    \r\n
+        \               </div>\r\n                <button class=\"btn btn-default
+        cancel\">Peruuta</button>\r\n                <div class=\"clearfix\"></div>\r\n
+        \           </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n\r\n\r\n<div
+        id=\"feedback-modal\" class=\"modal\" style=\"display:none\">\r\n    <div
+        class=\"modal-dialog\">\r\n        <div class=\"modal-content\">\r\n            <div
+        class=\"modal-body\">\r\n                <div class=\"page-header\">\r\n                    \r\n
+        \                   <button class=\"pull-right btn-dismiss\" aria-label=\"Sulje\"
+        data-action=\"cancel-all\"></button>\r\n                    <h1>Anna palautetta</h1>\r\n
+        \               </div>\r\n\r\n                <div class=\"form\"></div>\r\n
+        \               <div class=\"global-validation-error alert alert-danger\"
+        style=\"display:none\">\r\n                    T\xE4yt\xE4 puuttuvat kent\xE4t\r\n
+        \               </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n\r\n\r\n\r\n<div
+        id=\"forgotten-password-modal\" class=\"modal\" style=\"display:none\">\r\n
+        \   <div class=\"modal-dialog\">\r\n        <div class=\"modal-content\">\r\n
+        \           <div class=\"modal-body\">\r\n            \t<div class=\"page-header\">\r\n
+        \           \t\t<h2>Tilaa unohtunut salasana</h2>\r\n            \t</div>\r\n\r\n
+        \               <div class=\"form\"></div>\r\n            </div>\r\n        </div>\r\n
+        \   </div>\r\n</div>\r\n\r\n\r\n\r\n\r\n<div id=\"password-modal\" class=\"modal\"
+        style=\"display:none\">\r\n\t<div class=\"modal-dialog\">\r\n\t\t<div class=\"modal-content\">\r\n\t\t\t<div
+        class=\"modal-body\">\r\n\t\t\t\t<div class=\"page-header\">\r\n\t\t\t\t\t<h2>Vaihda
+        salasana</h2>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div class=\"form\" data-role=\"form\"></div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n</div>\r\n\r\n\r\n\r\n<script>\r\nfunction
+        serviceSelectorCombineNonBlanks(values, separator) {\r\n\tvar result = '';\r\n\tfor(var
+        i = 0; i < values.length; ++i) {\r\n\t\tif(values[i] !== null && values[i]
+        !== '') {\r\n\t\t\tif(result !== '') {\r\n\t\t\t\tresult += separator;\r\n\t\t\t}\r\n\t\t\tresult
+        += values[i];\r\n\t\t}\r\n\t}\r\n\treturn result;\r\n}\r\n\r\nfunction serviceSelectorInvoicing(customer)
+        {\r\n\tif(false && customer.isannoitsija) {\r\n\t\treturn serviceSelectorCombineNonBlanks([customer.isannoitsija.name,
+        customer.isannoitsija.street, customer.isannoitsija.post], ', ')\r\n\t} else
+        {\r\n\t\treturn serviceSelectorCombineNonBlanks([customer.laskutusnimi, customer.laskutusyhteyshenk,
+        customer.laskutuskatu, customer.laskutusposti, customer.laskutusmaa], ', ')
+        \r\n\t}\r\n}\r\n\r\n</script>\r\n\r\n<script id=\"service-selector-value-template\"
+        type=\"text/x-kendo-template\">\r\n\t# if(typeof customers !== 'undefined')
+        { #\r\n\t\t<div class=\"service-name\">#: Common.formatNullAsEmpty(customers[0].nimi)
+        ##: customers[0].yhteyshenk !== null && customers[0].yhteyshenk !== '' &&
+        customers[0].yhteyshenk !== customers[0].nimi ? ', ' + customers[0].yhteyshenk
+        : '' #</div>\r\n\t\t<div class=\"service-address\">#: serviceSelectorCombineNonBlanks([customers[0].katu,
+        customers[0].posti], ', ') #</div>\r\n\t\t\r\n\r\n\t\t\r\n\t# } else { #\r\n\t\t<div
+        class=\"service-name\">Valitse kohde</div>\r\n\t# } #\r\n</script>\r\n\r\n<script
+        id=\"service-selector-template\" type=\"text/x-kendo-template\"># if(typeof
+        customers !== 'undefined') { #\r\n\t<div class=\"service-name\">#: Common.formatNullAsEmpty(customers[0].nimi)
+        ##: customers[0].yhteyshenk !== null && customers[0].yhteyshenk !== '' &&
+        customers[0].yhteyshenk !== customers[0].nimi ? ', ' + customers[0].yhteyshenk
+        : '' #</div>\r\n\t<div class=\"service-address\">#: serviceSelectorCombineNonBlanks([customers[0].katu,
+        customers[0].posti], ', ') #</div>\r\n\t\r\n\r\n\t\r\n# } #</script>\r\n\r\n\r\n\r\n\r\n\r\n<textarea
+        id=\"type_dish1\" style=\"display:none;\">\r\n\t<div class=\"dish1 product\">\r\n\t\t<div
+        class=\"container-fluid\">\r\n\t\t\t<div class=\"row narrow-gaps\">\r\n\t\t\t\t<div
+        class=\"col-md-3 text-center-xs\">{common.imageElement()}</div>\r\n\t\t\t\t<div
+        class=\"col-md-6\">\r\n\t\t\t\t\t<h4 class=\"text-center-xs product-name\">{obj.name}</h4>\r\n\t\t\t\t\t<div
+        class=\"description\">\r\n\t\t\t\t\t\t{obj.desc}\r\n\t\t\t\t\t\t{obj.weightBased
+        == 1?<br>K\xE4sittelymaksu painon mukaisesti:}\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div
+        class=\"col-md-3\">\r\n\t\t\t\t\t\r\n\t\t\t\t\t\t<div class=\"row\" {common.displayPrice()}>\r\n\t\t\t\t\t\t\t<div
+        class=\"col-md-4 col-xs-4\">\r\n\t\t\t\t\t\t\t\t<label class=\"control-label\">Hinta</label>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t<div
+        class=\"col-md-8 col-xs-8\">\r\n\t\t\t\t\t\t\t\t<div class=\"price\">{common.combinedVatPrice()}
+        &euro;</div>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t{obj.weightBased
+        == 1?\r\n\t\t\t\t\t\t<div class=\"row\" {common.displayPrice()}>\r\n\t\t\t\t\t\t\t<div
+        class=\"col-md-4 col-xs-4\">\r\n\t\t\t\t\t\t\t\t<label class=\"control-label\">K\xE4sittely&shy;maksu</label>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t<div
+        class=\"col-md-8 col-xs-8\">\r\n\t\t\t\t\t\t\t\t<div class=\"price\">{obj.wprice}
+        &euro;/tn</div>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t:}\r\n\t\t\t\t\t\r\n\t\t\t\t\t\r\n\t\t\t\t\t<div
+        class=\"row\">\r\n\t\t\t\t\t\t<div class=\"col-md-4 col-xs-4\">\r\n\t\t\t\t\t\t\t<label
+        class=\"control-label\">M\xE4\xE4r\xE4</label>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div
+        class=\"col-md-8 col-xs-8\">\r\n\t\t\t\t\t\t\t<div class=\"amount\">\r\n\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\r\n\r\n\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t<select
+        id=\"amount_{obj.priceid}\" class=\"form-control\">\r\n\t\t\t\t\t\t\t\t\t\t<option
+        value=\"1\">1</option>\r\n\t\t\t\t\t\t\t\t\t\t<option value=\"2\">2</option>\r\n\t\t\t\t\t\t\t\t\t\t<option
+        value=\"3\">3</option>\r\n\t\t\t\t\t\t\t\t\t\t<option value=\"4\">4</option>\r\n\t\t\t\t\t\t\t\t\t\t<option
+        value=\"5\">5</option>\r\n\t\t\t\t\t\t\t\t\t\t<option value=\"6\">6</option>\r\n\t\t\t\t\t\t\t\t\t\t<option
+        value=\"7\">7</option>\r\n\t\t\t\t\t\t\t\t\t\t<option value=\"8\">8</option>\r\n\t\t\t\t\t\t\t\t\t\t<option
+        value=\"9\">9</option>\r\n\t\t\t\t\t\t\t\t\t\t<option value=\"10\">10</option>\r\n\t\t\t\t\t\t\t\t\t</select>\r\n\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<div
+        class=\"row\">\r\n\t\t\t\t\t\t<div class=\"col-md-8 col-md-offset-4 col-xs-8
+        col-xs-offset-4\">\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t<button class=\"btn
+        btn-default btn-block long-text-button\" onclick=\"shoppingCart.addProduct('{obj.priceid}','{obj.name}',$('#amount_{obj.priceid}').val(),'{common.category()}','{common.combinedVatPrice()}')\">\r\n\t\t\t\t\t\t\t\t\tKoriin\r\n\t\t\t\t\t\t\t\t</button>\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n</textarea>\t\r\n\r\n\r\n\r\n<div
+        id=\"video-popup-modal\" class=\"modal\" style=\"display:none\">\r\n\t<div
+        class=\"modal-dialog modal-lg\">\r\n\t\t<div class=\"modal-content\">\r\n\t\t\t<div
+        class=\"modal-body\">\r\n\t\t\t\t<div class=\"embed-responsive embed-responsive-4by3\">\r\n\t\t\t\t\t<video
+        controls>\r\n\t\t\t\t\t\tSelaimesi ei tue HTML5-videoa. <a href=\"#\" data-role=\"download\">Lataa
+        video.</a>\r\n\t\t\t\t\t</video>\r\n\t\t\t\t\t<iframe frameborder=\"0\" webkitallowfullscreen
+        mozallowfullscreen allowfullscreen></iframe>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
+        class=\"form-buttons text-center\">\r\n\t\t\t\t\t<button class=\"btn btn-primary\"
+        data-dismiss=\"modal\">Sulje</button>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n</div>\r\n\r\n\r\n<div
+        id=\"alert-modal\" class=\"modal\" style=\"display:none\">\r\n\t<div class=\"modal-dialog
+        modal-sm\">\r\n\t\t<div class=\"modal-content\">\r\n\t\t\t<div class=\"modal-body\">\r\n\t\t\t\t<div
+        data-role=\"text\"></div>\r\n\t\t\t</div>\r\n\t\t\t<div class=\"modal-footer\">\r\n\t\t\t\t<div
+        class=\"text-right\">\r\n\t\t\t\t\t<button class=\"btn btn-primary\" data-action=\"ok\"
+        data-dismiss=\"modal\"></button>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n</div>\r\n\r\n<div
+        id=\"confirm-modal\" class=\"modal\" style=\"display:none\">\r\n\t<div class=\"modal-dialog
+        modal-sm\">\r\n\t\t<div class=\"modal-content\">\r\n\t\t\t<div class=\"modal-body\">\r\n\t\t\t\t<div
+        data-role=\"text\"></div>\r\n\t\t\t</div>\r\n\t\t\t<div class=\"modal-footer\">\r\n\t\t\t\t<div
+        class=\"text-right\">\r\n\t\t\t\t\t<button class=\"btn btn-primary\" data-action=\"ok\"></button>\r\n\t\t\t\t\t<button
+        class=\"btn btn-default\" data-action=\"cancel\"></button>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n</div>\r\n\r\n<script>\r\n\r\nfunction
+        showAlert(type, text, okText) {\r\n    var $modal = $('#alert-modal');\r\n
+        \   var deferred = new $.Deferred();\r\n\r\n    $modal.find('[data-role=\"text\"]').html(text);\r\n
+        \   if(typeof okText === 'undefined') {\r\n        okText = 'Ok';\r\n    }\r\n
+        \   $modal.find('[data-action=\"ok\"]').html(okText);\r\n\r\n    $modal.modal('show');\r\n
+        \   $modal.on('hidden.bs.modal', function(e) {\r\n        deferred.resolve();\r\n
+        \   });\r\n    return deferred;\r\n}\r\n\r\nfunction showConfirm(type, text,
+        okText, cancelText) {\r\n    var $modal = $('#confirm-modal');\r\n    var
+        deferred = new $.Deferred();\r\n\r\n    $modal.find('[data-role=\"text\"]').html(text);\r\n
+        \   if(typeof okText === 'undefined') {\r\n        okText = \"Ok\";\r\n    }\r\n
+        \   $modal.find('[data-action=\"ok\"]').html(okText);\r\n    if(typeof cancelText
+        === 'undefined') {\r\n        cancelText = \"Peruuta\";\r\n    }\r\n    $modal.find('[data-action=\"cancel\"]').html(cancelText);\r\n\r\n
+        \   $modal.find('[data-action=\"ok\"]').off('click').on('click', function(e)
+        {\r\n        $modal.modal('hide');\r\n        deferred.resolve(true);\r\n
+        \   });\r\n    $modal.find('[data-action=\"cancel\"]').off('click').on('click',
+        function(e) {\r\n        $modal.modal('hide');\r\n        deferred.reject(false);\r\n
+        \   });\r\n\r\n    $modal.modal('show');\r\n    return deferred;\r\n}\r\n\r\n</script>\r\n\r\n\r\n\r\n\r\n\r\n\r\n<script
+        id=\"service-list-item-template\" type=\"text/x-template\">\r\n\r\n\r\n<fieldset
+        class=\"service-item\">\r\n\t<legend class=\"service-name\"></legend>\r\n\r\n\t<div
+        class=\"kimppa-info row\">\r\n\t\t\r\n\r\n\t\t\r\n\t\t\t<div class=\"col-md-12\">\r\n\t\t\t\t<dl>\r\n\t\t\t\t\t<label
+        class=\"kimpan-isanta\"></label>\r\n\t\t\t\t\t<label class=\"isannan-osoite\"></label>\r\n\t\t\t\t\t<label><label
+        class=\"kimpan-jasenten-maara\"></label> osakasta</label>\r\n\t\t\t\t\t<label>laskutusosuus
+        <label class=\"KIRPros\"></label></label>\r\n\t\t\t\t</dl>\r\n\t\t\t</div>\r\n\r\n\t\t\t\r\n\t\t\r\n\r\n\t</div>\r\n\r\n\t<div
+        class=\"row\" data-header=\"ASTKomm\">\r\n\t\t<div class=\"col-md-offset-2
+        col-md-7\">\r\n\t\t\t<p data-value=\"ASTKomm\"></p>\r\n\t\t</div>\r\n\t</div>\r\n\r\n\t<div
+        class=\"row\">\r\n\t\t<div class=\"col-md-2\">\r\n\t\t\t<img class=\"service-image
+        img-responsive\" alt=\"\" onerror=\"this.style.visibility='hidden';return
+        true\">\r\n\t\t</div>\r\n\r\n\t\t<div class=\"col-md-7\">\r\n\t\t\t<div class=\"service-info\">\r\n\t\t\t\t\r\n\r\n\t\t\t\t\r\n\t\t\t\t<div
+        data-header=\"ASTMaara\">\r\n\t\t\t\t\t<span data-value=\"ASTMaara\"></span><span>
+        </span><span data-value=\"tariff.unit\">kpl/t</span>\r\n\r\n\t\t\t\t\t\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\r\n\t\t\t\t\r\n\t\t\t\t\t<div
+        class=\"collection-schedule\"><a href=\"\" data-action=\"collection-schedule\">\xBB
+        Tyhjennysrytmi</a></div>\r\n\t\t\t\t\r\n\r\n\t\t\t\t\r\n\r\n\t\t\t\t\r\n\r\n\t\t\t\t\r\n\r\n\t\t\t\t\r\n\r\n\t\t\t\t\r\n\r\n\t\t\t\t\r\n\t\t\t\t<div
+        data-header=\"ASTNextDate\">\r\n\t\t\t\t\t<div data-header=\"ASTNextDate\">\r\n\t\t\t\t\t\t<span>Seuraava
+        tyhjennys </span>\r\n\t\t\t\t\t\t<span data-value=\"ASTNextDate\"></span>\r\n\t\t\t\t\t\t<span
+        data-role=\"next-emptying-variance-text\">\r\n\t\t\t\t\t\t\t (\xB1 1-2 p\xE4iv\xE4\xE4)\r\n\t\t\t\t\t\t</span>\r\n
+        \                       \r\n                            <i data-role=\"next-emptying-variance-tooltip\"
+        class=\"glyphicon glyphicon-question-sign\"\r\n                                tabindex=\"-1\"
+        data-original-title=\"Ajop\xE4iv\xE4 voi muuttua (\xB1 1-2 p\xE4iv\xE4\xE4)
+        esim. arkipyh\xE4viikoilla.\"\r\n                                data-toggle=\"popover\"
+        data-placement=\"auto right\" data-trigger=\"focus\"></i>\r\n                        \r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\r\n\t\t\t\t\r\n\r\n\t\t\t\t\r\n\r\n\t\t\t\t\r\n\t\t\t\t<div
+        data-header=\"ASTMatka\">\r\n\t\t\t\t\t<div data-header=\"ASTMatka\">Matka\r\n\t\t\t\t\t<span>
+        </span><span data-value=\"ASTMatka\"></span> m <span data-value=\"ASTMatkaPrice\"></span>\r\n
+        \                   </div>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\r\n\t\t\t\t\r\n\r\n\t\t\t\t\r\n\t\t\t\t<div
+        data-header=\"ASTKeskAlk-Ast\">\r\n\t\t\t\t\t<div data-header=\"ASTKeskAlk-Ast\">Keskeytys\r\n\t\t\t\t\t<span>
+        </span><span data-value=\"ASTKeskAlk-Ast\"></span>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\r\n\t\t\t\t<div
+        data-header=\"ASTLopPvm\">\r\n\t\t\t\t\t<div data-header=\"ASTLopPvm\">Lopetus</div>\r\n\t\t\t\t\t<div
+        data-value=\"ASTLopPvm\"></div>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t\r\n\t\t\t</div>\r\n\r\n\t\t\t\r\n\t\t\t<div
+        class=\"extra-text\">\r\n\t\t\t\t<a href=\"http://www.jatekukko.fi/lajittelu\"
+        target=\"_blank\"><small>\xBB Lajitteluohjeet</small> </a><a href=\"http://www.jatekukko.fi/hinnat\"
+        target=\"_blank\"><small>\xBB Lis\xE4tietoja hinnoista</small></a>\r\n\t\t\t</div>\r\n\t\t\t\r\n\r\n
+        \           \r\n\t\t\t    <div class=\"service-info\">\r\n\t\t\t\t    <div
+        data-header=\"ASTPerMatka\">\r\n\t\t\t\t\t    <div data-header=\"ASTPerMatka\">Matka\r\n\t\t\t\t\t
+        \   <span> </span><span data-value=\"ASTPerMatka\"></span> m</div>\r\n\t\t\t\t
+        \   </div>\r\n                </div>\r\n            \r\n\r\n\t\t\t\r\n\t\t\t\r\n\t\t\t\t<div
+        class=\"description\"></div>\r\n\t\t\t\r\n\t\t\t\r\n\t\t\t\r\n\t\t</div>\r\n\r\n\t\t\r\n\t\t<div
+        class=\"dropdown-content\">\r\n\t\t\r\n\t\t\r\n\t\t<div class=\"col-md-3 service-buttons\">\r\n\r\n\t\t\t\r\n\r\n
+        \           \r\n            <button class=\"order-button btn btn-primary btn-block
+        btn-wrap\">\r\n            \tTilaa ylim\xE4\xE4r\xE4inen tyhjennys\r\n        \t</button>\r\n
+        \           \r\n\r\n            \r\n            <button class=\"pause-button
+        btn btn-primary btn-block btn-wrap\">\r\n            \tKeskeyt\xE4\r\n        \t</button>\r\n
+        \           \r\n                    \r\n            \r\n\t\t\t<button class=\"change-request-button
+        btn btn-primary btn-block btn-wrap\">\r\n\t\t\t\tMuu muutos palveluun\r\n\t\t\t</button>\r\n\t\t\t\r\n
+        \               \r\n            \r\n\t\t    \t<button type=\"button\" class=\"btn
+        btn-primary btn-block btn-wrap full-width\" data-action=\"edit-kimppa\">\r\n\t\t
+        \   \t\tMuokkaa kimppaa\r\n\t    \t\t</button>\r\n\t\t    \r\n\r\n\t\t\t\r\n\t\t\t<button
+        class=\"resign-kimppa-button btn btn-primary\">\r\n\t\t\t\tEroa kimpasta\r\n\t\t\t</button>\r\n\t\t\t\r\n\r\n
+        \           \r\n            \t<button class=\"kimpaksi-button btn btn-primary
+        btn-block btn-wrap\">\r\n            \t\tPerusta uusi kimppa\r\n        \t\t</button>\r\n
+        \           \r\n\r\n            \r\n            \r\n\t\t\t<button class=\"stop-button
+        btn btn-primary btn-block btn-wrap\">\r\n\t\t\t\tLopeta\r\n\t\t\t</button>\r\n
+        \           \r\n            \r\n\r\n\t\t</div>\r\n\r\n\t\t<div class=\"col-md-3
+        akp-buttons\">\r\n\t\t\t<button class=\"akp-location-button btn btn-primary
+        btn-block\">\r\n\t\t\t\tPisteen sijainti / Vaihda pistett\xE4\r\n\t\t\t</button>\r\n\r\n\t\t\t\r\n\t\t\t<div
+        class=\"text-element\">Voit p\xE4\xE4tt\xE4\xE4 kohteen j\xE4tehuollon tai
+        muuttaa j\xE4tehuollon liittymistapaa <a href=\"#\" data-action=\"go-to-customer-data\">kohteen
+        tiedot -v\xE4lilehdell\xE4</a>.</div>\r\n\t\t\t\r\n\r\n\t\t\t\r\n\t\t</div>\r\n\t\t\r\n\r\n\t\t\r\n\t\t</div>\r\n\t\t\r\n\t\t<a
+        class=\"make-changes\">\r\n\t\t\t<span>\r\n\t\t\t\tTee muutoksia palveluun\r\n\t\t\t</span>\r\n\t\t</a>\r\n\t\t\r\n\t\t\r\n\r\n\t</div>\r\n\r\n</fieldset>\r\n</script>\r\n\r\n<script
+        id=\"kimppa-osakas-editor-template\" type=\"text/x-template\">\r\n\r\n\r\n\r\n\r\n<div
+        class=\"osakas-editor\">\r\n\t<div class=\"container-fluid\">\r\n\t\t<form>\r\n\t\t\t<div
+        class=\"row border-bottom\">\r\n\t\t\t\t<div class=\"col-md-12\">\r\n\t\t\t\t\t<h2>Uusi
+        osakas</h2>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\r\n\t\t\t<div class=\"row
+        border-bottom\">\r\n\t\t\t\t<fieldset class=\"fieldset margin-bottom-15\">\r\n\t\t\t\t\t<div
+        class=\"col-md-12\">\r\n\t\t\t\t\t\t<legend>Kiinteist\xF6n tiedot</legend>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<div
+        class=\"col-md-6\">\r\n\t\t\t\t\t\t<div class=\"form-group required\">\r\n\t\t\t\t\t\t\t<label
+        for=\"osakas.kuntatunnus\">Kunta</label> \r\n\t\t\t\t\t\t\t<div class=\"select\">\r\n\t\t\t\t\t\t\t\t<select
+        id=\"osakas.kuntatunnus\" name=\"osakas.kuntatunnus\" class=\"form-control\"
+        required>\r\n\t\t\t\t\t\t\t\t\t<option value=\"\">-- Valitse --</option>\r\n\t\t\t\t\t\t\t\t</select>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t\r\n\t\t\t\t\t\t<div
+        class=\"col-md-6\">\r\n\t\t\t\t\t\t\t<div class=\"form-group\">\r\n\t\t\t\t\t\t\t\t<label
+        for=\"osakas.kiintrektunnus\">Kiinteist\xF6rekisteritunnus</label> \r\n\t\t\t\t\t\t\t\t<input
+        type=\"text\" name=\"osakas.kiintrektunnus\" class=\"form-control\" maxlength=\"23\"
+        >\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\r\n\t\t\t\t</fieldset>\r\n\t\t\t</div>\r\n\r\n\t\t\t<div
+        class=\"row border-bottom\">\r\n\t\t\t\t<fieldset class=\"col-md-6 required\">\r\n\t\t\t\t\t<div>\r\n\t\t\t\t\t\t<legend>Kiinteist\xF6n
+        k\xE4ytt\xF6tarkoitus</legend>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<div>\r\n\t\t\t\t\t\t<div
+        class=\"form-group\">\r\n\t\t\t\t\t\t\t<div class=\"select\">\r\n\t\t\t\t\t\t\t\t<select
+        data-role=\"kayttotarkoitus-kategoria\" class=\"form-control\" required >\r\n\t\t\t\t\t\t\t\t\t<option
+        value=\"\"></option>\r\n\t\t\t\t\t\t\t\t\t<option value=\"0\">Vakituinen asunto</option>\r\n\t\t\t\t\t\t\t\t\t<option
+        value=\"1\">Vapaa-ajan asunto</option>\r\n\t\t\t\t\t\t\t\t\t<option value=\"2\">Taloyhti\xF6</option>\r\n\t\t\t\t\t\t\t\t\t<option
+        value=\"3\">Yritys</option>\r\n\t\t\t\t\t\t\t\t\t<option value=\"4\">Yhteis\xF6</option>\r\n\t\t\t\t\t\t\t\t</select>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t</div>\r\n\r\n\t\t\t\t\t\t<div
+        class=\"form-group\" >\r\n\t\t\t\t\t\t\t<div class=\"select\">\r\n\t\t\t\t\t\t\t\t<select
+        name=\"osakas.kayttotarkoitus\" class=\"form-control\" required >\r\n\t\t\t\t\t\t\t\t\t<option
+        value=\"\"></option>\r\n\t\t\t\t\t\t\t\t\t<option value=\"011\" data-kategoria=\"0\">Yhden
+        asunnon talo</option>\r\n\t\t\t\t\t\t\t\t\t<option value=\"012\" data-kategoria=\"0\">Kahden
+        asunnon talo</option>\r\n\t\t\t\t\t\t\t\t\t<option value=\"013\" data-kategoria=\"0\">Muu
+        erillinen pientalo</option>\r\n\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t<option
+        value=\"041\" data-kategoria=\"1\">Kes\xE4m\xF6kki tai vapaa-ajan asunto</option>\r\n\t\t\t\t\t\t\t\t\t<option
+        value=\"931\" data-kategoria=\"1\">Saunarakennus</option>\r\n\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t<option
+        value=\"021\" data-kategoria=\"2\">Rivitalo</option>\r\n\t\t\t\t\t\t\t\t\t<option
+        value=\"022\" data-kategoria=\"2\">Ketjutalo</option>\r\n\t\t\t\t\t\t\t\t\t<option
+        value=\"032\" data-kategoria=\"2\">Luhtitalo</option>\r\n\t\t\t\t\t\t\t\t\t<option
+        value=\"039\" data-kategoria=\"2\">Kerrostalo</option>\r\n\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t<option
+        value=\"111\" data-kategoria=\"3\">Yritys</option>\r\n\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t<option
+        value=\"131\" data-kategoria=\"4\">Yhteis\xF6</option>\r\n\t\t\t\t\t\t\t\t</select>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</fieldset>\r\n\r\n\t\t\t\t\r\n\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t<div
+        class=\"row\">\r\n\t\t\t\t<div class=\"col-md-6\">\r\n\t\t\t\t\t<fieldset
+        class=\"fieldset margin-bottom-15\">\r\n\t\t\t\t\t\t<legend>Osakkaan tiedot</legend>\r\n\t\t\t\t\t\t<div
+        class=\"checkbox invisible\"><label></label></div>\r\n\t\t\t\t\t\t<div class=\"form-group
+        required\">\r\n\t\t\t\t\t\t\t<label for=\"osakas.nimi\">Osakkaan nimi</label>
+        \r\n\t\t\t\t\t\t\t<input required type=\"text\" name=\"osakas.nimi\" class=\"form-control\"
+        >\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div class=\"form-group required\">\r\n\t\t\t\t\t\t\t<label
+        for=\"osakas.etunimi\">Osakkaan etunimi</label>\r\n\t\t\t\t\t\t\t<input required
+        type=\"text\" name=\"osakas.etunimi\" class=\"form-control\" >\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div
+        class=\"form-group required\" style=\"display:none\">\r\n\t\t\t\t\t\t\t<label
+        for=\"osakas.sukunimi\">Osakkaan sukunimi</label>\r\n\t\t\t\t\t\t\t<input
+        required type=\"text\" name=\"osakas.sukunimi\" class=\"form-control\" >\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div
+        class=\"form-group\">\r\n\t\t\t\t\t\t\t<label for=\"osakas.yhteyshenk\">Yhteyshenkil\xF6</label>\r\n\t\t\t\t\t\t\t<input
+        type=\"text\" name=\"osakas.yhteyshenk\" class=\"form-control\" >\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div
+        class=\"form-group required\">\r\n\t\t\t\t\t\t\t<label for=\"osakas.katu\">Kiinteist\xF6n
+        osoite</label> \r\n\t\t\t\t\t\t\t<input required type=\"text\" name=\"osakas.katu\"
+        class=\"form-control\" >\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div class=\"form-group
+        required\">\r\n\t\t\t\t\t\t\t<label for=\"osakas.posti\">Postinumero ja -toimipaikka</label>
+        \r\n\t\t\t\t\t\t\t<input required type=\"text\" name=\"osakas.posti\" class=\"form-control\"
+        >\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t<div
+        class=\"form-group\">\r\n\t\t\t\t\t\t\t\t<label for=\"osakas.henkilotunnusString\">Henkil\xF6tunnus/Y-tunnus</label>\r\n\t\t\t\t\t\t\t\t<input
+        type=\"text\" name=\"osakas.henkilotunnusString\" class=\"form-control\" >\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t</fieldset>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div
+        class=\"col-md-6\">\r\n\t\t\t\t\t<fieldset class=\"fieldset margin-bottom-15\">\r\n\t\t\t\t\t\t<legend>Maksajan
+        tiedot</legend>\r\n\t\t\t\t\t\t<div class=\"checkbox\">\r\n\t\t\t\t\t\t\t<label
+        for=\"same_as_before\">\r\n\t\t\t\t\t\t\t\t<input type=\"checkbox\" id=\"same_as_before\"
+        name=\"same_as_before\" data-action=\"same-as-before\" >\r\n\t\t\t\t\t\t\t\tSamat
+        kuin osakkaan\r\n\t\t\t\t\t\t\t</label>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div
+        class=\"form-group required\">\r\n\t\t\t\t\t\t\t<label for=\"osakas.laskutusnimi\">Maksajan
+        nimi</label> \r\n\t\t\t\t\t\t\t<input required type=\"text\" name=\"osakas.laskutusnimi\"
+        class=\"form-control\" >\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div class=\"form-group
+        required\">\r\n\t\t\t\t\t\t\t<label for=\"osakas.laskutusetunimi\">Maksajan
+        etunimi</label>\r\n\t\t\t\t\t\t\t<input required type=\"text\" name=\"osakas.laskutusetunimi\"
+        class=\"form-control\" >\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div class=\"form-group
+        required\" style=\"display:none\">\r\n\t\t\t\t\t\t\t<label for=\"osakas.laskutussukunimi\">Maksajan
+        sukunimi</label>\r\n\t\t\t\t\t\t\t<input required type=\"text\" name=\"osakas.laskutussukunimi\"
+        class=\"form-control\" >\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div class=\"form-group\">\r\n\t\t\t\t\t\t\t<label
+        for=\"osakas.laskutusyhteyshenk\">Maksajan yhteyshenkil\xF6</label>\r\n\t\t\t\t\t\t\t<input
+        type=\"text\" name=\"osakas.laskutusyhteyshenk\" class=\"form-control\" >\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div
+        class=\"form-group required\">\r\n\t\t\t\t\t\t\t<label for=\"osakas.laskutuskatu\">Kiinteist\xF6n
+        osoite</label> \r\n\t\t\t\t\t\t\t<input required type=\"text\" name=\"osakas.laskutuskatu\"
+        class=\"form-control\" >\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div class=\"form-group
+        required\">\r\n\t\t\t\t\t\t\t<label for=\"osakas.laskutusposti\">Postinumero
+        ja -toimipaikka</label> \r\n\t\t\t\t\t\t\t<input type=\"text\" required name=\"osakas.laskutusposti\"
+        class=\"form-control\" >\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</fieldset>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\r\n\t\t\t<div
+        class=\"row btn-row\">\r\n\t\t\t\t<div class=\"col-md-12 text-center\">\r\n\t\t\t\t\t<ul
+        class=\"list-inline\">\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<button
+        type=\"button\" class=\"btn btn-primary\" data-action=\"save-add\">\r\n\t\t\t\t\t\t\t\tJatka\r\n\t\t\t\t\t\t\t</button>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t<li>\r\n\t\t\t\t\t\t\t<button
+        type=\"button\" class=\"btn btn-primary\" data-action=\"cancel-add\">\r\n\t\t\t\t\t\t\t\tPeruuta\r\n\t\t\t\t\t\t\t</button>\r\n\t\t\t\t\t\t</li>\r\n\t\t\t\t\t</ul>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</form>\r\n\t</div>\r\n</div>\r\n</script>\r\n\r\n<script
+        id=\"akp-select-template\" type=\"text/x-template\">\r\n\r\n\r\n<div class=\"formCol\">\r\n\t<div
+        class=\"container-fluid\">\r\n\t\t<div class=\"row\">\r\n\t\t\t<div class=\"col-md-4\">\r\n\t\t\t\t<div
+        class=\"form-group\">\r\n\t\t\t\t\t<label for=\"community-selector\">Valitse
+        kunta</label>\r\n\t\t\t\t\t<select id=\"community-selector\" class=\"form-control\"
+        data-role=\"community-selector\"></select>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div
+        class=\"form-group\">\r\n\t\t\t\t\t<label for=\"akp-selector\">Valitse piste</label>\r\n\t\t\t\t\t<select
+        id=\"akp-selector\" class=\"form-control\" data-role=\"akp-selector\"></select>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
+        class=\"row\" data-role=\"button-container\" style=\"display: none\">\r\n\t\t\t\t\t<div
+        class=\"col-md-12\">\r\n\t\t\t\t\t\t<button data-role=\"ok\" class=\"btn btn-primary
+        btn-block\">Hyv\xE4ksy valittu piste</button>\r\n\t\t\t\t\t\t<button data-role=\"cancel\"
+        class=\"btn btn-default btn-block\">Peruuta</button>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div
+        class=\"row\">\r\n\t\t\t\t\t<div class=\"col-md-12\">\r\n\t\t\t\t\t\t<p class=\"help-block
+        text-center\">Voit valita pisteen my\xF6s kartalta</p>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\r\n\t\t\t<div
+        class=\"col-md-8\">\r\n\t\t\t\t<div id=\"akp-map\" data-role=\"map\"></div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n</div>\r\n</script>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n<div
+        id=\"waste-water-modal\" class=\"modal\" style=\"display:none\">\r\n    <div
+        class=\"modal-dialog modal-lg\">\r\n        <div class=\"modal-content\">\r\n
+        \           <div class=\"modal-body\">\r\n\r\n                <div class=\"page-header\">\r\n
+        \                   <h1>Liity lietteiden ker\xE4ykseen</h1>\r\n                </div>\r\n\r\n
+        \               <div class=\"loading-icon\"></div>\r\n\r\n                <div
+        data-role=\"tabbar\">\r\n                    \r\n                    <ul class=\"tab-list
+        list-inline\" data-role=\"tab-list\">\r\n                        <li class=\"active
+        a1\"><a href=\"#a1\">A1</a></li><li class=\"a2 disabled\"><a href=\"#a2\">A2</a></li><li
+        class=\"a3 disabled\"><a href=\"#a3\">A3</a></li><li class=\"a4 disabled\"><a
+        href=\"#a4\">A4</a></li><li class=\"a5 disabled\"><a href=\"#a5\">A5</a></li><li
+        class=\"a6 disabled\"><a href=\"#a6\">A6</a></li>\r\n                    </ul>\r\n
+        \                   \r\n                    \r\n\r\n                    \r\n
+        \                   <div class=\"a1\"></div>\r\n                    <div class=\"a2\"></div>\r\n
+        \                   <div class=\"a3\"></div>\r\n                    <div class=\"a4\"></div>\r\n
+        \                   <div class=\"a5\"></div>\r\n\r\n                    <div
+        class=\"a6\">\r\n                        <div class=\"map-info\">\r\n                            <div>Karttaa
+        voi siirt\xE4\xE4 hiirell\xE4 raahaamalla. Klikkaa Paikka -painiketta ja vie
+        hiiri kartalla kohtaan, jossa kaivo on. Ohjelma varmistaa viel\xE4 valinnan
+        oikeaksi </div>\r\n                            <button data-action=\"mark-well\">Paikka</button>\r\n
+        \                       </div>\r\n                        <div data-role=\"kartta\"
+        class=\"map\"></div>\r\n                    </div>\r\n\r\n                    <div
+        class=\"global-validation-error alert alert-danger\" style=\"display:none\">T\xE4yt\xE4
+        puuttuvat kent\xE4t</div>\r\n                </div>\r\n            </div>\r\n
+        \       </div>\r\n    </div>\r\n</div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n<div
+        id=\"collection-schedule-modal\" class=\"modal\" style=\"display:none\">\r\n
+        \   <div class=\"modal-dialog\">\r\n        <div class=\"modal-content\">\r\n
+        \           <div class=\"modal-body\">\r\n                <div class=\"row\">\r\n
+        \                   <div class=\"page-header\">\r\n                        <h1>J\xE4teastian
+        tyhjennysrytmi</h1>\r\n                    </div>\r\n                </div>\r\n\r\n
+        \               <div class=\"row customer-data-info\">\r\n                    <div
+        class=\"page-header\">\r\n                        <div class=\"col-sm-6\">\r\n
+        \                           <h4>Tyhjennysosoite</h4>\r\n                            <address>\r\n
+        \                           <span data-role=\"location-name\"></span><br><br>\r\n
+        \                           <span data-role=\"location-address\"></span><br>\r\n
+        \                           <span data-role=\"location-post\"></span>\r\n
+        \                           </address>\r\n                        </div>\r\n\r\n
+        \                       <div class=\"col-sm-6\">\r\n                            <h4>Laskutusosoite</h4>\r\n
+        \                           <address>\r\n                                <span
+        data-role=\"invoicing-name\"></span><br><br>\r\n                                <span
+        data-role=\"invoicing-address\"></span><br>\r\n                                <span
+        data-role=\"invoicing-post\"></span>\r\n                            </address>\r\n
+        \                       </div>\r\n\r\n                        \r\n\r\n                        <div
+        style=\"clear:both\"></div>\r\n                    </div>\r\n                </div>\r\n\r\n
+        \               <div class=\"small\">Ajop\xE4iv\xE4 voi muuttua (\xB1 1-2
+        p\xE4iv\xE4\xE4) esim. arkipyh\xE4viikoilla.</div>\r\n\r\n                <div
+        class=\"schedule-header\">\r\n                    <span>Palvelu</span><span>Viikko</span>\r\n
+        \               </div>\r\n                <div class=\"scroll-frame\">\r\n
+        \                   <table data-role=\"schedule\">\r\n                        <tbody>\r\n
+        \                       </tbody>\r\n                        <tfoot>\r\n                        </tfoot>\r\n
+        \                   </table>\r\n\r\n                    <div class=\"scrollbar
+        sticky\" data-role=\"scrollbar\">\r\n                        <div class=\"handle\"
+        data-role=\"scrollbar-handle\"></div>\r\n                    </div>\r\n\r\n
+        \                   <div class=\"sticky shadow-left\"></div>\r\n                    <div
+        class=\"sticky shadow-right\"></div>\r\n                </div>\r\n\r\n                <div
+        class=\"edit-menu\" data-role=\"edit-menu\" style=\"display:none\">\r\n                    <button
+        class=\"btn-dismiss\" data-action=\"close-menu\"></button>\r\n                    <div
+        class=\"row\">\r\n                        <div class=\"col-sm-3\">\r\n                            <button
+        data-action=\"pause\" class=\"btn btn-primary btn-block\">Keskeyt\xE4</button>\r\n
+        \                       </div>\r\n                        <div class=\"col-sm-3\">\r\n
+        \                           <button data-action=\"stop\" class=\"btn btn-primary
+        btn-block\">Lopeta</button>\r\n                        </div>\r\n                        <div
+        class=\"col-sm-3\">\r\n                            <button data-action=\"other\"
+        class=\"btn btn-primary btn-block\">Muu muutos</button>\r\n                        </div>\r\n
+        \                       <div class=\"col-sm-3\">\r\n                            <button
+        data-action=\"kimppa\" class=\"btn btn-primary btn-block\">Perusta kimppa</button>\r\n
+        \                       </div>\r\n                    </div>\r\n                </div>\r\n
+        \           </div>\r\n\r\n            <div class=\"modal-footer\">\r\n                <div
+        class=\"form-buttons text-center\">\r\n                    <button class=\"btn
+        btn-primary\" data-action=\"exit\">Poistu</button>\r\n                </div>\r\n
+        \           </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n\r\n\r\n<script
+        id=\"invoice-details-template\" type=\"text/x-kendo-template\">\r\n\r\n\r\n<td></td>\r\n<td
+        colspan=\"8\">\r\n\t<article class=\"invoice-details\">\r\n\t\t<table class=\"table\">\r\n\t\t\t<tr>\r\n\t\t\t\t<th>S\xE4ili\xF6</th>\r\n\t\t\t\t<th>Noutoaika</th>\r\n\t\t\t\t<th>Palvelun
+        suorittaja</th>\r\n\t\t\t\t<th>Vasteaika</th>\r\n\t\t\t</tr>\r\n\t\t\t<tr>\r\n\t\t\t\t<td>#:
+        signature.bin #</td>\r\n\t\t\t\t<td>#: kendo.toString(kendo.parseDate(signature.pickupDate),
+        'g') #</td>\r\n\t\t\t\t<td>#: signature.executer ? signature.executer : ''
+        #</td>\r\n\t\t\t\t<td></td>\r\n\t\t\t</tr>\r\n\r\n\t\t\t<tr>\r\n\t\t\t\t<th>RFID</th>\r\n\t\t\t\t<th>Vastaanottoaika</th>\r\n\t\t\t\t<th>Purkaja</th>\r\n\t\t\t\t<th></th>\r\n\t\t\t</tr>\r\n\t\t\t<tr>\r\n\t\t\t\t<td>#:
+        signature.rfid ? signature.rfid : '' #</td>\r\n\t\t\t\t<td>#: signature.receiveDate
+        ? kendo.toString(kendo.parseDate(signature.receiveDate), 'g') : '' #</td>\r\n\t\t\t\t<td>#:
+        signature.unloader ? signature.unloader : '' #</td>\r\n\t\t\t\t<td>#: formatInterval(signature.timeToUnload)
+        #</td>\r\n\t\t\t</tr>\r\n\r\n\t\t\t<tr>\r\n\t\t\t\t<th>Tuhoustodistus</th>\r\n\t\t\t\t<th>Tuhousaika</th>\r\n\t\t\t\t<th>Vastuullinen
+        tuhoaja</th>\r\n\t\t\t\t<th></th>\r\n\t\t\t</tr>\r\n\t\t\t<tr>\r\n\t\t\t\t<td>#:
+        signature.taskId #</td>\r\n\t\t\t\t<td>#: signature.destroyDate ? kendo.toString(kendo.parseDate(signature.destroyDate),
+        'g') : '' #</td>\r\n\t\t\t\t<td>#: signature.destroyer ? signature.destroyer
+        : '' #</td>\r\n\t\t\t\t<td>#: formatInterval(signature.timeToDestroy) #</td>\r\n\t\t\t</tr>\r\n\r\n\t\t\t<tr>\r\n\t\t\t\t<th>Materiaali</th>\r\n\t\t\t\t\r\n\t\t\t\t<th
+        colspan=\"3\">Huom</th>\r\n\t\t\t\t\r\n\t\t\t</tr>\r\n\t\t\t<tr>\r\n\t\t\t\t<td>#:
+        signature.material #</td>\r\n\t\t\t\t\r\n\t\t\t\t<td colspan=\"3\" rowspan=\"3\">#:
+        signature.comment #</td>\r\n\t\t\t\t\r\n\t\t\t</tr>\r\n\r\n\t\t\t<tr>\r\n\t\t\t\t<th>kg/kpl</th>\r\n\t\t\t</tr>\r\n\t\t\t<tr>\r\n\t\t\t\t<td>#:
+        signature.amount ? signature.amount : '' #</td>\r\n\t\t\t</tr>\r\n\t\t</table>\r\n\t</article>\r\n</td>\r\n</script>\r\n
+        \   </div>\r\n\r\n    <footer>\r\n\t<div>\r\n\t\t<div class=\"container\">\r\n\t\t\t<div
+        class=\"row\">\r\n\t\t\t\t<div class=\"col-sm-4 col-md-4\">\r\n\t\t\t\t\t<address>\r\n\t\t\t\t\t\tJ\xE4tekukko
+        Oy<br>\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t</address>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div
+        class=\"col-sm-4 col-md-4\">\r\n\t\t\t\t\tAsiakaspalvelu \u2022 017 3680 152
+        \u2022 asiakaspalvelu@jatekukko.fi\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"col-sm-3
+        col-md-3\">\r\n\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\r\n\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t\t\r\n\t\t\t\r\n\t\t\t\r\n\t\t\t\r\n\t\t</div>\r\n\t</div>\r\n\r\n\t<div>\r\n\t\t<div
+        class=\"container\">\r\n\t\t\t<div class=\"row\">\r\n\t\t\t\t<div class=\"col-sm-6
+        col-md-6\">\r\n\t\t\t\t\t J\xE4tekukko Oy\r\n\t\t\t\t</div>\r\n\t\t\t\t<div
+        class=\"col-sm-6 col-md-6\">\r\n\t\t\t\t\t\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n</footer>\r\n\r\n
+        \   <!-- JQuery -->\r\n<script src=\"//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js\"></script>\r\n<script>window.jQuery
+        || document.write('<script src=\"js/vendor/jquery-1.10.2.min.js\"><\\/script>')</script>\r\n<script
+        src=\"/jatekukko/js/jquery.validate.min.js\"></script>\r\n<script src=\"/jatekukko/js/jquery.number.min.js\"></script>\r\n\r\n<!--
+        JQuery Globalize -->\r\n<script src=\"/jatekukko/js/globalize/cldr.js\"></script>\r\n<script
+        src=\"/jatekukko/js/globalize/cldr/event.js\"></script>\r\n<script src=\"/jatekukko/js/globalize/cldr/supplemental.js\"></script>\r\n<script
+        src=\"/jatekukko/js/globalize/globalize.js\"></script>\r\n<script src=\"/jatekukko/js/globalize/globalize/message.js\"></script>\r\n\r\n<!--
+        JS Cookie -->\r\n<script src=\"/jatekukko/js/js-cookie/js.cookie.js\"></script>\r\n\r\n<script
+        src=\"/jatekukko/js/moment/moment-with-locales.min.js\"></script>\r\n<script>moment.locale('fi_FI'.replace('_',
+        '-'));</script>\r\n\r\n<!-- Webshim -->\r\n<!--[if lt IE 10]>\r\n\t<script
+        src=\"/jatekukko/js/js-webshim/minified/polyfiller.js\"></script>\r\n\t<script>\r\n\twebshim.setOptions('extendNative',
+        true);\r\n\twebshim.polyfill('forms');\r\n\t</script>\r\n<![endif]-->\r\n\r\n<!--
+        html5shiv -->\r\n<!--[if lt IE 9]>\r\n    <script src=\"/jatekukko/js/html5shiv.min.js\"></script>\r\n<![endif]-->\r\n\r\n<!--
+        DHTMLX -->\r\n<script src=\"/jatekukko/js/dhtmlxSuite/sources/dhtmlxCommon/codebase/dhtmlxcommon.js\"></script>\r\n<script
+        src=\"/jatekukko/js/dhtmlxSuite/sources/dhtmlxCommon/codebase/dhtmlxcore.js\"></script>\r\n<script
+        src=\"/jatekukko/js/dhtmlxSuite/sources/dhtmlxForm/codebase/dhtmlxform.js\"></script>\r\n<script
+        src=\"/jatekukko/js/dhtmlxSuite/sources/dhtmlxForm/codebase/ext/dhtmlxform_item_calendar.js\"></script>\r\n<script
+        src=\"/jatekukko/js/dhtmlxSuite/sources/dhtmlxForm/codebase/ext/dhtmlxform_dyn.js\"></script>\r\n<script
+        src=\"/jatekukko/js/dhtmlxSuite/sources/dhtmlxCalendar/codebase/dhtmlxcalendar.js\"></script>\r\n<script
+        src=\"/jatekukko/js/dhtmlxSuite/sources/dhtmlxToolbar/codebase/dhtmlxtoolbar.js\"></script>\r\n<script
+        src=\"/jatekukko/js/dhtmlxSuite/sources/dhtmlxDataView/codebase/dhtmlxdataview.js\"></script>\r\n<script
+        src=\"/jatekukko/js/dhtmlxSuite/sources/dhtmlxGrid/codebase/dhtmlxgrid.js\"></script>\r\n<script
+        src=\"/jatekukko/js/dhtmlxSuite/sources/dhtmlxMessage/codebase/dhtmlxmessage.js\"></script>\r\n\r\n<!--
+        Overwrite DHTMLX dhxform_btn role. This must be loaded after DHTMLX! -->\r\n<script
+        src=\"/jatekukko/js/dhtmlx_form_postload.js?timestamp=20230505-0729\"></script>\r\n\r\n<!--
+        \ Kendo UI -->\r\n<script src=\"/jatekukko/js/kendoui/kendo.core.min.js\"></script>\t\r\n<script
+        src=\"/jatekukko/js/kendoui/kendo.data.min.js\"></script>\r\n<script src=\"/jatekukko/js/kendoui/kendo.dom.min.js\"></script>\r\n<script
+        src=\"/jatekukko/js/kendoui/kendo.popup.min.js\"></script>\r\n<script src=\"/jatekukko/js/kendoui/kendo.list.min.js\"></script>\r\n<script
+        src=\"/jatekukko/js/kendoui/kendo.fx.min.js\"></script>\r\n<script src=\"/jatekukko/js/kendoui/kendo.userevents.min.js\"></script>\r\n<script
+        src=\"/jatekukko/js/kendoui/kendo.draganddrop.min.js\"></script>\r\n<script
+        src=\"/jatekukko/js/kendoui/kendo.resizable.min.js\"></script>\r\n<script
+        src=\"/jatekukko/js/kendoui/kendo.editable.min.js\"></script>\r\n<script src=\"/jatekukko/js/kendoui/kendo.binder.min.js\"></script>\r\n<script
+        src=\"/jatekukko/js/kendoui/kendo.validator.min.js\"></script>\r\n<script
+        src=\"/jatekukko/js/kendoui/kendo.mobile.scroller.min.js\"></script>\r\n<script
+        src=\"/jatekukko/js/kendoui/kendo.virtuallist.min.js\"></script>\r\n<script
+        src=\"/jatekukko/js/kendoui/kendo.columnsorter.min.js\"></script>\r\n<script
+        src=\"/jatekukko/js/kendoui/cultures/kendo.culture.fi-FI.min.js\"></script>\r\n<script
+        src=\"/jatekukko/js/kendoui/cultures/kendo.culture.sv-FI.min.js\"></script>\r\n\r\n<!--
+        Kendo UI, actual components -->\r\n<script src=\"/jatekukko/js/kendoui/kendo.dropdownlist.min.js\"></script>\r\n<script
+        src=\"/jatekukko/js/kendoui/kendo.numerictextbox.min.js\"></script>\r\n<script
+        src=\"/jatekukko/js/kendoui/kendo.grid.min.js\"></script>\r\n<script src=\"/jatekukko/js/kendoui/kendo.multiselect.min.js\"></script>\r\n<script
+        src=\"/jatekukko/js/kendoui/kendo.treelist.min.js\"></script>\r\n\r\n<script
+        src=\"/jatekukko/js/kendoui/messages/kendo.messages.fi-FI.min.js\"></script>\r\n<!--
+        Set kendo to right culture -->\r\n<script>\r\n\tkendo.culture(\"fi_FI\".replace('_',
+        '-'));\r\n</script>\r\n\r\n\r\n<!-- ArcGIS -->\r\n<script>\r\n    var dojoConfig
+        = {\r\n        locale: 'fi_FI'.toLowerCase().replace('_', '-')\r\n    };\r\n</script>\r\n<script
+        src=\"https://js.arcgis.com/3.39/\"></script>\r\n\r\n<!-- Bootstrap -->\r\n<script
+        src=\"/jatekukko/js/bootstrap/bootstrap.min.js\"></script>\r\n\r\n<!-- Custom
+        -->\r\n<script src=\"/jatekukko/js/dhtmlx_ext.js?timestamp=20230505-0729\"></script>\r\n<script
+        src=\"/jatekukko/js/dhtmlx_ext_week_calendar.js?timestamp=20230505-0729\"></script>\r\n<script
+        src=\"/jatekukko/js/common.js?timestamp=20230505-0729\"></script>\r\n<script
+        src=\"/jatekukko/js/validators.js?timestamp=20230505-0729\"></script>\r\n<script
+        src=\"/jatekukko/js/google.js?timestamp=20230505-0729\"></script>\r\n<script
+        src=\"/jatekukko/js/shared/timeout.js?timestamp=20230505-0729\"></script>\r\n<script
+        src=\"/jatekukko/js/shared/vimeo.js?timestamp=20230505-0729\"></script>\r\n\r\n<script
+        src=\"/jatekukko/js/sahas/application.js?timestamp=20230505-0729\"></script>\r\n<script
+        src=\"/jatekukko/js/sahas/login.js?timestamp=20230505-0729\"></script>\r\n<script
+        src=\"/jatekukko/js/sahas/service_windows.js?timestamp=20230505-0729\"></script>\r\n<script
+        src=\"/jatekukko/js/sahas/shoppingcart.js?timestamp=20230505-0729\"></script>\r\n<script
+        src=\"/jatekukko/js/sahas/service_akp.js?timestamp=20230505-0729\"></script>\r\n\r\n<script
+        src=\"/jatekukko/js/sahas/tabs/service-list.js?timestamp=20230505-0729\"></script>\r\n\r\n<script
+        src=\"/jatekukko/js/sahas/tabs/customer-data.js?timestamp=20230505-0729\"></script>\r\n\r\n\r\n<script
+        src=\"/jatekukko/js/sahas/tabs/feedback.js?timestamp=20230505-0729\"></script>\r\n\r\n<script
+        src=\"/jatekukko/js/sahas/tabs/user-details.js?timestamp=20230505-0729\"></script>\r\n<script
+        src=\"/jatekukko/js/sahas/tabs/login-page.js?timestamp=20230505-0729\"></script>\r\n\r\n\r\n<script
+        src=\"/jatekukko/js/sahas/tabs/invoice-list.js?timestamp=20230505-0729\"></script>\r\n\r\n\r\n<script
+        src=\"/jatekukko/js/sahas/windows/lost-password-window.js?timestamp=20230505-0729\"></script>\r\n<script
+        src=\"/jatekukko/js/sahas/windows/change-join-type-window.js?timestamp=20230505-0729\"></script>\r\n<script
+        src=\"/jatekukko/js/sahas/windows/akp-location-window.js?timestamp=20230505-0729\"></script>\r\n<script
+        src=\"/jatekukko/js/sahas/windows/bookup-window.js?timestamp=20230505-0729\"></script>\r\n<script
+        src=\"/jatekukko/js/sahas/windows/feedback-window.js?timestamp=20230505-0729\"></script>\r\n<script
+        src=\"/jatekukko/js/sahas/windows/password-window.js?timestamp=20230505-0729\"></script>\r\n<script
+        src=\"/jatekukko/js/sahas/windows/change-window.js?timestamp=20230505-0729\"></script>\r\n<script
+        src=\"/jatekukko/js/sahas/windows/terminate-window.js?timestamp=20230505-0729\"></script>\r\n<script
+        src=\"/jatekukko/js/sahas/windows/create-order-window.js?timestamp=20230505-0729\"></script>\r\n<script
+        src=\"/jatekukko/js/sahas/windows/form-window.js?timestamp=20230505-0729\"></script>\r\n<script
+        src=\"/jatekukko/js/sahas/windows/compost-window.js?timestamp=20230505-0729\"></script>\r\n<script
+        src=\"/jatekukko/js/sahas/windows/register-window.js?timestamp=20230505-0729\"></script>\r\n<script
+        src=\"/jatekukko/js/sahas/windows/create-new-user-window.js?timestamp=20230505-0729\"></script>\r\n<script
+        src=\"/jatekukko/js/sahas/windows/email-phone-window.js?timestamp=20230505-0729\"></script>\r\n<script
+        src=\"/jatekukko/js/sahas/windows/kimpaksi-window.js?timestamp=20230505-0729\"></script>\r\n<script
+        src=\"/jatekukko/js/sahas/windows/order-window.js?timestamp=20230505-0729\"></script>\r\n<script
+        src=\"/jatekukko/js/sahas/windows/resign-kimppa-window.js?timestamp=20230505-0729\"></script>\r\n<script
+        src=\"/jatekukko/js/sahas/windows/collection-schedule-window.js?timestamp=20230505-0729\"></script>\r\n\r\n\r\n\t<script
+        src=\"/jatekukko/js/sahas/windows/repsikka-window.js?timestamp=20230505-0729\"></script>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\t<script
+        src=\"/jatekukko/js/sahas/windows/waste-water-window.js?timestamp=20230505-0729\"></script>\r\n\r\n\r\n<script
+        src=\"/jatekukko/js/components/tabbar.js?timestamp=20230505-0729\"></script>\r\n<script
+        src=\"/jatekukko/js/components/terms-window.js?timestamp=20230505-0729\"></script>\r\n<script
+        src=\"/jatekukko/js/components/terms-banner.js?timestamp=20230505-0729\"></script>\r\n<script
+        src=\"/jatekukko/js/components/video-popup.js?timestamp=20230505-0729\"></script>\r\n\r\n\r\n\r\n<script
+        type=\"text/javascript\">\r\n\tvar baseurl = \"/jatekukko\";\r\n\r\n\twindow.dhx_globalImgPath
+        = \"/jatekukko/js/dhtmlxSuite/dhtmlxCombo/codebase/imgs/\";\r\n\r\n\tsiteLanguage=
+        \"fi_FI\";\r\n\t\r\n\t\r\n</script>\r\n\r\n<script src=\"/jatekukko/js/sahas/main.js?timestamp=20230505-0729\"></script>\r\n\r\n\r\n<script>\r\n
+        \ (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){\r\n
+        \ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),\r\n
+        \ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)\r\n
+        \ })(window,document,'script','//www.google-analytics.com/analytics.js','ga');\r\n\r\n
+        \ ga('create', 'UA-35956822-11', 'auto');\r\n  ga('send', 'pageview');\r\n</script>\r\n\r\n\r\n\r\n
+        \       <script>\r\n\t\t$('section#login .nav-tabs a').click(function (e)
+        {\r\n\t\t  e.preventDefault()\r\n\t\t  $(this).tab('show')\r\n\t\t});\r\n\t</script>\r\n\r\n
+        \   <script>\r\n        if (!application.isBrowserCompatible()) {\r\n            $('#browser-incompatible-message').show();\r\n
+        \       }\r\n\r\n        function setBodyPaddingForFooter() {\r\n            var
+        footerHeight = $('body > footer').height();\r\n            $('body').css('padding-bottom',
+        footerHeight + 'px');\r\n        }\r\n\r\n        $(window).on('resize', setBodyPaddingForFooter);\r\n
+        \       setBodyPaddingForFooter();\r\n    </script>\r\n\r\n    \r\n    <!--
+        begin SnapEngage code -->\r\n    <script type=\"text/javascript\">\r\n        (function()
+        {\r\n            var se = document.createElement('script'); se.type = 'text/javascript';
+        se.async = true;\r\n            se.src = 'https://storage.googleapis.com/snapengage-eu/js/c90e296a-9fa3-4879-a559-f74aae6e7ec4.js';\r\n
+        \           var done = false;\r\n            se.onload = se.onreadystatechange
+        = function() {\r\n                if (!done&&(!this.readyState||this.readyState==='loaded'||this.readyState==='complete'))
+        {\r\n                    done = true;\r\n                    /* Place your
+        SnapEngage JS API code below */\r\n                    /* SnapEngage.allowChatSound(true);
+        Example JS API: Enable sounds for Visitors. */\r\n                }\r\n            };\r\n
+        \           var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(se,
+        s);\r\n        })();\r\n    </script>\r\n    <!-- end SnapEngage code -->\r\n
+        \   \r\n    \r\n    </body>\r\n    </html>\r\n\r\n"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Language:
+      - fi-FI
+      Content-Security-Policy:
+      - frame-ancestors 'none'
+      Content-Type:
+      - text/html;charset=utf-8
+      Date:
+      - Fri, 26 May 2023 07:58:07 GMT
+      Server:
+      - nginx
+      Strict-Transport-Security:
+      - max-age=63072000
+      Transfer-Encoding:
+      - chunked
+      X-Frame-Options:
+      - DENY
+      X-Powered-By:
+      - 'Servlet/4.0 JSP/2.3 (Payara Server  5.2022.5 #badassfish Java/Eclipse OpenJ9/1.8)'
+    status:
+      code: 200
+      message: OK
+    url: https://tilasto.jatekukko.fi/jatekukko/sahas.jsp
+version: 1

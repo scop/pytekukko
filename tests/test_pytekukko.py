@@ -85,20 +85,18 @@ async def fixture_client() -> Pytekukko:
 
 
 @pytest.mark.vcr()
-async def test_login(client: Pytekukko) -> None:
-    """Test login."""
+async def test_login_logout(client: Pytekukko) -> None:
+    """Test login followed by logout."""
     async with client.session:
-        result = await client.login()
-    assert result
+        assert await client.login()
+        await client.logout()  # No exception counts as success here
 
 
 @pytest.mark.vcr()
 async def test_logout(client: Pytekukko) -> None:
-    """Test logout."""
-    # TODO(scop): would be better to test from a logged in session
+    """Test bare logout."""
     async with client.session:
-        await client.logout()
-    # No exception counts as success here
+        await client.logout()  # No exception counts as success here
 
 
 @pytest.mark.vcr()
