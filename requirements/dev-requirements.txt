@@ -1,7 +1,7 @@
 -e .[examples]
 -r test-requirements.txt
 
-black==23.1.0
+black==23.7.0
 mypy==1.0.1
 nox
 ruff==0.0.277
