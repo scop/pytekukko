@@ -13,7 +13,7 @@ from aiohttp import ClientResponse, ClientResponseError, ClientSession
 from .exceptions import UnexpectedResponseStructureError
 from .models import CustomerData, InvoiceHeader, Service
 
-__version__ = "0.13.0"
+__version__ = "0.14.0"
 DEFAULT_BASE_URL = "https://tilasto.jatekukko.fi/jatekukko/"
 
 SERVICE_TIMEZONE = ZoneInfo("Europe/Helsinki")

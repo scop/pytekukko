@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.14.0](https://github.com/scop/pytekukko/compare/v0.13.0...v0.14.0) (2023-07-25)
+
+
+### Features
+
+* **python:** drop support for 3.9 ([6690293](https://github.com/scop/pytekukko/commit/669029352c047f726158388232d601f3ab564b47))
+
+
+### Performance Improvements
+
+* avoid some looped list appends ([85b03fb](https://github.com/scop/pytekukko/commit/85b03fb07ea9d8e420f3f6cd48513f6fc183affc))
+
 ## [0.13.0](https://github.com/scop/pytekukko/compare/v0.12.1...v0.13.0) (2023-02-03)
 
 
