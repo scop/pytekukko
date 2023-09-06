@@ -26,7 +26,7 @@ jobs:
     permissions:
       id-token: write
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           ref: ${{ needs.release_please.outputs.sha }}
       - name: Create release assets
