@@ -22,9 +22,7 @@ def test(session: nox.Session) -> None:
 
     prefix += " -W error"
     # https://github.com/aio-libs/aiohttp/pull/7302
-    prefix += (
-        " -W default:datetime.utcfromtimestamp:DeprecationWarning:aiohttp.cookiejar"
-    )
+    prefix += " -W default:datetime.datetime.utcfromtimestamp:DeprecationWarning:aiohttp.cookiejar"
     prefix += " -m pytekukko.examples"
     session.run(*f"{prefix}.print_collection_schedules --help".split(), silent=True)
     session.run(*f"{prefix}.print_invoice_headers --help".split(), silent=True)
