@@ -13,7 +13,6 @@ def test(session: nox.Session) -> None:
     if int(cast(str, session.python).rpartition(".")[2]) >= 12:  # noqa: PLR2004
         session.env.update(
             AIOHTTP_NO_EXTENSIONS="1",
-            FROZENLIST_NO_EXTENSIONS="1",
         )
     session.install(".[examples]", "-r", "requirements/test-requirements.txt")
 
