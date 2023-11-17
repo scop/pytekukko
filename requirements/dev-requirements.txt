@@ -4,4 +4,4 @@
 black==23.7.0
 mypy==1.6.1
 nox
-ruff==0.0.280
+ruff==0.1.6
