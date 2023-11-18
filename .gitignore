@@ -3,7 +3,10 @@
 /.env
 /.nox/
 /.python-version
+/.rtx.*.local.toml
+/.rtx.local.toml
 /build/
 /dist/
 /service_account.json
+/venv/
 __pycache__/
