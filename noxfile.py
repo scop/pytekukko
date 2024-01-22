@@ -29,6 +29,11 @@ def test(session: nox.Session) -> None:
             "Setting custom ClientSession._resolve_charset attribute is discouraged:"
             "DeprecationWarning:aiohttp.client"
         ),
+        "-W",
+        (  # https://github.com/dateutil/dateutil/pull/1285, dateutil <= 2.8.2
+            "default:datetime.datetime.utcfromtimestamp:"
+            "DeprecationWarning:dateutil.tz.tz"
+        ),
     ]
 
     cmd = ["python3", "-X", "dev", "-bb"]
