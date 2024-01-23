@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.16.0](https://github.com/scop/pytekukko/compare/v0.15.0...v0.16.0) (2024-01-23)
+
+
+### Features
+
+* **examples:** more -collection-schedules icalendar metadata ([1aee758](https://github.com/scop/pytekukko/commit/1aee758181a4dd1d5e469ef0c9a782d63547fdce))
+
 ## [0.15.0](https://github.com/scop/pytekukko/compare/v0.14.0...v0.15.0) (2024-01-22)
 
 
