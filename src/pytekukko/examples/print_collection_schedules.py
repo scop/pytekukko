@@ -37,6 +37,11 @@ async def run_example() -> None:
         cal = icalendar.Calendar()
         cal.add("PRODID", f"pytekukko/{pytekukko.__version__}")
         cal.add("VERSION", "2.0")
+        cal.add("NAME", "Jätekukko collections")
+        cal.add("X-WR-CALNAME", "Jätekukko collections")
+        cal.add("URL", "https://tilasto.jatekukko.fi/indexservice2.jsp")
+        cal.add("X-WR-TIMEZONE", "Europe/Helsinki")
+        cal.add("METHOD", "PUBLISH")
         for service, schedule in data:
             for date in schedule:
                 event = icalendar.Event()
@@ -45,6 +50,7 @@ async def run_example() -> None:
                 event.add("DTSTAMP", now)
                 event.add("DTSTART", date)
                 event.add("DTEND", date + timedelta(days=1))
+                event.add("URL", "https://tilasto.jatekukko.fi/indexservice2.jsp")
                 cal.add_component(event)
         sys.stdout.buffer.write(cal.to_ical())
     else:
