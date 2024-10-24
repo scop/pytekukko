@@ -10,11 +10,11 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
         with:
           ref: ${{ github.event.pull_request.head.sha }}
           fetch-depth: 0
-      - uses: actions/cache@v4
+      - uses: actions/cache@6849a6489940f00c2f30c0fb92c6274307ccb58a # v4
         with:
           path: |
             ~/.cache/pip
@@ -48,8 +48,8 @@ jobs:
           - "3.13.0-alpha - 3.13"
           - "pypy-3.10"
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/cache@v4
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+      - uses: actions/cache@6849a6489940f00c2f30c0fb92c6274307ccb58a # v4
         with:
           path: |
             ~/.cache/pip
@@ -60,8 +60,8 @@ jobs:
               'pyproject.toml'
             ) }}
           restore-keys: test-${{ runner.os }}-${{ matrix.python-version }}-
-      - uses: fjwillemsen/setup-nox2@v3.0.0
-      - uses: actions/setup-python@v5
+      - uses: fjwillemsen/setup-nox2@fc5420448a3f1145b0128f86b1837e82841684a4 # v3.0.0
+      - uses: actions/setup-python@0b93645e9fea7318ecaed2b359559ac225c90a2b # v5
         with:
           python-version: ${{ matrix.python-version }}
       - name: Run tests

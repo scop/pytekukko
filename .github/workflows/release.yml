@@ -9,7 +9,7 @@ jobs:
   release_please:
     runs-on: ubuntu-latest
     steps:
-      - uses: google-github-actions/release-please-action@v4
+      - uses: google-github-actions/release-please-action@e4dc86ba9405554aeba3c6bb2d169500e7d3b4ee # v4
         id: release_please
         with:
           config-file: .github/release-please-config.json
@@ -25,7 +25,7 @@ jobs:
     permissions:
       id-token: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
         with:
           ref: ${{ needs.release_please.outputs.sha }}
       - name: Create release assets
@@ -34,4 +34,4 @@ jobs:
           python3 -m pip install -U build
           python3 -m build
           ls dist
-      - uses: pypa/gh-action-pypi-publish@v1.8.11
+      - uses: pypa/gh-action-pypi-publish@2f6f737ca5f74c637829c0f5c3acd0e29ea5e8bf # v1.8.11
