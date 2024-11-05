@@ -5,8 +5,8 @@
 /.mise.local.toml
 /.nox/
 /.python-version
+/.venv/
 /build/
 /dist/
 /service_account.json
-/venv/
 __pycache__/
