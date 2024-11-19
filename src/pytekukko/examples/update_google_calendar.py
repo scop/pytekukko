@@ -18,7 +18,7 @@ import zoneinfo
 from collections.abc import Mapping
 from typing import Any, NamedTuple, cast
 
-from google.oauth2 import service_account  # type: ignore[import-untyped]
+from google.oauth2 import service_account
 from googleapiclient.discovery import build  # type: ignore[import-untyped]
 
 from pytekukko.examples import arg_environ_default, example_argparser, example_client
@@ -166,7 +166,7 @@ async def run_example() -> None:
 
     client, cookie_jar, cookie_jar_path = example_client(args)
 
-    credentials = service_account.Credentials.from_service_account_file(
+    credentials = service_account.Credentials.from_service_account_file(  # type: ignore[no-untyped-call]
         args.google_service_account_file,
     )
 
