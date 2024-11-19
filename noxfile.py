@@ -7,7 +7,7 @@ import nox
 nox.options.error_on_external_run = True
 
 
-@nox.session(python=[f"{py}3.{x}" for py in ("", "pypy") for x in range(10, 14)])
+@nox.session(python=[f"{py}3.{x}" for py in ("", "pypy") for x in range(10, 15)])
 def test(session: nox.Session) -> None:
     """Run tests."""
     py_minor = int(cast(str, session.python).rpartition(".")[2])
@@ -18,6 +18,11 @@ def test(session: nox.Session) -> None:
     session.install(".[examples]", "-r", "requirements/test-requirements.txt")
 
     known_deprecations = [
+        "-W",
+        (  # https://github.com/pytest-dev/pytest-asyncio/issues/929, slated for 1.0
+            "default:'asyncio.iscoroutinefunction':"
+            "DeprecationWarning:pytest_asyncio.plugin"
+        ),
         "-W",
         (  # https://github.com/aio-libs/aiohttp/pull/7302, included in aiohttp >= 3.9
             "default:datetime.datetime.utcfromtimestamp:"
