@@ -61,10 +61,9 @@ jobs:
               'pyproject.toml'
             ) }}
           restore-keys: test-${{ runner.os }}-${{ matrix.python-version }}-
-      - uses: fjwillemsen/setup-nox2@fc5420448a3f1145b0128f86b1837e82841684a4 # v3.0.0
-      - uses: actions/setup-python@0b93645e9fea7318ecaed2b359559ac225c90a2b # v5.3.0
+      - uses: wntrblm/nox@1199ab3892b1a941f80ff052083d0a571abed79d # 2024.10.09
         with:
-          python-version: ${{ matrix.python-version }}
+          python-versions: ${{ matrix.python-version }}
       - name: Run tests
         run: |
           v="${{ matrix.python-version }}"
