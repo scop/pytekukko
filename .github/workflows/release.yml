@@ -28,10 +28,12 @@ jobs:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           ref: ${{ needs.release_please.outputs.sha }}
+      - uses: astral-sh/setup-uv@38f3f104447c67c051c4a08e39b64a148898af3a # v4.2.0
       - name: Create release assets
         run: |
           set -euxo pipefail
-          python3 -m pip install -U build
-          python3 -m build
+          uv venv
+          uv pip install --upgrade build
+          uv run python3 -m build
           ls dist
       - uses: pypa/gh-action-pypi-publish@2f6f737ca5f74c637829c0f5c3acd0e29ea5e8bf # v1.8.11

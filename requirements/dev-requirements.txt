@@ -2,5 +2,5 @@
 -r test-requirements.txt
 
 mypy==1.8.0
-nox
+nox[uv]
 ruff==0.7.4
