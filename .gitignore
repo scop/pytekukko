@@ -9,4 +9,5 @@
 /build/
 /dist/
 /service_account.json
+/uv.lock
 __pycache__/
