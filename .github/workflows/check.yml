@@ -14,26 +14,20 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.sha }}
           fetch-depth: 0
-      - uses: actions/cache@6849a6489940f00c2f30c0fb92c6274307ccb58a # v4.1.2
+      - uses: astral-sh/setup-uv@38f3f104447c67c051c4a08e39b64a148898af3a # v4.2.0
         with:
-          path: |
-            ~/.cache/pip
-            .venv
-          key: >-
-            lint-${{ hashFiles(
-                '.github/requirements.txt',
-                'requirements/dev-requirements.txt',
-                'requirements/test-requirements.txt',
-                'pyproject.toml'
-            ) }}
-          restore-keys: lint-
+          enable-cache: true
+          cache-dependency-glob: |
+            .github/requirements.txt
+            requirements/dev-requirements.txt
+            requirements/test-requirements.txt
+            pyproject.toml
       - name: Install dependencies
         run: |
           set -euxo pipefail
-          # venv due to mypy through pre-commit, venv-run
-          python3 -m venv .venv
-          .venv/bin/python3 -m pip install -Ur .github/requirements.txt
-      - run: .venv/bin/gitlint --commits "origin/$GITHUB_BASE_REF..HEAD"
+          uv venv
+          uv pip install --upgrade --requirements .github/requirements.txt
+      - run: uv run gitlint --commits "origin/$GITHUB_BASE_REF..HEAD"
         if: github.event_name == 'pull_request'
       - uses: pre-commit/action@2c7b3805fd2a0fd8c1884dcaebf91fc102a13ecd # v3.0.1
 
@@ -50,17 +44,12 @@ jobs:
           - "pypy-3.10"
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
-      - uses: actions/cache@6849a6489940f00c2f30c0fb92c6274307ccb58a # v4.1.2
+      - uses: astral-sh/setup-uv@38f3f104447c67c051c4a08e39b64a148898af3a # v4.2.0
         with:
-          path: |
-            ~/.cache/pip
-            .nox
-          key: >-
-            test-${{ runner.os }}-${{ matrix.python-version }}-${{ hashFiles(
-              'requirements/test-requirements.txt',
-              'pyproject.toml'
-            ) }}
-          restore-keys: test-${{ runner.os }}-${{ matrix.python-version }}-
+          enable-cache: true
+          cache-dependency-glob: |
+            pyproject.toml
+            requirements/test-requirements.txt
       - uses: wntrblm/nox@1199ab3892b1a941f80ff052083d0a571abed79d # 2024.10.09
         with:
           python-versions: ${{ matrix.python-version }}
@@ -71,4 +60,5 @@ jobs:
           v=${v//-}   # "pypy-3.9" -> "pypy3.9"
           nox --force-color --python "$v"
         env:
+          NOX_DEFAULT_VENV_BACKEND: uv
           PYTEST_ADDOPTS: --vcr-record=none --color=yes
