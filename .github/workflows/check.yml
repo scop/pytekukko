@@ -12,23 +12,17 @@ jobs:
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
-          ref: ${{ github.event.pull_request.head.sha }}
-          fetch-depth: 0
+          fetch-depth: 0 # for commit message checks
       - uses: astral-sh/setup-uv@887a942a15af3a7626099df99e897a18d9e5ab3a # v5.1.0
         with:
           cache-dependency-glob: |
-            .github/requirements.txt
             requirements/dev-requirements.txt
             requirements/test-requirements.txt
             pyproject.toml
-      - name: Install dependencies
-        run: |
-          set -euxo pipefail
-          uv venv
-          uv pip install --upgrade --requirements .github/requirements.txt
-      - run: uv run gitlint --commits "origin/$GITHUB_BASE_REF..HEAD"
-        if: github.event_name == 'pull_request'
-      - uses: pre-commit/action@2c7b3805fd2a0fd8c1884dcaebf91fc102a13ecd # v3.0.1
+      - uses: jdx/mise-action@249c01ba271e19fa76eede7f766161cc95ace489 # v2.1.10
+      - name: Check commit messages
+        run: lefthook run commit-msgs-on-pr-branch --no-tty
+        if: ${{ github.event_name == 'pull_request' }}
 
   test:
     runs-on: ubuntu-latest

@@ -1,10 +1,11 @@
 *.egg-info/
 *~
+/.config/mise.*.local.toml
+/.config/mise.local.toml
 /.env
 /.mise.*.local.toml
 /.mise.local.toml
 /.nox/
-/.python-version
 /.venv/
 /build/
 /dist/
