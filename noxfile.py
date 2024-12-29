@@ -17,6 +17,16 @@ def test(session: nox.Session) -> None:
             "DeprecationWarning:pytest_asyncio.plugin"
         ),
         "-W",
+        (  # https://github.com/pytest-dev/pytest-asyncio/issues/1025
+            r"default:'asyncio.get_event_loop_policy':"
+            "DeprecationWarning:pytest_asyncio.plugin"
+        ),
+        "-W",
+        (  # https://github.com/pytest-dev/pytest-asyncio/issues/1025
+            r"default:'asyncio.set_event_loop_policy':"
+            "DeprecationWarning:pytest_asyncio.plugin"
+        ),
+        "-W",
         (  # https://github.com/aio-libs/aiohttp/pull/7302, included in aiohttp >= 3.9
             "default:datetime.datetime.utcfromtimestamp:"
             "DeprecationWarning:aiohttp.cookiejar"
