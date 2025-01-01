@@ -1,5 +1,5 @@
 pytest>=6
   pytest-asyncio>=0.17
   pytest-vcr
-  vcrpy==6.0.0
+  vcrpy==7.0.0
 python-dotenv>=0.10,<2
