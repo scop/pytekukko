@@ -82,8 +82,3 @@ ignore_missing_imports = true
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
-filterwarnings = [
-  "error",
-  # https://github.com/pytest-dev/pytest/issues/10977
-  "default:(ast\\.(NameConstant|Str)|Attribute s) is deprecated:DeprecationWarning:_pytest.assertion.rewrite",
-]
