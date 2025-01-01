@@ -16,7 +16,9 @@
   "commitMessageTopic": "{{depName}}",
   "packageRules": [
     {
-      "matchFiles": ["requirements/test-requirements.txt"],
+      "matchFileNames": [
+        "requirements/test-requirements.txt"
+      ],
       "semanticCommitType": "test"
     }
   ]
