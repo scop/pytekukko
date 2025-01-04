@@ -1,13 +1,13 @@
 {
   "excludes": [
-    ".git/**",
-    ".github/release-please-manifest.json",
-    ".mypy_cache/**",
-    ".nox/**",
-    ".pytest_cache/**",
-    ".venv/**",
-    "CHANGELOG.md",
-    "tests/cassettes/**",
+    "/.git/**",
+    "/.github/release-please-manifest.json",
+    "/.mypy_cache/**",
+    "/.nox/**",
+    "/.pytest_cache/**",
+    "/.venv/**",
+    "/CHANGELOG.md",
+    "/tests/cassettes/**",
   ],
   "plugins": [
     "https://plugins.dprint.dev/json-0.19.4.wasm",
