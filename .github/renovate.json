@@ -16,6 +16,11 @@
   "commitMessageTopic": "{{depName}}",
   "packageRules": [
     {
+      "matchDepNames": ["committed"],
+      "overrideDatasource": "github-releases",
+      "overridePackageName": "crate-ci/committed"
+    },
+    {
       "matchFileNames": [
         "requirements/test-requirements.txt"
       ],

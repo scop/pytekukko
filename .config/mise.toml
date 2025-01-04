@@ -1,6 +1,4 @@
 [tools]
-# https://github.com/renovatebot/renovate/issues/30387
-# renovate: datasource=github-releases packageName=crate-ci/committed
 committed = "1.1.5"
 lefthook = "latest"
 typos = "1.29.4"
