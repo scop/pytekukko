@@ -2,7 +2,7 @@
 committed = "1.1.5"
 dprint = "0.48.0"
 lefthook = "latest"
-typos = "1.29.4"
+typos = "1.29.5"
 
 [env]
 NOX_DEFAULT_VENV_BACKEND = "uv"
