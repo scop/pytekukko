@@ -3,4 +3,3 @@
 
 mypy==1.8.0
 nox[uv]
-ruff==0.9.3
