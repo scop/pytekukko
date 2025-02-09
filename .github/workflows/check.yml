@@ -52,7 +52,7 @@ jobs:
           cache-dependency-glob: |
             pyproject.toml
             requirements/test-requirements.txt
-      - uses: wntrblm/nox@1199ab3892b1a941f80ff052083d0a571abed79d # 2024.10.09
+      - uses: wntrblm/nox@a74da2c766d4e656d6105639926c31f3aa4a6ca1 # 2025.02.09
         with:
           python-versions: ${{ matrix.python-version }}
       - name: Run tests
