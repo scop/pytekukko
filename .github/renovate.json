@@ -16,6 +16,10 @@
   "commitMessageTopic": "{{depName}}",
   "packageRules": [
     {
+      "matchDepNames": ["dprint/dprint-plugin-*"],
+      "groupName": "dprint plugins"
+    },
+    {
       "matchFileNames": [
         "requirements/test-requirements.txt"
       ],
