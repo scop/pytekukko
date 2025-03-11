@@ -12,11 +12,6 @@ def test(session: nox.Session) -> None:
 
     known_deprecations = [
         "-W",
-        (  # https://github.com/pytest-dev/pytest-asyncio/issues/929, slated for 1.0
-            "default:'asyncio.iscoroutinefunction':"
-            "DeprecationWarning:pytest_asyncio.plugin"
-        ),
-        "-W",
         (  # https://github.com/pytest-dev/pytest-asyncio/issues/1025
             r"default:'asyncio.get_event_loop_policy':"
             "DeprecationWarning:pytest_asyncio.plugin"
