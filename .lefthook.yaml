@@ -6,7 +6,7 @@ pre-commit:
         jobs:
           - name: dprint
             glob: "*.{json,jsonc,md,toml,yaml}"
-            run: mise exec -- dprint fmt {staged_files}
+            run: mise exec -- dprint fmt --allow-no-files {staged_files}
           - name: python-tools
             glob: "*.py"
             group:

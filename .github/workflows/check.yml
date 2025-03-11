@@ -64,4 +64,4 @@ jobs:
           nox --force-color --python "$v"
         env:
           NOX_DEFAULT_VENV_BACKEND: uv
-          PYTEST_ADDOPTS: --vcr-record=none --color=yes
+          PYTEST_ADDOPTS: --color=yes
