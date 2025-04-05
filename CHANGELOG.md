@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.16.1](https://github.com/scop/pytekukko/compare/v0.16.0...v0.16.1) (2025-04-05)
+
+
+### Performance Improvements
+
+* quote typing.cast type expressions ([76b5c56](https://github.com/scop/pytekukko/commit/76b5c566f49a2f385e89bbfaffaa3eb5dff1153e))
+
 ## [0.16.0](https://github.com/scop/pytekukko/compare/v0.15.0...v0.16.0) (2024-01-23)
 
 
