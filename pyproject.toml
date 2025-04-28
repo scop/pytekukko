@@ -23,13 +23,12 @@ classifiers = [
 dependencies = ["aiohttp~=3.4"]
 
 [project.optional-dependencies]
-examples = ["python-dotenv>=0.10,<2", "google-api-python-client~=2.0,>=2.0.2", "icalendar~=5.0"]
+examples = ["python-dotenv>=0.10,<2", "icalendar~=5.0"]
 
 [project.scripts]
 pytekukko-collection-schedules = "pytekukko.examples.print_collection_schedules:main [examples]"
 pytekukko-invoice-headers = "pytekukko.examples.print_invoice_headers:main [examples]"
 pytekukko-next-collections = "pytekukko.examples.print_next_collections:main [examples]"
-pytekukko-update-google-calendar = "pytekukko.examples.update_google_calendar:main [examples]"
 
 [project.urls]
 Homepage = "https://github.com/scop/pytekukko"

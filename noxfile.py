@@ -61,9 +61,3 @@ def test(session: nox.Session) -> None:
         "--help",
         silent=True,
     )
-    session.run(
-        *cmd,
-        "pytekukko.examples.update_google_calendar",
-        "--help",
-        silent=True,
-    )

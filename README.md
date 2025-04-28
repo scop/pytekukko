@@ -35,8 +35,6 @@ package is installed with the `examples` extra, invoke them with
 - `pytekukko-collection-schedules`: output collection schedules in JSON
 - `pytekukko-invoice-headers`: output basic info on invoices in JSON
 - `pytekukko-next-collections`: output next collection dates in JSON
-- `pytekukko-update-google-calendar`: update Google Calendar with
-  events for next collections
 
 ## Disclaimer
 
