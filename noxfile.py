@@ -61,3 +61,31 @@ def test(session: nox.Session) -> None:
         "--help",
         silent=True,
     )
+
+    session.run(
+        "shtab",
+        "--prog",
+        "pytekukko-collection-schedules",
+        "--prefix",
+        "pytekukko_collection_schedules",
+        "pytekukko.examples.print_collection_schedules.argparser",
+        silent=True,
+    )
+    session.run(
+        "shtab",
+        "--prog",
+        "pytekukko-invoice-headers",
+        "--prefix",
+        "pytekukko_invoice_headers",
+        "pytekukko.examples.print_invoice_headers.argparser",
+        silent=True,
+    )
+    session.run(
+        "shtab",
+        "--prog",
+        "pytekukko-next-collections",
+        "--prefix",
+        "pytekukko_next_collections",
+        "pytekukko.examples.print_next_collections.argparser",
+        silent=True,
+    )

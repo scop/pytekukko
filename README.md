@@ -27,6 +27,8 @@ detected. If the detection is successful, there is no need to
 separately track session expiration or use the `login` method in the
 first place.
 
+## Command line examples
+
 For usage examples, see utilities in the `pytekukko.examples`
 package. Executables and dependencies for these are installed when the
 package is installed with the `examples` extra, invoke them with
@@ -35,6 +37,28 @@ package is installed with the `examples` extra, invoke them with
 - `pytekukko-collection-schedules`: output collection schedules in JSON
 - `pytekukko-invoice-headers`: output basic info on invoices in JSON
 - `pytekukko-next-collections`: output next collection dates in JSON
+
+Shell completions for the examples can be generated with
+[shtab's CLI usage mode](https://docs.iterative.ai/shtab/use/#cli-usage).
+
+<details>
+
+```shell
+shtab \
+  --prog pytekukko-collection-schedules \
+  --prefix pytekukko_collection_schedules \
+  pytekukko.examples.print_collection_schedules.argparser
+shtab \
+  --prog pytekukko-invoice-headers \
+  --prefix pytekukko_invoice_headers \
+  pytekukko.examples.print_invoice_headers.argparser
+shtab \
+  --prog pytekukko-next-collections \
+  --prefix pytekukko_next_collections \
+  pytekukko.examples.print_next_collections.argparser
+```
+
+</details>
 
 ## Disclaimer
 

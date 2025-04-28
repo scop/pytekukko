@@ -2,6 +2,7 @@
 
 """Print collection schedules."""
 
+import argparse
 import asyncio
 import json
 import sys
@@ -13,13 +14,21 @@ import pytekukko
 from pytekukko.examples import example_argparser, example_client
 
 
-async def run_example() -> None:
-    """Run the example."""
+def argparser() -> argparse.ArgumentParser:
+    """Return an argument parser for the example.
+
+    This is a separate function to facilitate shtab generated completions.
+    """
     argparser = example_argparser(__doc__)
     argparser.add_argument(
         "-i", "--icalendar", action="store_true", help="output iCalendar"
     )
-    args = argparser.parse_args()
+    return argparser
+
+
+async def run_example() -> None:
+    """Run the example."""
+    args = argparser().parse_args()
 
     client, cookie_jar, cookie_jar_path = example_client(args)
 

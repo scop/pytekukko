@@ -2,17 +2,24 @@
 
 """Print basic info on invoices."""
 
+import argparse
 import asyncio
 import json
 
 from pytekukko.examples import example_argparser, example_client
 
 
+def argparser() -> argparse.ArgumentParser:
+    """Return an argument parser for the example.
+
+    This is a separate function to facilitate shtab generated completions.
+    """
+    return example_argparser(__doc__)
+
+
 async def run_example() -> None:
     """Run the example."""
-    client, cookie_jar, cookie_jar_path = example_client(
-        example_argparser(__doc__).parse_args(),
-    )
+    client, cookie_jar, cookie_jar_path = example_client(argparser().parse_args())
 
     async with client.session:
         data = [
