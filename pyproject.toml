@@ -23,7 +23,7 @@ classifiers = [
 dependencies = ["aiohttp~=3.4"]
 
 [project.optional-dependencies]
-examples = ["python-dotenv>=0.10,<2", "icalendar~=5.0"]
+examples = ["python-dotenv>=0.10,<2", "icalendar>=5,<7"]
 
 [project.scripts]
 pytekukko-collection-schedules = "pytekukko.examples.print_collection_schedules:main [examples]"
