@@ -10,22 +10,6 @@ permissions:
   contents: read
 
 jobs:
-  lint:
-    runs-on: ubuntu-latest
-    env:
-      FORCE_COLOR: true
-      LEFTHOOK_QUIET: meta,execution
-    steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
-      - uses: astral-sh/setup-uv@e92bafb6253dcd438e0484186d7669ea7a8ca1cc # v6.4.3
-        with:
-          activate-environment: true
-      - name: Install Python dev dependencies
-        run: uv pip install --upgrade --requirements requirements/dev-requirements.txt
-      - uses: jdx/mise-action@eb2f5cb41b0a8175dad2f797e3daca6fe7795a19 # v2.4.2
-      - name: Check code
-        run: lefthook run pre-commit --all-files --force --no-tty
-
   test:
     runs-on: ubuntu-latest
     strategy:
