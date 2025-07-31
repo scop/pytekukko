@@ -21,11 +21,8 @@ pre-commit:
       run: mise exec -- typos --force-exclude --write-changes {staged_files}
     - name: tool-made-changes
       run: |-
-        if test -n "${CI-}"; then
-          git diff --exit-code {staged_files}
-        else
-          git diff --quiet {staged_files}
-        fi
+        test -z "${CI-}" || exit 0 # defer to autofix.ci
+        git diff --quiet {staged_files}
         rc=$?
         test $rc -eq 0 || echo "error: found files modified by tools" >&2
         exit $rc
