@@ -2,7 +2,7 @@
 
 [![Python versions](https://img.shields.io/pypi/pyversions/pytekukko.svg)](https://pypi.org/project/pytekukko/)
 [![PyPI version](https://badge.fury.io/py/pytekukko.svg)](https://badge.fury.io/py/pytekukko)
-[![CI status](https://github.com/scop/pytekukko/workflows/check/badge.svg)](https://github.com/scop/pytekukko/actions?query=workflow%3ACheck)
+[![CI status](https://github.com/scop/pytekukko/workflows/test/badge.svg)](https://github.com/scop/pytekukko/actions?query=workflow%3ATest)
 [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/scop/pytekukko/badge)](https://scorecard.dev/viewer/?uri=github.com%2Fscop%2Fpytekukko)
 
 Simple Python asyncio client for the [Jätekukko](https://www.jatekukko.fi)
