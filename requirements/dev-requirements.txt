@@ -1,5 +1,5 @@
 -e .[examples]
 -r test-requirements.txt
 
-mypy==1.17.0
+mypy==1.17.1
 nox[uv]
