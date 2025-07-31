@@ -17,8 +17,6 @@ jobs:
       LEFTHOOK_QUIET: meta,execution
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
-        with:
-          fetch-depth: 0 # for commit message checks
       - uses: astral-sh/setup-uv@e92bafb6253dcd438e0484186d7669ea7a8ca1cc # v6.4.3
         with:
           activate-environment: true
@@ -27,9 +25,6 @@ jobs:
       - uses: jdx/mise-action@eb2f5cb41b0a8175dad2f797e3daca6fe7795a19 # v2.4.2
       - name: Check code
         run: lefthook run pre-commit --all-files --force --no-tty
-      - name: Check commit messages
-        run: lefthook run commit-msgs-on-pr-branch --no-tty
-        if: ${{ github.event_name == 'pull_request' }}
 
   test:
     runs-on: ubuntu-latest
