@@ -9,6 +9,7 @@ permissions: {}
 
 jobs:
   release-please:
+    name: Release please
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -24,6 +25,7 @@ jobs:
       sha: ${{ steps.release-please.outputs.sha }}
 
   pypi-publish:
+    name: PyPI publish
     runs-on: ubuntu-latest
     needs: release-please
     if: needs.release-please.outputs.release-created
