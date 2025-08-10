@@ -46,4 +46,4 @@ jobs:
           uv pip install --upgrade build
           uv run python3 -m build
           ls dist
-      - uses: pypa/gh-action-pypi-publish@2f6f737ca5f74c637829c0f5c3acd0e29ea5e8bf # v1.8.11
+      - uses: pypa/gh-action-pypi-publish@76f52bc884231f62b9a034ebfe128415bbaabdfc # v1.12.4
