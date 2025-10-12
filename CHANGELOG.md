@@ -1,5 +1,26 @@
 # Changelog
 
+## [0.17.0](https://github.com/scop/pytekukko/compare/v0.16.0...v0.17.0) (2025-10-12)
+
+
+### Features
+
+* **examples:** facilitate shtab generated completions ([0b89ac6](https://github.com/scop/pytekukko/commit/0b89ac6b9d5c33e003f1a5e1bfa131e74625f5a1))
+* remove Google calendar updater example ([c2f4c5c](https://github.com/scop/pytekukko/commit/c2f4c5c34824bcc3c91a2b7f82f57b971df98fe3))
+
+
+### Performance Improvements
+
+* quote typing.cast type expressions ([76b5c56](https://github.com/scop/pytekukko/commit/76b5c566f49a2f385e89bbfaffaa3eb5dff1153e))
+
+
+### Documentation
+
+* add OpenSSF Scorecard badge ([a2b1fa8](https://github.com/scop/pytekukko/commit/a2b1fa800e8493e999afbb13b0834848bfd75ce2))
+* add OpenSSF Scorecard badge, misc tweaks ([5b70504](https://github.com/scop/pytekukko/commit/5b70504b5ffca34158cda3cbf96f36f0ed70d82c))
+* note Python in top level description ([adc916d](https://github.com/scop/pytekukko/commit/adc916d65a7a781071baa047e9478e87860acbff))
+* **README:** update CI badge URLs ([084fc4b](https://github.com/scop/pytekukko/commit/084fc4bdc2c94d8c70655e44dbe3fd314d77f26a))
+
 ## [0.16.0](https://github.com/scop/pytekukko/compare/v0.15.0...v0.16.0) (2024-01-23)
 
 
