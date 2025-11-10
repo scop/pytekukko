@@ -14,7 +14,6 @@ jobs:
     runs-on: ubuntu-latest
     env:
       FORCE_COLOR: true
-      LEFTHOOK_QUIET: meta,execution
     permissions:
       contents: read
     steps:
