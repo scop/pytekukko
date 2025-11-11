@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "pytekukko"
 version = "0.17.0"
-description   = "Jätekukko Omakukko API client for autofix.ci testing"
+description = "Jätekukko Omakukko API client for autofix.ci testing"
 readme = "README.md"
 requires-python = ">=3.10"
 license = { file = "LICENSE" }
