@@ -1,24 +1,9 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:best-practices",
-    ":prConcurrentLimit20",
-    ":preserveSemverRanges",
-    ":semanticPrefixChore",
-    "github>kachick/renovate-config-dprint#1.3.0",
-    "github>kachick/renovate-config-dprint:self"
+    "github>scop/common"
   ],
-  "ignorePresets": [
-    ":dependencyDashboard",
-    ":semanticPrefixFixDepsChoreOthers"
-  ],
-  "semanticCommits": "enabled",
-  "commitMessageTopic": "{{depName}}",
   "packageRules": [
-    {
-      "matchDepNames": ["dprint/dprint-plugin-*"],
-      "groupName": "dprint plugins"
-    },
     {
       "matchFileNames": [
         "requirements/test-requirements.txt"
