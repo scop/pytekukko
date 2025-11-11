@@ -1,4 +1,7 @@
+min_version: 2.0.3
+
 pre-commit:
+  fail_on_changes: non-ci
   jobs:
     - name: mutating-tools
       group:
@@ -19,13 +22,6 @@ pre-commit:
                   run: uv run mypy .
     - name: typos
       run: mise exec -- typos --force-exclude --write-changes {staged_files}
-    - name: tool-made-changes
-      run: |-
-        test -z "${CI-}" || exit 0 # defer to autofix.ci
-        git diff --quiet {staged_files}
-        rc=$?
-        test $rc -eq 0 || echo "error: found files modified by tools" >&2
-        exit $rc
 
 commit-msg:
   commands:
