@@ -1,12 +1,6 @@
 {
   "excludes": [
-    "/.git/**",
     "/.github/release-please-manifest.json",
-    "/.mypy_cache/**",
-    "/.nox/**",
-    "/.pytest_cache/**",
-    "/.rumdl_cache/**",
-    "/.venv/**",
     "/tests/cassettes/**",
   ],
   "plugins": [
