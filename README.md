@@ -42,7 +42,7 @@ package is installed with the `examples` extra, invoke them with
 Shell completions for the examples can be generated with
 [shtab's CLI usage mode](https://docs.iterative.ai/shtab/use/#cli-usage).
 
-<details>
+<details><!-- markdownlint-disable-line no-inline-html -->
 
 ```shell
 shtab \
