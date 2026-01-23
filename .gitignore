@@ -5,8 +5,6 @@
 /.env
 /.mise.*.local.toml
 /.mise.local.toml
-/.nox/
-/.venv/
 /build/
 /dist/
 /uv.lock
