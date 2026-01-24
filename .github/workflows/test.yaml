@@ -26,6 +26,7 @@ jobs:
     permissions:
       contents: read
     steps:
+      - uses: scop/common/force-color@main
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           persist-credentials: false
@@ -38,7 +39,6 @@ jobs:
           v="${{ matrix.python-version }}"
           v=${v##* }  # "3.X.0-alpha - 3.X" -> "3.X"
           v=${v//-}   # "pypy-X.Y" -> "pypyX.Y"
-          nox --force-color --python "$v"
+          nox --python "$v"
         env:
           NOX_DEFAULT_VENV_BACKEND: uv
-          PYTEST_ADDOPTS: --color=yes
