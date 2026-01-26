@@ -75,6 +75,7 @@ mypy_path = "$MYPY_CONFIG_FILE_DIR/src"
 enable_error_code = "deprecated,exhaustive-match,explicit-override,ignore-without-code,possibly-undefined,redundant-expr,redundant-self,truthy-bool,truthy-iterable"
 strict = true
 warn_unreachable = true
+files = "."
 exclude = "^build/"
 
 [[tool.mypy.overrides]]
