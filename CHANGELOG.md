@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.17.1](https://github.com/scop/pytekukko/compare/v0.17.0...v0.17.1) (2026-02-27)
+
+
+### Documentation
+
+* **examples:** note iCalendar capability ([fe95678](https://github.com/scop/pytekukko/commit/fe956780a788437ac4958eeed491856a7dbeae7f))
+
 ## [0.17.0](https://github.com/scop/pytekukko/compare/v0.16.0...v0.17.0) (2025-10-12)
 
 
