@@ -20,10 +20,14 @@ def argparser() -> argparse.ArgumentParser:
     This is a separate function to facilitate shtab generated completions.
     """
     argparser = example_argparser(__doc__)
-    argparser.add_argument(
+    _ = argparser.add_argument(
         "-i", "--icalendar", action="store_true", help="output iCalendar"
     )
     return argparser
+
+
+# reportUnknownMemberType=false for Calendar.add, Event.add
+# pyright: reportUnknownMemberType=false
 
 
 async def run_example() -> None:
@@ -61,7 +65,7 @@ async def run_example() -> None:
                 event.add("DTEND", date + timedelta(days=1))
                 event.add("URL", "https://tilasto.jatekukko.fi/indexservice2.jsp")
                 cal.add_component(event)
-        sys.stdout.buffer.write(cal.to_ical())
+        _ = sys.stdout.buffer.write(cal.to_ical())
     else:
         print(  # noqa: T201 # intentional
             json.dumps(
