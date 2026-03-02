@@ -16,7 +16,7 @@ class Service:
     and all data retrieved from the service is available in the ``raw_data`` dict.
     """
 
-    raw_data: dict[str, Any]
+    raw_data: dict[str, Any]  # pyright: ignore[reportExplicitAny] # various
 
     @property
     def name(self) -> str:
@@ -45,7 +45,7 @@ class CustomerData:
     and all data retrieved from the service is available in the ``raw_data`` dict.
     """
 
-    raw_data: dict[str, Any]
+    raw_data: dict[str, Any]  # pyright: ignore[reportExplicitAny] # various
 
     @property
     def customer_number(self) -> str:
@@ -66,7 +66,7 @@ class InvoiceHeader:
     and all data retrieved from the service is available in the ``raw_data`` dict.
     """
 
-    raw_data: dict[str, Any]
+    raw_data: dict[str, Any]  # pyright: ignore[reportExplicitAny] # various
 
     @property
     def name(self) -> str:

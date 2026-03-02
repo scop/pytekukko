@@ -34,7 +34,7 @@ def load_pytekukko_dotenv() -> bool:
     return load_dotenv(os.environ.get("PYTEKUKKO_DOTENV", find_dotenv(usecwd=True)))
 
 
-def example_argparser(description: str) -> ArgumentParser:
+def example_argparser(description: str | None) -> ArgumentParser:
     """Set up example argument parser."""
     _ = load_pytekukko_dotenv()
 
@@ -47,17 +47,17 @@ def example_argparser(description: str) -> ArgumentParser:
             "current directory, walking towards the file system root."
         ),
     )
-    argparser.add_argument(
+    _ = argparser.add_argument(
         "--customer-number",
         type=str,
         **arg_environ_default("PYTEKUKKO_CUSTOMER_NUMBER"),  # type: ignore[arg-type]
     )
-    argparser.add_argument(
+    _ = argparser.add_argument(
         "--password",
         type=str,
         **arg_environ_default("PYTEKUKKO_PASSWORD"),  # type: ignore[arg-type]
     )
-    argparser.add_argument(
+    _ = argparser.add_argument(
         "--cookie-jar-file",
         type=str,
         **arg_environ_default(  # type: ignore[arg-type]

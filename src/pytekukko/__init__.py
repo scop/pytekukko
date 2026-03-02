@@ -31,10 +31,10 @@ class Pytekukko:
         base_url: str = DEFAULT_BASE_URL,
     ):
         """Set up client."""
-        self.session = session
-        self.customer_number = customer_number
-        self.password = password
-        self.base_url = base_url
+        self.session: ClientSession = session
+        self.customer_number: str = customer_number
+        self.password: str = password
+        self.base_url: str = base_url
 
     async def get_customer_data(self) -> dict[str, list[CustomerData]]:
         """Get customer data."""
@@ -123,7 +123,7 @@ class Pytekukko:
         async with self.session.get(url, raise_for_status=True) as response:
             await _drain(response)
 
-    async def _request_with_retry(self, **request_kwargs: Any) -> Any:
+    async def _request_with_retry(self, **request_kwargs: Any) -> Any:  # pyright: ignore[reportExplicitAny] # aiohttp kwargs type not public
         """Do a request, with automatic login and retry if session is logged out.
 
         :param raise_for_first_status: whether first unsuccessful status should raise;
@@ -155,7 +155,10 @@ class Pytekukko:
             return await response.json()
 
 
-def _unmarshal(data: Any) -> Any:
+# pyright: reportUnknownArgumentType=false, reportUnknownVariableType=false
+
+
+def _unmarshal(data: Any) -> Any:  # pyright: ignore[reportExplicitAny] # by design
     """Unmarshal items in parsed JSON to more specific objects.
 
     :param data: parsed JSON data
