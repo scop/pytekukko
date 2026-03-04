@@ -1,6 +1,6 @@
 [tools]
 committed = "1.1.10"
-dprint = "0.51.1"
+dprint = "0.52.0"
 lefthook = "latest"
 ruff = "0.15.0"
 rumdl = "0.0.217"
