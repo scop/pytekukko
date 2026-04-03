@@ -3,7 +3,7 @@ committed = "1.1.11"
 dprint = "0.53.0"
 lefthook = "latest"
 ruff = "0.15.5"
-rumdl = "0.0.217"
+rumdl = "0.1.62"
 typos = "1.43.5"
 
 [env]
