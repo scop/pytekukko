@@ -31,7 +31,7 @@ jobs:
         with:
           persist-credentials: false
       - uses: astral-sh/setup-uv@37802adc94f370d6bfd71619e3f0bf239e1f3b78 # v7.6.0
-      - uses: wntrblm/nox@5a277b752f6094150e25237d47c34168e2b7526e # 2026.02.09
+      - uses: wntrblm/nox@97e345e6a26bb2c5aacff9cc4327bd4ac1b00ce6 # 2026.04.10
         with:
           python-versions: ${{ matrix.python-version }}
       - name: Run tests
