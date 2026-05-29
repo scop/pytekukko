@@ -162,22 +162,20 @@ def _unmarshal(data: Any) -> Any:  # pyright: ignore[reportExplicitAny] # by des
     """Unmarshal items in parsed JSON to more specific objects.
 
     :param data: parsed JSON data
-    :return: unmarshalled data
+    :return: copy of data, unmarshalled
     """
-    if isinstance(data, dict):
-        for key, value in data.items():
-            data[key] = _unmarshal(value)
-    elif isinstance(data, list):
-        for i, value in enumerate(data):
-            data[i] = _unmarshal(value)
-    elif isinstance(data, str):
+    if isinstance(data, str):
         try:
             parsed = dt.strptime(data, "%Y-%m-%d").replace(tzinfo=SERVICE_TIMEZONE)
-            data = parsed.date()
+            return parsed.date()
         except ValueError:
             with suppress(ValueError):
                 parsed = dt.strptime(data, "%H:%M").replace(tzinfo=SERVICE_TIMEZONE)
-                data = parsed.time()
+                return parsed.time()
+    if isinstance(data, dict):
+        return {key: _unmarshal(value) for key, value in data.items()}
+    if isinstance(data, list):
+        return [_unmarshal(value) for value in data]
     return data
 
 
