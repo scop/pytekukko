@@ -36,7 +36,7 @@ package is installed with the `examples` extra, invoke them with
 `--help` for usage and setup information:
 
 - `pytekukko-collection-schedules`:
-   output collection schedules in JSON or iCalendar
+  output collection schedules in JSON or iCalendar
 - `pytekukko-invoice-headers`: output basic info on invoices in JSON
 - `pytekukko-next-collections`: output next collection dates in JSON
 
