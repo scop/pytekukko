@@ -24,7 +24,7 @@ jobs:
           activate-environment: true
       - name: Install Python dev dependencies
         run: uv pip install --upgrade --requirements requirements/dev-requirements.txt
-      - uses: jdx/mise-action@dba19683ed58901619b14f395a24841710cb4925 # v4.1.0
+      - uses: jdx/mise-action@e6a8b3978addb5a52f2b4cd9d91eafa7f0ab959d # v4.2.0
       - run: lefthook run pre-commit --all-files --no-tty
       - uses: autofix-ci/action@c5b2d67aa2274e7b5a18224e8171550871fc7e4a # v1.3.4
         with:
