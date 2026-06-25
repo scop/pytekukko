@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.17.2](https://github.com/scop/pytekukko/compare/v0.17.1...v0.17.2) (2026-06-25)
+
+
+### Documentation
+
+* **README:** remove Python 3 badge ([97ed30c](https://github.com/scop/pytekukko/commit/97ed30c7a3898e0ee8457b29b7df87ea803311f1))
+
 ## [0.17.1](https://github.com/scop/pytekukko/compare/v0.17.0...v0.17.1) (2026-06-17)
 
 
