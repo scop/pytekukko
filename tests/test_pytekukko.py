@@ -1,5 +1,7 @@
 """Pytekukko tests."""
 
+# Copyright 2021 Ville Skyttä
+
 import datetime
 import os
 from typing import Any, TypeVar

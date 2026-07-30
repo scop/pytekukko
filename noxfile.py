@@ -1,5 +1,7 @@
 """nox config for pytekukko."""
 
+# Copyright 2023 Ville Skyttä
+
 import nox
 
 nox.options.error_on_external_run = True

@@ -1,5 +1,7 @@
 """Jätekukko Omakukko client."""
 
+# Copyright 2021 Ville Skyttä
+
 from contextlib import suppress
 from datetime import date
 from datetime import datetime as dt

@@ -1,5 +1,7 @@
 """Pytekukko exceptions."""
 
+# Copyright 2023 Ville Skyttä
+
 from typing import Any
 
 
