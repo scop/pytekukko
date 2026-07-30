@@ -1,5 +1,7 @@
 """Pytekukko examples."""
 
+# Copyright 2021 Ville Skyttä
+
 import os
 import sys
 from argparse import ArgumentParser, Namespace

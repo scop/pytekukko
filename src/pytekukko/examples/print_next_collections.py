@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+# Copyright 2021 Ville Skyttä
+
 """Print next collection dates."""
 
 import argparse

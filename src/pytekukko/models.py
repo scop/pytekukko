@@ -1,5 +1,7 @@
 """Pytekukko model objects."""
 
+# Copyright 2021 Ville Skyttä
+
 from dataclasses import dataclass
 from datetime import date
 from typing import Any, cast
