@@ -18,4 +18,6 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
       - uses: jdx/mise-action@c2a87611a18de5b3828c5652fe268e992400cb5c # v4.3.0
+        with:
+          minimum_release_age: 7d
       - run: lefthook run commits-on-pr-branch --no-tty
