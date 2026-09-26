@@ -2,6 +2,7 @@
 
 # Copyright 2021 Ville Skyttä
 
+import json
 import os
 import sys
 from argparse import ArgumentParser, Namespace
@@ -11,6 +12,7 @@ from aiohttp import ClientSession, CookieJar
 from dotenv import find_dotenv, load_dotenv
 
 from pytekukko import Pytekukko
+from pytekukko.models import TokenInfo
 
 
 def arg_environ_default(
@@ -50,14 +52,22 @@ def example_argparser(description: str | None) -> ArgumentParser:
         ),
     )
     _ = argparser.add_argument(
-        "--customer-number",
+        "--username",
         type=str,
-        **arg_environ_default("PYTEKUKKO_CUSTOMER_NUMBER"),  # type: ignore[arg-type]
+        **arg_environ_default("PYTEKUKKO_USERNAME"),  # type: ignore[arg-type]
     )
     _ = argparser.add_argument(
         "--password",
         type=str,
         **arg_environ_default("PYTEKUKKO_PASSWORD"),  # type: ignore[arg-type]
+    )
+    _ = argparser.add_argument(
+        "--token-file",
+        type=str,
+        **arg_environ_default(  # type: ignore[arg-type]
+            "PYTEKUKKO_TOKEN_FILE",
+            optional=True,
+        ),
     )
     _ = argparser.add_argument(
         "--cookie-jar-file",
@@ -71,10 +81,37 @@ def example_argparser(description: str | None) -> ArgumentParser:
     return argparser
 
 
-def example_client(args: Namespace) -> tuple[Pytekukko, CookieJar, Path | None]:
+def load_token(path: Path) -> TokenInfo | None:
+    """Load a token from a file saved with :func:`save_token`.
+
+    :param path: path to the token file
+    :return: the token, None if the file does not exist
+    """
+    if not path.exists():
+        return None
+    data = json.loads(path.read_text(encoding="utf-8"))
+    return TokenInfo.model_validate(data)
+
+
+def save_token(token: TokenInfo | None, path: Path) -> None:
+    """Save a token to a file, or remove the file if there is no token.
+
+    :param token: the token, None to just remove the file
+    :param path: path to the token file
+    """
+    if token is None:
+        path.unlink(missing_ok=True)
+        return
+    path.touch(mode=0o600)
+    _ = path.write_text(token.model_dump_json(by_alias=True), encoding="utf-8")
+
+
+def example_client(
+    args: Namespace,
+) -> tuple[Pytekukko, CookieJar, Path | None, Path | None]:
     """Set up example client."""
-    if not args.customer_number:
-        print("customer number required", file=sys.stderr)  # noqa: T201
+    if not args.username:
+        print("username required", file=sys.stderr)  # noqa: T201
         sys.exit(2)
     if not args.password:
         print("password required", file=sys.stderr)  # noqa: T201
@@ -85,11 +122,13 @@ def example_client(args: Namespace) -> tuple[Pytekukko, CookieJar, Path | None]:
         cookie_jar_path = Path(args.cookie_jar_file)
         if cookie_jar_path.exists():
             cookie_jar.load(cookie_jar_path)
+    token_path = Path(args.token_file) if args.token_file else None
 
     client = Pytekukko(
         session=ClientSession(cookie_jar=cookie_jar),
-        customer_number=args.customer_number,
+        username=args.username,
         password=args.password,
+        token=load_token(token_path) if token_path else None,
     )
 
-    return client, cookie_jar, cookie_jar_path
+    return client, cookie_jar, cookie_jar_path, token_path

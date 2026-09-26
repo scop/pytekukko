@@ -1,0 +1,82 @@
+interactions:
+- request:
+    body:
+      password: test-password
+      userName: test-username
+    headers:
+      Tenant-Id:
+      - 0431f4d4-5592-49c9-bcc8-51a6965b6851
+    method: POST
+    uri: https://asiointi.jatekukko.fi/api/customers/Users/login
+  response:
+    body:
+      string: '{"token": "test-token", "expiresAt": "2026-10-10T21:20:20Z"}'
+    headers:
+      Cache-Control:
+      - no-cache,no-store
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2847'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 10 Oct 2026 20:20:21 GMT
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - Kestrel
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Authorization:
+      - Vingo-e-services test-token
+    method: GET
+    uri: https://asiointi.jatekukko.fi/api/customers/Customers/contracts/00-0000000-00/42
+  response:
+    body:
+      string: '{"allEmptyings": {"Successful": [], "Missed": [], "Planned": [{"emptyingDate":
+        "2026-11-04T22:00:00Z", "eventType": "Planned", "description": null}, {"emptyingDate":
+        "2026-12-30T22:00:00Z", "eventType": "Planned", "description": null}, {"emptyingDate":
+        "2027-02-24T22:00:00Z", "eventType": "Planned", "description": null}, {"emptyingDate":
+        "2027-04-21T21:00:00Z", "eventType": "Planned", "description": null}, {"emptyingDate":
+        "2027-05-19T21:00:00Z", "eventType": "Planned", "description": null}, {"emptyingDate":
+        "2027-06-16T21:00:00Z", "eventType": "Planned", "description": null}, {"emptyingDate":
+        "2027-07-14T21:00:00Z", "eventType": "Planned", "description": null}, {"emptyingDate":
+        "2027-08-11T21:00:00Z", "eventType": "Planned", "description": null}, {"emptyingDate":
+        "2027-09-08T21:00:00Z", "eventType": "Planned", "description": null}]}, "price":
+        {"handlingPrice": 0.0, "handlingPriceIncludingVat": 0.0, "handlingUnitPrice":
+        0.0, "handlingUnitPriceIncludingVat": 0.0, "transportPrice": 5.841, "transportPriceIncludingVat":
+        7.33, "transportUnitPrice": 5.841, "transportUnitPriceIncludingVat": 7.33,
+        "wasteTaxPrice": 0.0, "wasteTaxPriceIncludingVat": 0.0, "wasteUnitTaxPrice":
+        0.0, "wasteUnitTaxPriceIncludingVat": 0.0, "totalPriceGross": 7.33, "totalPriceNet":
+        5.84}, "customerId": "00-0000000-00", "productCode": 1249, "position": 42,
+        "name": "J\u00e4teastia 240 l, sekaj\u00e4te energiaksi", "serviceName": "",
+        "productGuid": "00000000-0000-0000-0000-000000000001", "nextEmptying": "2026-11-05T00:00:00",
+        "emptyingIntervals": [{"startWeek": 18, "endWeek": 39, "interval": 4, "amountPerWeek":
+        1, "sequence": 1}, {"startWeek": 40, "endWeek": 17, "interval": 8, "amountPerWeek":
+        1, "sequence": 2}], "amount": 1.0, "unit": "Piece", "size": "240 L", "transportPrice":
+        5.841, "handlingPrice": 0.0, "startDate": "2025-01-13T00:00:00", "endDate":
+        null, "pausedFrom": null, "pausedTo": null, "comment": "Hello world!", "sharedContainer":
+        false, "readonlyContract": false, "status": "Unspecified", "gateKeyCode":
+        "", "correspondingPersonId": "", "wellType": false, "attachmentIds": []}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1935'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 10 Oct 2026 20:20:24 GMT
+      Server:
+      - Kestrel
+    status:
+      code: 200
+      message: OK
+version: 1

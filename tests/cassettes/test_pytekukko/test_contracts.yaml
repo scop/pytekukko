@@ -1,0 +1,76 @@
+interactions:
+- request:
+    body:
+      password: test-password
+      userName: test-username
+    headers:
+      Tenant-Id:
+      - 0431f4d4-5592-49c9-bcc8-51a6965b6851
+    method: POST
+    uri: https://asiointi.jatekukko.fi/api/customers/Users/login
+  response:
+    body:
+      string: '{"token": "test-token", "expiresAt": "2026-10-10T21:20:24Z"}'
+    headers:
+      Cache-Control:
+      - no-cache,no-store
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2847'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 10 Oct 2026 20:20:25 GMT
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - Kestrel
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Authorization:
+      - Vingo-e-services test-token
+    method: GET
+    uri: https://asiointi.jatekukko.fi/api/customers/Customers/emptying-infos/00-0000000-00/contracts
+  response:
+    body:
+      string: '[{"customerId": "00-0000000-00", "productCode": 4638, "position": 42,
+        "name": "Perusmaksu v. 2026, vapaa-ajan asunto", "serviceName": "", "productGuid":
+        "00000000-0000-0000-0000-000000000002", "nextEmptying": null, "emptyingIntervals":
+        [{"startWeek": 1, "endWeek": 53, "interval": 1, "amountPerWeek": 1, "sequence":
+        1}], "amount": 1.0, "unit": "Unknown", "size": "", "transportPrice": 13.697,
+        "handlingPrice": 0.0, "startDate": "2021-06-18T00:00:00", "endDate": null,
+        "pausedFrom": null, "pausedTo": null, "comment": "Hello world!", "sharedContainer":
+        false, "readonlyContract": true, "status": "Unspecified", "gateKeyCode": "",
+        "correspondingPersonId": "", "wellType": false, "attachmentIds": []}, {"customerId":
+        "00-0000000-00", "productCode": 1249, "position": 42, "name": "J\u00e4teastia
+        240 l, sekaj\u00e4te energiaksi", "serviceName": "", "productGuid": "00000000-0000-0000-0000-000000000003",
+        "nextEmptying": "2026-11-05T00:00:00", "emptyingIntervals": [{"startWeek":
+        18, "endWeek": 39, "interval": 4, "amountPerWeek": 1, "sequence": 1}, {"startWeek":
+        40, "endWeek": 17, "interval": 8, "amountPerWeek": 1, "sequence": 2}], "amount":
+        1.0, "unit": "Piece", "size": "240 L", "transportPrice": 5.841, "handlingPrice":
+        0.0, "startDate": "2025-01-13T00:00:00", "endDate": null, "pausedFrom": null,
+        "pausedTo": null, "comment": "Hello world!", "sharedContainer": false, "readonlyContract":
+        false, "status": "Unspecified", "gateKeyCode": "", "correspondingPersonId":
+        "", "wellType": false, "attachmentIds": []}]'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1378'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 10 Oct 2026 20:20:25 GMT
+      Server:
+      - Kestrel
+    status:
+      code: 200
+      message: OK
+version: 1
