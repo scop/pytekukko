@@ -1,233 +1,61 @@
 interactions:
 - request:
     body:
-      j_password: secret
-      j_username: 00-0000000-00
+      password: test-password
+      userName: test-username
     headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Content-Length:
-      - '78'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Host:
-      - tilasto.jatekukko.fi
-      User-Agent:
-      - Python/3.12 aiohttp/3.9.0
-      X-Requested-With:
-      - XMLHttpRequest
+      Tenant-Id:
+      - 0431f4d4-5592-49c9-bcc8-51a6965b6851
     method: POST
-    uri: https://tilasto.jatekukko.fi/jatekukko/j_acegi_security_check?target=2
-  response:
-    body: {}
-    headers:
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '0'
-      Date:
-      - Mon, 22 Jan 2024 21:06:07 GMT
-      Location:
-      - https://tilasto.jatekukko.fi/jatekukko/secure/welcome.do
-      Server:
-      - nginx
-      Strict-Transport-Security:
-      - max-age=63072000
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Powered-By:
-      - 'Servlet/4.0 JSP/2.3 (Payara Server  5.2022.5 #badassfish Java/Eclipse OpenJ9/1.8)'
-    status:
-      code: 303
-      message: See Other
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Host:
-      - tilasto.jatekukko.fi
-      User-Agent:
-      - Python/3.12 aiohttp/3.9.0
-      X-Requested-With:
-      - XMLHttpRequest
-    method: GET
-    uri: https://tilasto.jatekukko.fi/jatekukko/secure/welcome.do
-  response:
-    body: {}
-    headers:
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '0'
-      Content-Security-Policy:
-      - frame-ancestors 'none'
-      Date:
-      - Mon, 22 Jan 2024 21:06:07 GMT
-      Location:
-      - https://tilasto.jatekukko.fi/jatekukko/secure/well.do
-      Server:
-      - nginx
-      Strict-Transport-Security:
-      - max-age=63072000
-      X-Frame-Options:
-      - DENY
-      X-Powered-By:
-      - 'Servlet/4.0 JSP/2.3 (Payara Server  5.2022.5 #badassfish Java/Eclipse OpenJ9/1.8)'
-    status:
-      code: 303
-      message: See Other
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Host:
-      - tilasto.jatekukko.fi
-      User-Agent:
-      - Python/3.12 aiohttp/3.9.0
-      X-Requested-With:
-      - XMLHttpRequest
-    method: GET
-    uri: https://tilasto.jatekukko.fi/jatekukko/secure/well.do
+    uri: https://asiointi.jatekukko.fi/api/customers/Users/login
   response:
     body:
-      string: '{ "response":"OK"}'
+      string: '{"token": "test-token", "expiresAt": "2026-10-10T21:20:18Z"}'
     headers:
-      Accept-Charset:
-      - big5, big5-hkscs, cesu-8, euc-jp, euc-kr, gb18030, gb2312, gbk, ibm-thai,
-        ibm00858, ibm01140, ibm01141, ibm01142, ibm01143, ibm01144, ibm01145, ibm01146,
-        ibm01147, ibm01148, ibm01149, ibm037, ibm1026, ibm1047, ibm273, ibm277, ibm278,
-        ibm280, ibm284, ibm285, ibm290, ibm297, ibm420, ibm424, ibm437, ibm500, ibm775,
-        ibm850, ibm852, ibm855, ibm857, ibm860, ibm861, ibm862, ibm863, ibm864, ibm865,
-        ibm866, ibm868, ibm869, ibm870, ibm871, ibm918, iso-2022-cn, iso-2022-jp,
-        iso-2022-jp-2, iso-2022-kr, iso-8859-1, iso-8859-13, iso-8859-15, iso-8859-2,
-        iso-8859-3, iso-8859-4, iso-8859-5, iso-8859-6, iso-8859-7, iso-8859-8, iso-8859-9,
-        jis_x0201, jis_x0212-1990, koi8-r, koi8-u, shift_jis, tis-620, us-ascii, utf-16,
-        utf-16be, utf-16le, utf-32, utf-32be, utf-32le, utf-8, windows-1250, windows-1251,
-        windows-1252, windows-1253, windows-1254, windows-1255, windows-1256, windows-1257,
-        windows-1258, windows-31j, x-big5-hkscs-2001, x-big5-solaris, x-compound_text,
-        x-euc-jp-linux, x-euc-tw, x-eucjp-open, x-ibm1006, x-ibm1025, x-ibm1046, x-ibm1097,
-        x-ibm1098, x-ibm1112, x-ibm1122, x-ibm1123, x-ibm1124, x-ibm1166, x-ibm1364,
-        x-ibm1381, x-ibm1383, x-ibm300, x-ibm33722, x-ibm737, x-ibm833, x-ibm834,
-        x-ibm856, x-ibm874, x-ibm875, x-ibm921, x-ibm922, x-ibm930, x-ibm933, x-ibm935,
-        x-ibm937, x-ibm939, x-ibm942, x-ibm942c, x-ibm943, x-ibm943c, x-ibm948, x-ibm949,
-        x-ibm949c, x-ibm950, x-ibm964, x-ibm970, x-iscii91, x-iso-2022-cn-cns, x-iso-2022-cn-gb,
-        x-iso-8859-11, x-jis0208, x-jisautodetect, x-johab, x-macarabic, x-maccentraleurope,
-        x-maccroatian, x-maccyrillic, x-macdingbat, x-macgreek, x-machebrew, x-maciceland,
-        x-macroman, x-macromania, x-macsymbol, x-macthai, x-macturkish, x-macukraine,
-        x-ms932_0213, x-ms950-hkscs, x-ms950-hkscs-xp, x-mswin-936, x-pck, x-sjis_0213,
-        x-utf-16le-bom, x-utf-32be-bom, x-utf-32le-bom, x-windows-50220, x-windows-50221,
-        x-windows-874, x-windows-949, x-windows-950, x-windows-iso2022jp
       Cache-Control:
-      - no-cache, no-store, must-revalidate
+      - no-cache,no-store
       Connection:
       - keep-alive
       Content-Length:
-      - '18'
+      - '2847'
       Content-Type:
-      - application/json;charset=UTF-8
+      - application/json; charset=utf-8
       Date:
-      - Mon, 22 Jan 2024 21:06:07 GMT
+      - Sat, 10 Oct 2026 20:20:19 GMT
       Expires:
       - Thu, 01 Jan 1970 00:00:00 GMT
       Pragma:
       - no-cache
       Server:
-      - nginx
-      Strict-Transport-Security:
-      - max-age=63072000
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Powered-By:
-      - 'Servlet/4.0 JSP/2.3 (Payara Server  5.2022.5 #badassfish Java/Eclipse OpenJ9/1.8)'
+      - Kestrel
     status:
       code: 200
       message: OK
 - request:
     body: null
     headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Host:
-      - tilasto.jatekukko.fi
-      User-Agent:
-      - Python/3.12 aiohttp/3.9.0
-    method: GET
-    uri: https://tilasto.jatekukko.fi/jatekukko/j_acegi_logout_elcustrap
-  response:
-    body: {}
-    headers:
-      Connection:
-      - keep-alive
-      Content-Language:
-      - fi-FI
-      Content-Length:
-      - '198'
-      Content-Type:
-      - text/html;charset=UTF-8
-      Date:
-      - Mon, 22 Jan 2024 21:06:07 GMT
-      Location:
-      - https://tilasto.jatekukko.fi/jatekukko/sahas.jsp
-      Server:
-      - nginx
-      Strict-Transport-Security:
-      - max-age=63072000
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Powered-By:
-      - 'Servlet/4.0 JSP/2.3 (Payara Server  5.2022.5 #badassfish Java/Eclipse OpenJ9/1.8)'
-    status:
-      code: 302
-      message: Found
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Host:
-      - tilasto.jatekukko.fi
-      User-Agent:
-      - Python/3.12 aiohttp/3.9.0
-    method: GET
-    uri: https://tilasto.jatekukko.fi/jatekukko/sahas.jsp
+      Authorization:
+      - Vingo-e-services test-token
+    method: POST
+    uri: https://asiointi.jatekukko.fi/api/customers/Users/logout
   response:
     body:
-      string: redacted
+      string: ''
     headers:
+      Cache-Control:
+      - no-cache,no-store
       Connection:
       - keep-alive
-      Content-Encoding:
-      - gzip
-      Content-Language:
-      - fi-FI
-      Content-Security-Policy:
-      - frame-ancestors 'none'
-      Content-Type:
-      - text/html;charset=utf-8
+      Content-Length:
+      - '0'
       Date:
-      - Mon, 22 Jan 2024 21:06:07 GMT
+      - Sat, 10 Oct 2026 20:20:19 GMT
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Pragma:
+      - no-cache
       Server:
-      - nginx
-      Strict-Transport-Security:
-      - max-age=63072000
-      Transfer-Encoding:
-      - chunked
-      X-Frame-Options:
-      - DENY
-      X-Powered-By:
-      - 'Servlet/4.0 JSP/2.3 (Payara Server  5.2022.5 #badassfish Java/Eclipse OpenJ9/1.8)'
+      - Kestrel
     status:
       code: 200
       message: OK

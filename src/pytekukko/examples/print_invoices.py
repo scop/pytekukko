@@ -24,16 +24,15 @@ async def run_example() -> None:
     client, cookie_jar, cookie_jar_path = example_client(argparser().parse_args())
 
     async with client.session:
+        invoices = await client.invoices()
         data = [
             {
-                "name": invoice_header.name,
-                "due_date": invoice_header.due_date.isoformat(),
-                "total": invoice_header.total,
+                "due_date": invoice.due_date.isoformat(),
+                "amount_open": float(invoice.amount_open),
             }
-            for invoice_header in await client.get_invoice_headers()
+            for invoice in invoices
         ]
-        if not cookie_jar_path:
-            await client.logout()
+        await client.logout()
 
     print(json.dumps(data))  # noqa: T201
 

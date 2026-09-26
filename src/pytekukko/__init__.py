@@ -2,24 +2,32 @@
 
 # Copyright 2021 Ville Skyttä
 
-from contextlib import suppress
-from datetime import date
 from datetime import datetime as dt
 from http import HTTPStatus
-from typing import Any, cast
-from urllib.parse import urljoin
-from zoneinfo import ZoneInfo
+from typing import Any
+from urllib.parse import quote, urljoin
 
 from aiohttp import ClientResponse, ClientResponseError, ClientSession
+from pydantic import TypeAdapter
 
-from .exceptions import UnexpectedResponseStructureError
-from .models import CustomerData, InvoiceHeader, Service
+from .models import (
+    BillingInfo,
+    Contract,
+    EmptyingInfo,
+    Invoice,
+    LoginResult,
+)
 
-__version__ = "0.17.1"
-DEFAULT_BASE_URL = "https://tilasto.jatekukko.fi/jatekukko/"
+__version__ = "0.50.0"
+DEFAULT_BASE_URL = "https://asiointi.jatekukko.fi/api/"
+DEFAULT_TENANT_ID = "0431f4d4-5592-49c9-bcc8-51a6965b6851"
 
-SERVICE_TIMEZONE = ZoneInfo("Europe/Helsinki")
-"""Assumed time zone of timestamps in data from service."""
+_AUTH_HEADER = "Vingo-e-services {}"
+
+_BILLING_INFOS = TypeAdapter(list[BillingInfo])
+_CONTRACTS = TypeAdapter(list[Contract])
+_EMPTYING_INFOS = TypeAdapter(list[EmptyingInfo])
+_INVOICES = TypeAdapter(list[Invoice])
 
 
 class Pytekukko:
@@ -28,157 +36,124 @@ class Pytekukko:
     def __init__(
         self,
         session: ClientSession,
-        customer_number: str,
+        username: str,
         password: str,
         base_url: str = DEFAULT_BASE_URL,
+        tenant_id: str = DEFAULT_TENANT_ID,
     ):
         """Set up client."""
         self.session: ClientSession = session
-        self.customer_number: str = customer_number
+        self.username: str = username
         self.password: str = password
         self.base_url: str = base_url
+        self.tenant_id: str = tenant_id
+        self._token: str | None = None
+        self._token_expires_at: dt | None = None
 
-    async def get_customer_data(self) -> dict[str, list[CustomerData]]:
-        """Get customer data."""
-        url = urljoin(self.base_url, "secure/get_customer_datas.do")
-
-        response_data = await self._request_with_retry(method="GET", url=url)
-
-        return {
-            customer_number: [CustomerData(raw_data=a_data) for a_data in data]
-            for customer_number, data in _unmarshal(response_data).items()
-        }
-
-    async def get_services(self) -> list[Service]:
-        """Get services."""
-        url = urljoin(self.base_url, "secure/get_services_by_customer_numbers.do")
-        params = {"customerNumbers[]": self.customer_number}
-
-        response_data = await self._request_with_retry(
-            method="GET",
-            url=url,
-            params=params,
-        )
-        if not isinstance(response_data, list | tuple):
-            raise UnexpectedResponseStructureError(response_data)
-
-        return [Service(raw_data=_unmarshal(service)) for service in response_data]
-
-    async def get_collection_schedule(self, what: Service | int) -> list[date]:
-        """Get collection schedule for a service.
-
-        :param what: the service or a "pos" value of one to get schedule for
-        """
-        url = urljoin(self.base_url, "get_collection_schedule.do")
-        pos = what.pos if isinstance(what, Service) else what
-        params = {"customerNumber": self.customer_number, "pos": pos}
-
-        response_data = await self._request_with_retry(
-            method="GET",
-            url=url,
-            params=params,
-        )
-
-        return cast("list[date]", _unmarshal(response_data))
-
-    async def get_invoice_headers(self) -> list[InvoiceHeader]:
-        """Get headers of available invoices."""
-        url = urljoin(self.base_url, "secure/get_invoice_headers_for_customer.do")
-        params = {
-            "customerId": self.customer_number,  # yep, customerId, not *Number here
-        }
-
-        response_data = await self._request_with_retry(
-            method="GET",
-            url=url,
-            params=params,
-        )
-        if not isinstance(response_data, list | tuple):
-            raise UnexpectedResponseStructureError(response_data)
-
-        return [
-            InvoiceHeader(raw_data=_unmarshal(invoice_header))
-            for invoice_header in response_data
-        ]
-
-    async def login(self) -> dict[str, str]:
+    async def login(self) -> LoginResult:
         """Log in."""
-        url = urljoin(self.base_url, "j_acegi_security_check")
-        headers = (("X-Requested-With", "XMLHttpRequest"),)
-        params = {"target": "2"}
-        data = {"j_username": self.customer_number, "j_password": self.password}
+        url = urljoin(self.base_url, "customers/Users/login")
+        headers = (("Tenant-Id", self.tenant_id),)
+        data = {"userName": self.username, "password": self.password}
 
         async with self.session.post(
             url,
             headers=headers,
-            params=params,
-            data=data,
+            json=data,
             raise_for_status=True,
         ) as response:
-            # NOTE(scop): could check that we got {"response":"OK"}
-            return cast("dict[str, str]", await response.json())
+            rt = await response.text()
+            res = LoginResult.model_validate_json(rt)
+            self.session.headers["Authorization"] = _AUTH_HEADER.format(res.token)
+            return res
+
+    async def refresh_login(self) -> LoginResult:
+        """Refresh the login token."""
+        url = urljoin(self.base_url, "customers/Users/refresh-login")
+
+        async with self.session.post(
+            url,
+            raise_for_status=True,
+        ) as response:
+            rt = await response.text()
+            res = LoginResult.model_validate_json(rt)
+            self.session.headers["Authorization"] = _AUTH_HEADER.format(res.token)
+            return res
 
     async def logout(self) -> None:
         """Log out the current session."""
-        url = urljoin(self.base_url, "j_acegi_logout_elcustrap")
+        url = urljoin(self.base_url, "customers/Users/logout")
 
-        async with self.session.get(url, raise_for_status=True) as response:
+        async with self.session.post(url, raise_for_status=True) as response:
             await _drain(response)
+            self.session.headers.pop("Authorization", None)
 
-    async def _request_with_retry(self, **request_kwargs: Any) -> Any:  # pyright: ignore[reportExplicitAny] # aiohttp kwargs type not public
+    async def billing_infos(self) -> list[BillingInfo]:
+        """Get billing information."""
+        url = urljoin(self.base_url, "customers/Customers/billing-infos")
+        response_text = await self._request_with_retry(method="GET", url=url)
+        return _BILLING_INFOS.validate_json(response_text)
+
+    async def contract(self, customer_id: str, position: int) -> Contract:
+        """Get a single contract.
+
+        :param customer_id: the customer id, e.g. emptying info id
+        :param position: the contract position, see Contract.position
+        """
+        url = urljoin(
+            self.base_url,
+            f"customers/Customers/contracts/{quote(customer_id, safe='')}/{position}",
+        )
+        response_text = await self._request_with_retry(method="GET", url=url)
+        return Contract.model_validate_json(response_text)
+
+    async def contracts(self, customer_id: str) -> list[Contract]:
+        """Get contracts.
+
+        :param customer_id: the customer id, e.g. emptying info id
+        """
+        url = urljoin(
+            self.base_url,
+            "customers/Customers/emptying-infos/"
+            + quote(customer_id, safe="")
+            + "/contracts",
+        )
+        response_text = await self._request_with_retry(method="GET", url=url)
+        return _CONTRACTS.validate_json(response_text)
+
+    async def emptying_infos(self) -> list[EmptyingInfo]:
+        """Get emptying information."""
+        url = urljoin(self.base_url, "customers/Customers/emptying-infos")
+        response_text = await self._request_with_retry(method="GET", url=url)
+        return _EMPTYING_INFOS.validate_json(response_text)
+
+    async def invoices(self) -> list[Invoice]:
+        """Get invoices."""
+        url = urljoin(self.base_url, "customers/Customers/invoices")
+        response_text = await self._request_with_retry(method="GET", url=url)
+        return _INVOICES.validate_json(response_text)
+
+    async def _request_with_retry(self, **request_kwargs: Any) -> str:  # pyright: ignore[reportExplicitAny] # aiohttp kwargs type not public
         """Do a request, with automatic login and retry if session is logged out.
 
-        :param raise_for_first_status: whether first unsuccessful status should raise;
-            False allows for handling special cases that give errors instead of
-            redirecting to login page
         :param request_kwargs: kwargs to pass to self.session.request
         """
-        try:
+
+        async def _do_request() -> str:
             async with self.session.request(
                 **request_kwargs,
                 raise_for_status=True,
             ) as response:
-                if response.history and response.url.path.endswith("/login.do"):
-                    await _drain(response)
-                else:
-                    return await response.json()
+                return await response.text()
+
+        try:
+            return await _do_request()
         except ClientResponseError as ex:
-            if not (
-                ex.status in (HTTPStatus.BAD_REQUEST, HTTPStatus.INTERNAL_SERVER_ERROR)
-                and "get_collection_schedule" in ex.request_info.url.path
-            ):
+            if ex.status != HTTPStatus.UNAUTHORIZED:
                 raise
 
         _ = await self.login()
-        async with self.session.request(
-            **request_kwargs,
-            raise_for_status=True,
-        ) as response:
-            return await response.json()
-
-
-# pyright: reportUnknownArgumentType=false, reportUnknownVariableType=false
-
-
-def _unmarshal(data: Any) -> Any:  # pyright: ignore[reportExplicitAny] # by design
-    """Unmarshal items in parsed JSON to more specific objects.
-
-    :param data: parsed JSON data
-    :return: copy of data, unmarshalled
-    """
-    if isinstance(data, str):
-        try:
-            parsed = dt.strptime(data, "%Y-%m-%d").replace(tzinfo=SERVICE_TIMEZONE)
-            return parsed.date()
-        except ValueError:
-            with suppress(ValueError):
-                parsed = dt.strptime(data, "%H:%M").replace(tzinfo=SERVICE_TIMEZONE)
-                return parsed.time()
-    if isinstance(data, dict):
-        return {key: _unmarshal(value) for key, value in data.items()}
-    if isinstance(data, list):
-        return [_unmarshal(value) for value in data]
-    return data
+        return await _do_request()
 
 
 async def _drain(response: ClientResponse) -> None:

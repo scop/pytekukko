@@ -20,15 +20,15 @@ classifiers = [
   "Programming Language :: Python :: 3 :: Only",
   "Typing :: Typed",
 ]
-dependencies = ["aiohttp~=3.4"]
+dependencies = ["aiohttp~=3.4", "pydantic~=2.0"]
 
 [project.optional-dependencies]
 examples = ["python-dotenv>=0.10,<2", "icalendar>=7,<8"]
 
 [project.scripts]
-pytekukko-collection-schedules = "pytekukko.examples.print_collection_schedules:main [examples]"
-pytekukko-invoice-headers = "pytekukko.examples.print_invoice_headers:main [examples]"
-pytekukko-next-collections = "pytekukko.examples.print_next_collections:main [examples]"
+pytekukko-invoices = "pytekukko.examples.print_invoices:main [examples]"
+pytekukko-next-emptyings = "pytekukko.examples.print_next_emptyings:main [examples]"
+pytekukko-planned-emptyings = "pytekukko.examples.print_planned_emptyings:main [examples]"
 
 [project.urls]
 Homepage = "https://github.com/scop/pytekukko"
@@ -80,7 +80,10 @@ files = "."
 exclude = "^build/"
 
 [[tool.mypy.overrides]]
-module = "icalendar.*"
+module = [
+  "icalendar.*",
+  "vcr.request",
+]
 ignore_missing_imports = true
 
 [tool.pytest.ini_options]

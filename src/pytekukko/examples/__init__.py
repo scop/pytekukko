@@ -50,9 +50,9 @@ def example_argparser(description: str | None) -> ArgumentParser:
         ),
     )
     _ = argparser.add_argument(
-        "--customer-number",
+        "--username",
         type=str,
-        **arg_environ_default("PYTEKUKKO_CUSTOMER_NUMBER"),  # type: ignore[arg-type]
+        **arg_environ_default("PYTEKUKKO_USERNAME"),  # type: ignore[arg-type]
     )
     _ = argparser.add_argument(
         "--password",
@@ -73,8 +73,8 @@ def example_argparser(description: str | None) -> ArgumentParser:
 
 def example_client(args: Namespace) -> tuple[Pytekukko, CookieJar, Path | None]:
     """Set up example client."""
-    if not args.customer_number:
-        print("customer number required", file=sys.stderr)  # noqa: T201
+    if not args.username:
+        print("username required", file=sys.stderr)  # noqa: T201
         sys.exit(2)
     if not args.password:
         print("password required", file=sys.stderr)  # noqa: T201
@@ -88,7 +88,7 @@ def example_client(args: Namespace) -> tuple[Pytekukko, CookieJar, Path | None]:
 
     client = Pytekukko(
         session=ClientSession(cookie_jar=cookie_jar),
-        customer_number=args.customer_number,
+        username=args.username,
         password=args.password,
     )
 
