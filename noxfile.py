@@ -47,19 +47,19 @@ def test(session: nox.Session) -> None:
     cmd += ["-W", "error", *known_deprecations, "-m"]
     session.run(
         *cmd,
-        "pytekukko.examples.print_collection_schedules",
+        "pytekukko.examples.print_invoices",
         "--help",
         silent=True,
     )
     session.run(
         *cmd,
-        "pytekukko.examples.print_invoice_headers",
+        "pytekukko.examples.print_next_emptyings",
         "--help",
         silent=True,
     )
     session.run(
         *cmd,
-        "pytekukko.examples.print_next_collections",
+        "pytekukko.examples.print_planned_emptyings",
         "--help",
         silent=True,
     )
@@ -67,27 +67,27 @@ def test(session: nox.Session) -> None:
     session.run(
         "shtab",
         "--prog",
-        "pytekukko-collection-schedules",
+        "pytekukko-invoices",
         "--prefix",
-        "pytekukko_collection_schedules",
-        "pytekukko.examples.print_collection_schedules.argparser",
+        "pytekukko_invoices",
+        "pytekukko.examples.print_invoices.argparser",
         silent=True,
     )
     session.run(
         "shtab",
         "--prog",
-        "pytekukko-invoice-headers",
+        "pytekukko-next-emptyings",
         "--prefix",
-        "pytekukko_invoice_headers",
-        "pytekukko.examples.print_invoice_headers.argparser",
+        "pytekukko_next_emptyings",
+        "pytekukko.examples.print_next_emptyings.argparser",
         silent=True,
     )
     session.run(
         "shtab",
         "--prog",
-        "pytekukko-next-collections",
+        "pytekukko-planned-emptyings",
         "--prefix",
-        "pytekukko_next_collections",
-        "pytekukko.examples.print_next_collections.argparser",
+        "pytekukko_planned_emptyings",
+        "pytekukko.examples.pytekukko_planned_emptyings.argparser",
         silent=True,
     )
