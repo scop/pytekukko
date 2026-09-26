@@ -3,10 +3,19 @@
 # Copyright 2021 Ville Skyttä
 
 from dataclasses import dataclass
-from datetime import date
+from datetime import date, datetime as dt
 from typing import Any, cast
 
 
+@dataclass
+class LoginResult:
+    """LoginResult encapsulates a token and its expiration time."""
+
+    token: str
+    expires_at: dt
+
+
+# TODO
 @dataclass
 class Service:
     """Service encapsulates information about parts of a customer relationship.
@@ -39,6 +48,7 @@ class Service:
         return self.raw_data.get("ASTSeurTyhj")
 
 
+# TODO
 @dataclass
 class CustomerData:
     """CustomerData encapsulates customer information.
@@ -60,6 +70,7 @@ class CustomerData:
         return cast("str", self.raw_data["nimi"])
 
 
+# TODO
 @dataclass
 class InvoiceHeader:
     """InvoiceHeader encapsulates basic information of an invoice.

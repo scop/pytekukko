@@ -13,13 +13,14 @@ from zoneinfo import ZoneInfo
 from aiohttp import ClientResponse, ClientResponseError, ClientSession
 
 from .exceptions import UnexpectedResponseStructureError
-from .models import CustomerData, InvoiceHeader, Service
+from .models import CustomerData, InvoiceHeader, LoginResult, Service
 
-__version__ = "0.17.1"
-DEFAULT_BASE_URL = "https://tilasto.jatekukko.fi/jatekukko/"
+__version__ = "0.50.0"
+DEFAULT_BASE_URL = "https://asiointi.jatekukko.fi/api/"
+DEFAULT_TENANT_ID = "0431f4d4-5592-49c9-bcc8-51a6965b6851"
 
 SERVICE_TIMEZONE = ZoneInfo("Europe/Helsinki")
-"""Assumed time zone of timestamps in data from service."""
+"""Time zone to use when converting UTC datetime timestamps dates in local time."""
 
 
 class Pytekukko:
@@ -28,16 +29,21 @@ class Pytekukko:
     def __init__(
         self,
         session: ClientSession,
-        customer_number: str,
+        username: str,
         password: str,
         base_url: str = DEFAULT_BASE_URL,
+        tenant_id: str = DEFAULT_TENANT_ID,
     ):
         """Set up client."""
         self.session: ClientSession = session
-        self.customer_number: str = customer_number
+        self.username: str = username
         self.password: str = password
         self.base_url: str = base_url
+        self.tenant_id: str = tenant_id
+        self._token: str | None = None
+        self._token_expires_at: dt | None = None
 
+    # TODO
     async def get_customer_data(self) -> dict[str, list[CustomerData]]:
         """Get customer data."""
         url = urljoin(self.base_url, "secure/get_customer_datas.do")
@@ -49,6 +55,7 @@ class Pytekukko:
             for customer_number, data in _unmarshal(response_data).items()
         }
 
+    # TODO
     async def get_services(self) -> list[Service]:
         """Get services."""
         url = urljoin(self.base_url, "secure/get_services_by_customer_numbers.do")
@@ -64,6 +71,7 @@ class Pytekukko:
 
         return [Service(raw_data=_unmarshal(service)) for service in response_data]
 
+    # TODO
     async def get_collection_schedule(self, what: Service | int) -> list[date]:
         """Get collection schedule for a service.
 
@@ -81,6 +89,7 @@ class Pytekukko:
 
         return cast("list[date]", _unmarshal(response_data))
 
+    # TODO
     async def get_invoice_headers(self) -> list[InvoiceHeader]:
         """Get headers of available invoices."""
         url = urljoin(self.base_url, "secure/get_invoice_headers_for_customer.do")
@@ -101,60 +110,50 @@ class Pytekukko:
             for invoice_header in response_data
         ]
 
-    async def login(self) -> dict[str, str]:
+    async def login(self) -> LoginResult:
         """Log in."""
-        url = urljoin(self.base_url, "j_acegi_security_check")
-        headers = (("X-Requested-With", "XMLHttpRequest"),)
-        params = {"target": "2"}
-        data = {"j_username": self.customer_number, "j_password": self.password}
+        url = urljoin(self.base_url, "customers/Users/login")
+        headers = (("Tenant-Id", self.tenant_id),)
+        data = {"userName": self.username, "password": self.password}
 
         async with self.session.post(
             url,
             headers=headers,
-            params=params,
-            data=data,
+            json=data,
             raise_for_status=True,
         ) as response:
-            # NOTE(scop): could check that we got {"response":"OK"}
-            return cast("dict[str, str]", await response.json())
+            rj = await response.json()
+            return LoginResult(
+                token=rj["token"],
+                expires_at=dt.fromisoformat(rj["expiresAt"]),
+            )
 
     async def logout(self) -> None:
         """Log out the current session."""
-        url = urljoin(self.base_url, "j_acegi_logout_elcustrap")
+        url = urljoin(self.base_url, "customers/Users/logout")
 
-        async with self.session.get(url, raise_for_status=True) as response:
+        async with self.session.post(url, raise_for_status=True) as response:
             await _drain(response)
 
     async def _request_with_retry(self, **request_kwargs: Any) -> Any:  # pyright: ignore[reportExplicitAny] # aiohttp kwargs type not public
         """Do a request, with automatic login and retry if session is logged out.
 
-        :param raise_for_first_status: whether first unsuccessful status should raise;
-            False allows for handling special cases that give errors instead of
-            redirecting to login page
         :param request_kwargs: kwargs to pass to self.session.request
         """
-        try:
+        async def _do_request() -> Any:
             async with self.session.request(
                 **request_kwargs,
                 raise_for_status=True,
             ) as response:
-                if response.history and response.url.path.endswith("/login.do"):
-                    await _drain(response)
-                else:
-                    return await response.json()
+                return await response.json()
+        try:
+            return await _do_request()
         except ClientResponseError as ex:
-            if not (
-                ex.status in (HTTPStatus.BAD_REQUEST, HTTPStatus.INTERNAL_SERVER_ERROR)
-                and "get_collection_schedule" in ex.request_info.url.path
-            ):
+            if ex.status != HTTPStatus.UNAUTHORIZED:
                 raise
 
         _ = await self.login()
-        async with self.session.request(
-            **request_kwargs,
-            raise_for_status=True,
-        ) as response:
-            return await response.json()
+        return await _do_request()
 
 
 # pyright: reportUnknownArgumentType=false, reportUnknownVariableType=false
