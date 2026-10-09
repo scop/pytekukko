@@ -13,7 +13,7 @@ from datetime import datetime, timedelta, timezone
 import icalendar
 
 import pytekukko
-from pytekukko.examples import example_argparser, example_client
+from pytekukko.examples import example_argparser, example_client, save_token
 
 
 def argparser() -> argparse.ArgumentParser:
@@ -36,7 +36,7 @@ async def run_example() -> None:
     """Run the example."""
     args = argparser().parse_args()
 
-    client, cookie_jar, cookie_jar_path = example_client(args)
+    client, token_path = example_client(args)
 
     async with client.session:
         data = [
@@ -44,7 +44,7 @@ async def run_example() -> None:
             for service in await client.get_services()
             if service.next_collection
         ]
-        if not cookie_jar_path:
+        if not token_path:
             await client.logout()
 
     if args.icalendar:
@@ -94,8 +94,8 @@ async def run_example() -> None:
             )
         )
 
-    if cookie_jar_path:
-        cookie_jar.save(cookie_jar_path)
+    if token_path:
+        save_token(client.token, token_path)
 
 
 def main() -> None:

@@ -8,7 +8,7 @@ import argparse
 import asyncio
 import json
 
-from pytekukko.examples import example_argparser, example_client
+from pytekukko.examples import example_argparser, example_client, save_token
 
 
 def argparser() -> argparse.ArgumentParser:
@@ -21,24 +21,27 @@ def argparser() -> argparse.ArgumentParser:
 
 async def run_example() -> None:
     """Run the example."""
-    client, cookie_jar, cookie_jar_path = example_client(argparser().parse_args())
+    client, token_path = example_client(argparser().parse_args())
 
     async with client.session:
         data = [
             {
+                "invoice_number": invoice_header.invoice_number,
+                "customer_number": invoice_header.customer_number,
                 "name": invoice_header.name,
+                "invoice_date": invoice_header.invoice_date.isoformat(),
                 "due_date": invoice_header.due_date.isoformat(),
                 "total": invoice_header.total,
             }
             for invoice_header in await client.get_invoice_headers()
         ]
-        if not cookie_jar_path:
+        if not token_path:
             await client.logout()
 
     print(json.dumps(data))  # noqa: T201
 
-    if cookie_jar_path:
-        cookie_jar.save(cookie_jar_path)
+    if token_path:
+        save_token(client.token, token_path)
 
 
 def main() -> None:

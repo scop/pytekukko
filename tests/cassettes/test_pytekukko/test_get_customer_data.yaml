@@ -45,14 +45,24 @@ interactions:
       - 0431f4d4-5592-49c9-bcc8-51a6965b6851
       User-Agent:
       - Python/3.12 aiohttp/3.9.0
-    method: POST
-    uri: https://asiointi.jatekukko.fi/api/customers/Users/logout
+    method: GET
+    uri: https://asiointi.jatekukko.fi/api/customers/Customers/emptying-infos
   response:
     body:
-      string: ''
+      string: '[{"id": "00-0000000-00", "name": "Meikäläinen Matti", "address": {"street":
+        "Esimerkkikatu 1", "postOffice": "KUOPIO", "postalCode": "70100", "countryCode":
+        "FI"}, "contractDate": "2020-01-01T00:00:00", "contractEndDate": null, "locationInterruptDate":
+        null, "locationInterruptEndDate": null, "coordinates": {"x": 3500000.0, "y":
+        6950000.0}, "buildingClassification": {"code": "011", "name": "YHDEN ASUNNON
+        TALOT"}, "buildingUsage": {"code": "  "}, "apartmentCount": 1, "residentCount":
+        0, "composts": false, "customerPriceList": "LA1", "municipalityCode": "297",
+        "invoicingId": "00-0000000-00", "concernId": "", "managerId": "", "customerGroup":
+        "1020", "area": "2", "contactPerson": {"name": "", "phoneNumber": "", "email":
+        "", "binLocationContactPerson": "Meikäläinen Matti"}, "sharedContainer": null,
+        "contractTypes": [], "notifications": []}]'
     headers:
       Content-Type:
-      - text/plain
+      - application/json; charset=utf-8
       Date:
       - Thu, 01 Jan 2026 12:00:00 GMT
       Server:
