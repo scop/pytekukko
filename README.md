@@ -1,30 +1,32 @@
-# pytekukko -- Jätekukko Omakukko API client
+# pytekukko -- Jätekukko e-services API client
 
 [![PyPI version](https://badge.fury.io/py/pytekukko.svg)](https://badge.fury.io/py/pytekukko)
 [![CI status](https://github.com/scop/pytekukko/actions/workflows/test.yaml/badge.svg)](https://github.com/scop/pytekukko/actions/workflows/test.yaml)
 [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/scop/pytekukko/badge)](https://scorecard.dev/viewer/?uri=github.com%2Fscop%2Fpytekukko)
 
 Simple Python asyncio client for the [Jätekukko](https://www.jatekukko.fi)
-[Omakukko](https://tilasto.jatekukko.fi/indexservice2.jsp) API.
+[e-services](https://asiointi.jatekukko.fi/) API.
 
-The API of this package is modeled closely after the Omakukko
-API. Only read operations are implemented (well apart from, strictly
+The API of this package is modeled closely after the e-services API.
+Only read operations are implemented (well apart from, strictly
 speaking, login/logout), and there are no plans to add support for any
 write ones.
 
 Usage in a nutshell:
 
 - construct an aiohttp [`ClientSession`](https://docs.aiohttp.org/en/stable/client_reference.html#client-session),
-- construct a `Pytekukko` client with it and your credentials,
+- construct a `Pytekukko` client with it and your e-services username
+  and password,
 - invoke methods on the client.
 
-The Omakukko API uses cookie based sessions, use a persistent aiohttp
-[`CookieJar`](https://docs.aiohttp.org/en/stable/client_reference.html#cookiejar)
-to maintain client session across interpreter restarts.
+The e-services API uses token based authentication. The token obtained
+on login is available in the client's `token` attribute; persist it and
+pass it to a new client's constructor to maintain the session across
+interpreter restarts.
 
 High level client methods handle logging in when the need to do so is
 detected. If the detection is successful, there is no need to
-separately track session expiration or use the `login` method in the
+separately track token expiration or use the `login` method in the
 first place.
 
 ## Command line examples

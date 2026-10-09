@@ -1,8 +1,7 @@
-"""Jätekukko Omakukko client."""
+"""Jätekukko e-services client."""
 
 # Copyright 2021 Ville Skyttä
 
-from contextlib import suppress
 from datetime import date
 from datetime import datetime as dt
 from http import HTTPStatus
@@ -10,89 +9,136 @@ from typing import Any, cast
 from urllib.parse import urljoin
 from zoneinfo import ZoneInfo
 
-from aiohttp import ClientResponse, ClientResponseError, ClientSession
+from aiohttp import ClientResponseError, ClientSession
 
 from .exceptions import UnexpectedResponseStructureError
-from .models import CustomerData, InvoiceHeader, Service
+from .models import CollectionEvent, CustomerData, InvoiceHeader, Service, TokenInfo
 
 __version__ = "0.17.1"
-DEFAULT_BASE_URL = "https://tilasto.jatekukko.fi/jatekukko/"
+DEFAULT_BASE_URL = "https://asiointi.jatekukko.fi/api/customers/"
+DEFAULT_TENANT_ID = "0431f4d4-5592-49c9-bcc8-51a6965b6851"
+"""Jätekukko's tenant id in the service."""
 
 SERVICE_TIMEZONE = ZoneInfo("Europe/Helsinki")
-"""Assumed time zone of timestamps in data from service."""
+"""Assumed time zone of naive timestamps in data from service."""
+
+_AUTH_SCHEME = "Vingo-e-services"
 
 
 class Pytekukko:
-    """Client for accessing Jätekukko Omakukko services."""
+    """Client for accessing Jätekukko e-services."""
 
     def __init__(
         self,
         session: ClientSession,
-        customer_number: str,
+        username: str,
         password: str,
         base_url: str = DEFAULT_BASE_URL,
+        token: TokenInfo | None = None,
     ):
-        """Set up client."""
+        """Set up client.
+
+        :param session: aiohttp client session to use
+        :param username: e-services username
+        :param password: e-services password
+        :param base_url: base URL of the service API
+        :param token: previously obtained token to use, see :attr:`token`
+        """
         self.session: ClientSession = session
-        self.customer_number: str = customer_number
+        self.username: str = username
         self.password: str = password
         self.base_url: str = base_url
+        self.tenant_id: str = DEFAULT_TENANT_ID
+        self.token: TokenInfo | None = token
+        """Current authentication token.
 
-    async def get_customer_data(self) -> dict[str, list[CustomerData]]:
+        Set by :meth:`login`, cleared by :meth:`logout`. Can be persisted and passed
+        to a new client to maintain the session across interpreter restarts.
+        """
+
+    async def get_customer_data(self) -> list[CustomerData]:
         """Get customer data."""
-        url = urljoin(self.base_url, "secure/get_customer_datas.do")
+        url = urljoin(self.base_url, "Customers/emptying-infos")
 
         response_data = await self._request_with_retry(method="GET", url=url)
-
-        return {
-            customer_number: [CustomerData(raw_data=a_data) for a_data in data]
-            for customer_number, data in _unmarshal(response_data).items()
-        }
-
-    async def get_services(self) -> list[Service]:
-        """Get services."""
-        url = urljoin(self.base_url, "secure/get_services_by_customer_numbers.do")
-        params = {"customerNumbers[]": self.customer_number}
-
-        response_data = await self._request_with_retry(
-            method="GET",
-            url=url,
-            params=params,
-        )
         if not isinstance(response_data, list | tuple):
             raise UnexpectedResponseStructureError(response_data)
 
-        return [Service(raw_data=_unmarshal(service)) for service in response_data]
+        return [CustomerData(raw_data=_unmarshal(data)) for data in response_data]
 
-    async def get_collection_schedule(self, what: Service | int) -> list[date]:
-        """Get collection schedule for a service.
+    async def get_services(
+        self,
+        customer: CustomerData | str | None = None,
+    ) -> list[Service]:
+        """Get services.
 
-        :param what: the service or a "pos" value of one to get schedule for
+        :param customer: the customer or a customer number to get services of;
+            None to get services of all customers available to the user
         """
-        url = urljoin(self.base_url, "get_collection_schedule.do")
-        pos = what.pos if isinstance(what, Service) else what
-        params = {"customerNumber": self.customer_number, "pos": pos}
+        if customer is None:
+            customer_numbers = [
+                a_customer.customer_number
+                for a_customer in await self.get_customer_data()
+            ]
+        elif isinstance(customer, CustomerData):
+            customer_numbers = [customer.customer_number]
+        else:
+            customer_numbers = [customer]
 
-        response_data = await self._request_with_retry(
-            method="GET",
-            url=url,
-            params=params,
+        services: list[Service] = []
+        for customer_number in customer_numbers:
+            url = urljoin(
+                self.base_url,
+                f"Customers/emptying-infos/{customer_number}/contracts",
+            )
+            response_data = await self._request_with_retry(method="GET", url=url)
+            if not isinstance(response_data, list | tuple):
+                raise UnexpectedResponseStructureError(response_data)
+            services.extend(
+                Service(raw_data=_unmarshal(service)) for service in response_data
+            )
+
+        return services
+
+    async def get_collection_events(self, service: Service) -> list[CollectionEvent]:
+        """Get past and planned collection events for a service.
+
+        :param service: the service to get events for
+        """
+        url = urljoin(
+            self.base_url,
+            f"Customers/contracts/{service.customer_number}/{service.pos}",
         )
 
-        return cast("list[date]", _unmarshal(response_data))
+        response_data = await self._request_with_retry(method="GET", url=url)
+        if not isinstance(response_data, dict):
+            raise UnexpectedResponseStructureError(response_data)
+        all_emptyings = cast(
+            "dict[str, list[dict[str, Any]]]",
+            response_data.get("allEmptyings", {}),
+        )
+
+        events = [
+            CollectionEvent(raw_data=_unmarshal(event))
+            for events_of_type in all_emptyings.values()
+            for event in events_of_type
+        ]
+        events.sort(key=lambda event: event.date)
+        return events
+
+    async def get_collection_schedule(self, what: Service) -> list[date]:
+        """Get collection schedule for a service.
+
+        :param what: the service to get schedule for
+        :returns: sorted dates of past and planned collections
+        """
+        return sorted({event.date for event in await self.get_collection_events(what)})
 
     async def get_invoice_headers(self) -> list[InvoiceHeader]:
         """Get headers of available invoices."""
-        url = urljoin(self.base_url, "secure/get_invoice_headers_for_customer.do")
-        params = {
-            "customerId": self.customer_number,  # yep, customerId, not *Number here
-        }
+        url = urljoin(self.base_url, "customers/invoices")
 
-        response_data = await self._request_with_retry(
-            method="GET",
-            url=url,
-            params=params,
-        )
+        response_data = await self._request_with_retry(method="GET", url=url)
         if not isinstance(response_data, list | tuple):
             raise UnexpectedResponseStructureError(response_data)
 
@@ -101,57 +147,78 @@ class Pytekukko:
             for invoice_header in response_data
         ]
 
-    async def login(self) -> dict[str, str]:
-        """Log in."""
-        url = urljoin(self.base_url, "j_acegi_security_check")
-        headers = (("X-Requested-With", "XMLHttpRequest"),)
-        params = {"target": "2"}
-        data = {"j_username": self.customer_number, "j_password": self.password}
+    async def login(self) -> TokenInfo:
+        """Log in, and store the obtained token in :attr:`token`."""
+        url = urljoin(self.base_url, "Users/login")
+        data = {"userName": self.username, "password": self.password}
 
         async with self.session.post(
             url,
-            headers=headers,
-            params=params,
-            data=data,
+            headers=self._headers(authenticated=False),
+            json=data,
             raise_for_status=True,
         ) as response:
-            # NOTE(scop): could check that we got {"response":"OK"}
-            return cast("dict[str, str]", await response.json())
+            response_data = await response.json()
+
+        if not isinstance(response_data, dict) or "token" not in response_data:
+            raise UnexpectedResponseStructureError(response_data)
+        unmarshalled = _unmarshal(response_data)
+        self.token = TokenInfo(
+            token=cast("str", unmarshalled["token"]),
+            expires_at=cast("dt", unmarshalled["expiresAt"]),
+        )
+        return self.token
 
     async def logout(self) -> None:
-        """Log out the current session."""
-        url = urljoin(self.base_url, "j_acegi_logout_elcustrap")
+        """Log out the current session, and clear :attr:`token`."""
+        if self.token is None:
+            return
+        url = urljoin(self.base_url, "Users/logout")
 
-        async with self.session.get(url, raise_for_status=True) as response:
-            await _drain(response)
-
-    async def _request_with_retry(self, **request_kwargs: Any) -> Any:  # pyright: ignore[reportExplicitAny] # aiohttp kwargs type not public
-        """Do a request, with automatic login and retry if session is logged out.
-
-        :param raise_for_first_status: whether first unsuccessful status should raise;
-            False allows for handling special cases that give errors instead of
-            redirecting to login page
-        :param request_kwargs: kwargs to pass to self.session.request
-        """
         try:
-            async with self.session.request(
-                **request_kwargs,
+            async with self.session.post(
+                url,
+                headers=self._headers(),
                 raise_for_status=True,
             ) as response:
-                if response.history and response.url.path.endswith("/login.do"):
-                    await _drain(response)
-                else:
-                    return await response.json()
-        except ClientResponseError as ex:
-            if not (
-                ex.status in (HTTPStatus.BAD_REQUEST, HTTPStatus.INTERNAL_SERVER_ERROR)
-                and "get_collection_schedule" in ex.request_info.url.path
-            ):
-                raise
+                _ = await response.read()
+        finally:
+            self.token = None
 
-        _ = await self.login()
+    def _headers(self, *, authenticated: bool = True) -> dict[str, str]:
+        """Get request headers."""
+        headers = {
+            "Accept": "application/json",
+            "Accept-Language": "fi-FI, fi",
+            "Tenant-Id": self.tenant_id,
+        }
+        if authenticated and self.token is not None:
+            headers["Authorization"] = f"{_AUTH_SCHEME} {self.token.token}"
+        return headers
+
+    async def _request_with_retry(self, **request_kwargs: Any) -> Any:  # pyright: ignore[reportExplicitAny] # aiohttp kwargs type not public
+        """Do a request, with automatic login and retry if not logged in.
+
+        :param request_kwargs: kwargs to pass to self.session.request
+        """
+        if self.token is None or not self.token.is_valid():
+            _ = await self.login()
+        else:
+            try:
+                async with self.session.request(
+                    **request_kwargs,
+                    headers=self._headers(),
+                    raise_for_status=True,
+                ) as response:
+                    return await response.json()
+            except ClientResponseError as ex:
+                if ex.status not in (HTTPStatus.UNAUTHORIZED, HTTPStatus.FORBIDDEN):
+                    raise
+            _ = await self.login()
+
         async with self.session.request(
             **request_kwargs,
+            headers=self._headers(),
             raise_for_status=True,
         ) as response:
             return await response.json()
@@ -163,28 +230,22 @@ class Pytekukko:
 def _unmarshal(data: Any) -> Any:  # pyright: ignore[reportExplicitAny] # by design
     """Unmarshal items in parsed JSON to more specific objects.
 
+    ISO 8601 timestamps are converted to timezone aware datetimes in
+    :data:`SERVICE_TIMEZONE`; naive ones are assumed to be in it already.
+
     :param data: parsed JSON data
     :return: copy of data, unmarshalled
     """
     if isinstance(data, str):
         try:
-            parsed = dt.strptime(data, "%Y-%m-%d").replace(tzinfo=SERVICE_TIMEZONE)
-            return parsed.date()
+            parsed = dt.fromisoformat(data.replace("Z", "+00:00"))
         except ValueError:
-            with suppress(ValueError):
-                parsed = dt.strptime(data, "%H:%M").replace(tzinfo=SERVICE_TIMEZONE)
-                return parsed.time()
+            return data
+        if parsed.tzinfo is None:
+            return parsed.replace(tzinfo=SERVICE_TIMEZONE)
+        return parsed.astimezone(SERVICE_TIMEZONE)
     if isinstance(data, dict):
         return {key: _unmarshal(value) for key, value in data.items()}
     if isinstance(data, list):
         return [_unmarshal(value) for value in data]
     return data
-
-
-async def _drain(response: ClientResponse) -> None:
-    """Consume and discard response.
-
-    Useful for keeping the connection alive without caring about response content.
-    """
-    async for _ in response.content.iter_chunked(1024):
-        pass

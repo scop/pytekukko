@@ -1,0 +1,130 @@
+interactions:
+- request:
+    body: '{"userName": "user@example.com", "password": "secret"}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Accept-Language:
+      - fi-FI, fi
+      Host:
+      - asiointi.jatekukko.fi
+      Tenant-Id:
+      - 0431f4d4-5592-49c9-bcc8-51a6965b6851
+      User-Agent:
+      - Python/3.12 aiohttp/3.9.0
+    method: POST
+    uri: https://asiointi.jatekukko.fi/api/customers/Users/login
+  response:
+    body:
+      string: '{"token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+        "expiresAt": "2099-01-01T00:00:00Z"}'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Thu, 01 Jan 2026 12:00:00 GMT
+      Server:
+      - Microsoft-IIS/10.0
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Accept-Language:
+      - fi-FI, fi
+      Host:
+      - asiointi.jatekukko.fi
+      Tenant-Id:
+      - 0431f4d4-5592-49c9-bcc8-51a6965b6851
+      User-Agent:
+      - Python/3.12 aiohttp/3.9.0
+    method: GET
+    uri: https://asiointi.jatekukko.fi/api/customers/Customers/emptying-infos
+  response:
+    body:
+      string: '[{"id": "00-0000000-00", "name": "Meikäläinen Matti", "address": {"street":
+        "Esimerkkikatu 1", "postOffice": "KUOPIO", "postalCode": "70100", "countryCode":
+        "FI"}, "contractDate": "2020-01-01T00:00:00", "contractEndDate": null, "locationInterruptDate":
+        null, "locationInterruptEndDate": null, "coordinates": {"x": 3500000.0, "y":
+        6950000.0}, "buildingClassification": {"code": "011", "name": "YHDEN ASUNNON
+        TALOT"}, "buildingUsage": {"code": "  "}, "apartmentCount": 1, "residentCount":
+        0, "composts": false, "customerPriceList": "LA1", "municipalityCode": "297",
+        "invoicingId": "00-0000000-00", "concernId": "", "managerId": "", "customerGroup":
+        "1020", "area": "2", "contactPerson": {"name": "", "phoneNumber": "", "email":
+        "", "binLocationContactPerson": "Meikäläinen Matti"}, "sharedContainer": null,
+        "contractTypes": [], "notifications": []}]'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Thu, 01 Jan 2026 12:00:00 GMT
+      Server:
+      - Microsoft-IIS/10.0
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Accept-Language:
+      - fi-FI, fi
+      Host:
+      - asiointi.jatekukko.fi
+      Tenant-Id:
+      - 0431f4d4-5592-49c9-bcc8-51a6965b6851
+      User-Agent:
+      - Python/3.12 aiohttp/3.9.0
+    method: GET
+    uri: https://asiointi.jatekukko.fi/api/customers/Customers/emptying-infos/00-0000000-00/contracts
+  response:
+    body:
+      string: '[{"customerId": "00-0000000-00", "productCode": 1249, "position": 1,
+        "name": "Jäteastia 240 l, sekajäte energiaksi", "serviceName": "", "productGuid":
+        "00000000-0000-0000-0000-000000000001", "nextEmptying": "2026-01-15T00:00:00",
+        "emptyingIntervals": [{"startWeek": 1, "endWeek": 53, "interval": 2, "amountPerWeek":
+        1, "sequence": 1}], "amount": 1.0, "unit": "Piece", "size": "240 L", "transportPrice":
+        5.0, "handlingPrice": 0.0, "startDate": "2020-01-01T00:00:00", "endDate":
+        null, "pausedFrom": null, "pausedTo": null, "comment": "", "sharedContainer":
+        false, "readonlyContract": false, "status": "Unspecified", "gateKeyCode":
+        "", "correspondingPersonId": "", "wellType": false, "attachmentIds": []},
+        {"customerId": "00-0000000-00", "productCode": 4628, "position": 2, "name":
+        "Perusmaksu v. 2026, vakituinen asunto", "serviceName": "", "productGuid":
+        "00000000-0000-0000-0000-000000000002", "nextEmptying": null, "emptyingIntervals":
+        [{"startWeek": 1, "endWeek": 53, "interval": 1, "amountPerWeek": 1, "sequence":
+        1}], "amount": 1.0, "unit": "Unknown", "size": "", "transportPrice": 20.0,
+        "handlingPrice": 0.0, "startDate": "2020-01-01T00:00:00", "endDate": null,
+        "pausedFrom": null, "pausedTo": null, "comment": "", "sharedContainer": false,
+        "readonlyContract": true, "status": "Unspecified", "gateKeyCode": "", "correspondingPersonId":
+        "", "wellType": false, "attachmentIds": []}, {"customerId": "00-0000001-00",
+        "productCode": 1244, "position": 3, "name": "Jäteastia 240 l, bio", "serviceName":
+        "", "productGuid": "00000000-0000-0000-0000-000000000003", "nextEmptying":
+        "2026-01-12T00:00:00", "emptyingIntervals": [{"startWeek": 18, "endWeek":
+        39, "interval": 2, "amountPerWeek": 1, "sequence": 1}, {"startWeek": 40, "endWeek":
+        17, "interval": 4, "amountPerWeek": 1, "sequence": 2}], "amount": 1.0, "unit":
+        "Piece", "size": "240 L", "transportPrice": 4.5, "handlingPrice": 0.0, "startDate":
+        "2020-01-01T00:00:00", "endDate": null, "pausedFrom": null, "pausedTo": null,
+        "comment": "", "sharedContainer": false, "readonlyContract": false, "status":
+        "Unspecified", "gateKeyCode": "", "correspondingPersonId": "", "wellType":
+        false, "attachmentIds": []}]'
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Thu, 01 Jan 2026 12:00:00 GMT
+      Server:
+      - Microsoft-IIS/10.0
+    status:
+      code: 200
+      message: OK
+version: 1
