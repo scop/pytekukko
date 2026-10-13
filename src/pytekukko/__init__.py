@@ -32,14 +32,15 @@ _INVOICES = TypeAdapter(list[Invoice])
 class Pytekukko:
     """Client for accessing Jätekukko Omakukko services."""
 
+    base_url: str = DEFAULT_BASE_URL
+    tenant_id: str = DEFAULT_TENANT_ID
+
     def __init__(
         self,
         session: ClientSession,
         username: str,
         password: str,
         token: TokenInfo | None = None,
-        base_url: str = DEFAULT_BASE_URL,
-        tenant_id: str = DEFAULT_TENANT_ID,
     ):
         """Set up client.
 
@@ -59,8 +60,6 @@ class Pytekukko:
         Set by :meth:`login`, cleared by :meth:`logout`. Can be persisted and passed
         to a new client to maintain the session across interpreter restarts.
         """
-        self.base_url: str = base_url
-        self.tenant_id: str = tenant_id
 
         self._authorize()
 
