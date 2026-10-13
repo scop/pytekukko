@@ -7,7 +7,9 @@ import nox
 nox.options.error_on_external_run = True
 
 
-@nox.session(python=[f"{py}3.{x}" for py in ("", "pypy") for x in range(10, 16)])
+@nox.session(
+    python=[f"3.{x}" for x in range(10, 16)] + [f"pypy3.{x}" for x in range(11, 12)]
+)
 def test(session: nox.Session) -> None:
     """Run tests."""
     session.install(".[examples]", "-r", "requirements/test-requirements.txt")
