@@ -44,7 +44,9 @@ ignore = [
   "ANN", # Maybe sometime
   "D203", # Ping/pong with D211
   "D213", # Ping/pong with D212
+  "FIX002", # Temporary
   "TC003", # Maybe sometime
+  "TD003", # Temporary
   # https://docs.astral.sh/ruff/formatter/#conflicting-lint-rules
   # (keep order of ignores here same as ^there for maintainability)
   # https://github.com/astral-sh/ruff/issues/8175
