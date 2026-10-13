@@ -6,6 +6,7 @@ import json
 import os
 import re
 import uuid
+from itertools import count
 from typing import Any, TypeVar
 
 import pytest
@@ -23,31 +24,25 @@ TEST_TOKEN = "test-token"  # noqa: S105
 TEST_CUSTOMER_ID = "00-0000000-00"
 TEST_POSITION = 42
 
-invoice_number = 0
+_invoice_numbers = count(1)
 
 
 def _gen_invoice_number() -> int:
-    global invoice_number
-    invoice_number += 1
-    return invoice_number
+    return next(_invoice_numbers)
 
 
-amount_open = 10.0
+_amounts_open = count(10.01, 0.01)
 
 
 def _gen_amount_open() -> float:
-    global amount_open
-    amount_open += 0.01
-    return amount_open
+    return next(_amounts_open)
 
 
-product_guid = 0
+_product_guids = count(1)
 
 
 def _gen_product_guid() -> str:
-    global product_guid
-    product_guid += 1
-    return str(uuid.UUID(int=product_guid))
+    return str(uuid.UUID(int=next(_product_guids)))
 
 
 HEADER_FILTERS = [
