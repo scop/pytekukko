@@ -5,7 +5,7 @@
 [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/scop/pytekukko/badge)](https://scorecard.dev/viewer/?uri=github.com%2Fscop%2Fpytekukko)
 
 Simple Python asyncio client for the [Jätekukko](https://www.jatekukko.fi)
-[Omakukko](https://tilasto.jatekukko.fi/indexservice2.jsp) API.
+[Omakukko](https://asiointi.jatekukko.fi) API.
 
 The API of this package is modeled closely after the Omakukko
 API. Only read operations are implemented (well apart from, strictly
@@ -18,9 +18,12 @@ Usage in a nutshell:
 - construct a `Pytekukko` client with it and your credentials,
 - invoke methods on the client.
 
-The Omakukko API uses cookie based sessions, use a persistent aiohttp
+The Omakukko API uses token based sessions. The token is stored in the
+client's `token` attribute, persist and load it as appropriate to
+maintain the session across interpreter restarts. The service also
+sets some cookies, use a persistent
 [`CookieJar`](https://docs.aiohttp.org/en/stable/client_reference.html#cookiejar)
-to maintain client session across interpreter restarts.
+to maintain them similarly.
 
 High level client methods handle logging in when the need to do so is
 detected. If the detection is successful, there is no need to
@@ -34,10 +37,10 @@ package. Executables and dependencies for these are installed when the
 package is installed with the `examples` extra, invoke them with
 `--help` for usage and setup information:
 
-- `pytekukko-collection-schedules`:
-  output collection schedules in JSON or iCalendar
-- `pytekukko-invoice-headers`: output basic info on invoices in JSON
-- `pytekukko-next-collections`: output next collection dates in JSON
+- `pytekukko-invoices`: output basic info on invoices in JSON
+- `pytekukko-next-emptyings`: output next emptying dates in JSON
+- `pytekukko-planned-emptyings`:
+  output planned emptying schedules in JSON or iCalendar
 
 Shell completions for the examples can be generated with
 [shtab's CLI usage mode](https://docs.iterative.ai/shtab/use/#cli-usage).
@@ -46,17 +49,17 @@ Shell completions for the examples can be generated with
 
 ```shell
 shtab \
-  --prog pytekukko-collection-schedules \
-  --prefix pytekukko_collection_schedules \
-  pytekukko.examples.print_collection_schedules.argparser
+  --prog pytekukko-invoices \
+  --prefix pytekukko_invoices \
+  pytekukko.examples.print_invoices.argparser
 shtab \
-  --prog pytekukko-invoice-headers \
-  --prefix pytekukko_invoice_headers \
-  pytekukko.examples.print_invoice_headers.argparser
+  --prog pytekukko-next-emptyings \
+  --prefix pytekukko_next_emptyings \
+  pytekukko.examples.print_next_emptyings.argparser
 shtab \
-  --prog pytekukko-next-collections \
-  --prefix pytekukko_next_collections \
-  pytekukko.examples.print_next_collections.argparser
+  --prog pytekukko-planned-emptyings \
+  --prefix pytekukko_planned_emptyings \
+  pytekukko.examples.print_planned_emptyings.argparser
 ```
 
 </details>
