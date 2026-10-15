@@ -49,11 +49,11 @@ ignore = [
   "TD003", # Temporary
   # https://docs.astral.sh/ruff/formatter/#conflicting-lint-rules
   # (keep order of ignores here same as ^there for maintainability)
-  # https://github.com/astral-sh/ruff/issues/8175
   "W191",
   "E111",
   "E114",
   "E117",
+  # "D203", but already ignored above
   "D206",
   "D300",
   "Q000",
