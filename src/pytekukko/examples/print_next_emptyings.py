@@ -37,7 +37,7 @@ async def run_example() -> None:
         if not token_path:
             await client.logout()
 
-    print(json.dumps(data))  # noqa: T201 if contract.all_emptyings
+    print(json.dumps(data))  # noqa: T201
 
     if cookie_jar_path:
         cookie_jar.save(cookie_jar_path)
