@@ -33,6 +33,8 @@ class Pytekukko:
     """Client for accessing Jätekukko Omakukko services."""
 
     base_url: str = DEFAULT_BASE_URL
+    """Service API base URL. Must end with a slash."""
+
     tenant_id: str = DEFAULT_TENANT_ID
 
     def __init__(
@@ -48,8 +50,6 @@ class Pytekukko:
         :param username: account username
         :param password: account password
         :param token: previously obtained token to use, see :attr:`token`
-        :param base_url: base URL of the service API
-        :param tenant_id: Jätekukko's tenant id in the service
         """
         self.session: ClientSession = session
         self.username: str = username
