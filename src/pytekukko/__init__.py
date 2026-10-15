@@ -17,7 +17,7 @@ from .models import (
     TokenInfo,
 )
 
-__version__ = "0.50.0"
+__version__ = "1.0.0"
 DEFAULT_BASE_URL = "https://asiointi.jatekukko.fi/api/"
 DEFAULT_TENANT_ID = "0431f4d4-5592-49c9-bcc8-51a6965b6851"
 

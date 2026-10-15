@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.0.0](https://github.com/scop/pytekukko/compare/v0.17.1...v1.0.0) (2026-10-15)
+
+
+### ⚠ BREAKING CHANGES
+
+* update to the 2026-08 changed API
+
+### Bug Fixes
+
+* update to the 2026-08 changed API ([68ecdfc](https://github.com/scop/pytekukko/commit/68ecdfc2ed6ab34e2473997ec67f757393b10d48))
+
+
+### Documentation
+
+* **README:** remove Python 3 badge ([97ed30c](https://github.com/scop/pytekukko/commit/97ed30c7a3898e0ee8457b29b7df87ea803311f1))
+* **README:** update wrt new API and implementation ([e052dec](https://github.com/scop/pytekukko/commit/e052decda6c4ccfbc90020256599ae3fa1e13e45))
+
 ## [0.17.1](https://github.com/scop/pytekukko/compare/v0.17.0...v0.17.1) (2026-06-17)
 
 
