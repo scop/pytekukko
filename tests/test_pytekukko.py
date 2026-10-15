@@ -35,7 +35,8 @@ _amounts_open = count(10.01, 0.01)
 
 
 def _gen_amount_open() -> float:
-    return next(_amounts_open)
+    # round to keep float drift out of the recorded cassettes
+    return round(next(_amounts_open), 2)
 
 
 _product_guids = count(1)
