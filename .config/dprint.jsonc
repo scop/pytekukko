@@ -1,7 +1,7 @@
 {
   "excludes": [
-    "/.github/release-please-manifest.json",
-    "/tests/cassettes/**",
+    "../.github/release-please-manifest.json",
+    "../tests/cassettes/**",
   ],
   "plugins": [
     "npm:@dprint/json@0.25.2",
