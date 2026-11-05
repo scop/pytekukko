@@ -168,7 +168,7 @@ url_api = "https://api.github.com/repos/astral-sh/ruff/releases/assets/603827051
 provenance = "github-attestations"
 
 [[tools.rumdl]]
-version = "v0.2.78"
+version = "0.2.78"
 backend = "aqua:rvben/rumdl"
 
 [tools.rumdl."platforms.linux-arm64"]
