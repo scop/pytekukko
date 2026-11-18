@@ -11,7 +11,7 @@ from typing import Any, TypeVar
 
 import pytest
 from aiohttp import ClientSession
-from vcr.request import Request
+from vcr.request import Request  # type: ignore[import-untyped]
 
 from pytekukko import _AUTH_HEADER, Pytekukko
 from pytekukko.examples import load_pytekukko_dotenv

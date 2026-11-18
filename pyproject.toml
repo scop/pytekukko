@@ -81,11 +81,6 @@ warn_unreachable = true
 files = "."
 exclude = "^build/"
 
-[[tool.mypy.overrides]]
-module = [
-  "vcr.request",
-]
-ignore_missing_imports = true
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
