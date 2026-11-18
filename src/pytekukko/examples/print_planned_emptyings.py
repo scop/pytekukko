@@ -28,10 +28,6 @@ def argparser() -> argparse.ArgumentParser:
     return argparser
 
 
-# reportUnknownMemberType=false for Calendar.add, Event.add
-# pyright: reportUnknownMemberType=false
-
-
 async def run_example() -> None:
     """Run the example."""
     args = argparser().parse_args()
