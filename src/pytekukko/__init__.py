@@ -160,7 +160,7 @@ class Pytekukko:
         else:
             self.session.headers.pop("Authorization", None)
 
-    async def _request_with_retry(self, **request_kwargs: Any) -> str:  # pyright: ignore[reportExplicitAny] # aiohttp kwargs type not public
+    async def _request_with_retry(self, **request_kwargs: Any) -> str:
         """Do a request, with automatic login and retry if session is logged out.
 
         :param request_kwargs: kwargs to pass to self.session.request
